@@ -1,0 +1,43 @@
+{
+  "name": "sao",
+  "version": "0.0.0",
+  "description": "Fat-free static document engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "build": "webpack -p --config webpack.config.prod.js",
+    "dev": "webpack --config webpack.config.dev.js --watch"
+  },
+  "bin": {
+    "sao": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egoist/sao.git"
+  },
+  "keywords": [
+    "doc"
+  ],
+  "author": "EGOIST <0x142857@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egoist/sao/issues"
+  },
+  "homepage": "https://github.com/egoist/sao#readme",
+  "dependencies": {
+    "babel-core": "^5.8.34",
+    "co": "^4.6.0",
+    "colorful": "^2.1.0",
+    "minimist": "^1.2.0",
+    "path-exists": "^2.1.0",
+    "typelog": "^0.1.2"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.4.0",
+    "vue-simple-router": "^0.1.11",
+    "webpack": "^1.12.9"
+  }
+}
