@@ -3,7 +3,10 @@
 ## Folder Structure
 
 ```bash
-
+your-template/
+  ├── README.md
+  ├── sao.js
+  └── template/
 ```
 
 ## Config File
