@@ -48,6 +48,29 @@ Then you can just use the answers of prompts in your template, for example:
 }
 ```
 
+#### Role
+
+You can use `role` to apply built-in options to the prompt, for example:
+
+```js
+module.exports = {
+  prompts: {
+    projectName: {
+      role: 'name',
+      message: 'Type your project name:'
+    }
+  }
+}
+```
+
+Then the default value `projectName` will be the target folder name.
+
+List of built-in roles:
+
+- `name`: Set default value to target folder name
+- `git:name`: Set default value to git username
+- `git:email`: Set default value to git email
+
 ### Filters
 
 You can filter files with user prompts, for example:

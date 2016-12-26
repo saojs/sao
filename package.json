@@ -42,9 +42,12 @@
     "co": "^4.6.0",
     "download-git-repo": "^0.2.1",
     "ejs": "^2.5.5",
+    "git-config-path": "^1.0.1",
     "kopy": "^2.1.1",
     "mkdirp": "^0.5.1",
     "ora": "^0.4.0",
+    "parse-git-config": "^1.1.1",
+    "update-notifier": "^1.0.3",
     "user-home": "^2.0.0"
   }
 }

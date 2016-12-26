@@ -2,6 +2,7 @@
 'use strict'
 const cac = require('cac')
 const ora = require('ora')
+const update = require('update-notifier')
 
 const cli = cac()
 
@@ -35,3 +36,5 @@ cli
   .option('git-cache', 'Use cached version for a repo template')
 
 cli.parse()
+
+update({pkg: cli.pkg}).notify()
