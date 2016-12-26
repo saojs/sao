@@ -11,7 +11,7 @@ your-template/
 
 ## Config File
 
-The default config is `./sao.js` or `./sao.json` in your template, `sao` will copy `./template` folder in your template.
+The default config is `./sao.js` or `./sao.json` in your template, if config file exists `sao` will copy `./template` folder in your template, otherwise it copy root directory.
 
 You can also use `--config` option to set custom config file.
 
