@@ -92,8 +92,18 @@ This hooks will be invoked after everything ends:
 
 ```js
 module.exports = {
-  post() {
+  post(context) {
     // perform your logic
   }
 }
 ```
+
+##### context
+
+###### targetFolder
+
+The target folder, it's `./` if generating to current working directory.
+
+###### chalk
+
+The [chalk](https://github.com/chalk/chalk) module as argument.
