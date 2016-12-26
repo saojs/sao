@@ -1,0 +1,49 @@
+{
+  "name": "sao",
+  "version": "0.0.0",
+  "description": "Futuristic project generator.",
+  "license": "MIT",
+  "repository": "egoist/sao",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "github.com/egoist"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "bin": "bin/sao",
+  "scripts": {
+    "test": "eslint lib/*.js bin/*"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "keywords": [
+    "generator",
+    "template"
+  ],
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-rem": "latest",
+    "jest-cli": "^15.1.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "eslintConfig": {
+    "extends": "rem/esnext"
+  },
+  "dependencies": {
+    "cac": "^3.0.4",
+    "co": "^4.6.0",
+    "download-git-repo": "^0.2.1",
+    "ejs": "^2.5.5",
+    "kopy": "^2.1.0",
+    "mkdirp": "^0.5.1",
+    "ora": "^0.4.0",
+    "user-home": "^2.0.0"
+  }
+}

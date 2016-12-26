@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+'use strict'
+const cac = require('cac')
+const ora = require('ora')
+
+const cli = cac()
+
+cli.command('*', 'Generate a new project', (input, flags) => {
+  const sao = require('../lib')
+  const event = require('../lib/event')
+
+  const spinner = ora()
+  event.on('download:start', () => {
+    spinner.text = 'Downloading...'
+    spinner.start()
+  })
+  event.on('download:stop', () => {
+    spinner.stop()
+  })
+
+  const options = Object.assign({
+    template: input[0],
+    output: input[1]
+  }, flags)
+
+  return sao(options)
+    .catch(err => {
+      spinner.stop()
+      console.log(err.stack)
+    })
+})
+
+cli
+  .option('c, config', 'Use custom config file')
+  .option('git-cache', 'Use cached version for a repo template')
+
+cli.parse()
