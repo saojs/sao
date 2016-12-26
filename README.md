@@ -2,8 +2,6 @@
 
 [![NPM version](https://img.shields.io/npm/v/sao.svg?style=flat)](https://npmjs.com/package/sao) [![NPM downloads](https://img.shields.io/npm/dm/sao.svg?style=flat)](https://npmjs.com/package/sao) [![Build Status](https://img.shields.io/circleci/project/egoist/sao/master.svg?style=flat)](https://circleci.com/gh/egoist/sao) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
-![preview](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-126926.png)
-
 ## Quick Start
 
 ```bash
@@ -42,5 +40,3 @@ For detailed usage please head to https://sao.js.org
 Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/sao/contributors)).
 
 > [egoistian.com](https://egoistian.com) · GitHub [@egoist](https://github.com/egoist) · Twitter [@rem_rin_rin](https://twitter.com/rem_rin_rin)
-
-![preview](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-126926.png)
