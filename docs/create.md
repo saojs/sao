@@ -121,12 +121,24 @@ module.exports = {
 }
 ```
 
-##### context
+## context
 
-###### newFolder
+As you may notice, there's a `context` argument in `post hook`, it's also available in your template markup as underscore `_`, for example:
+
+```json
+{
+  "name": "<%= _.folderName %>"
+}
+```
+
+### newFolder
 
 If it's generating to current working directory, the value of `newFolder` would be `null`, otherwise it's the folder name.
 
-###### chalk
+### folderName
+
+No matter it's current directory or a new folder, this will always return the name of the folder, never `null`.
+
+### chalk
 
 The [chalk](https://github.com/chalk/chalk) module as argument.
