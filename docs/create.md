@@ -67,7 +67,7 @@ Then the default value `projectName` will be the target folder name.
 
 List of built-in roles:
 
-- `name`: Set default value to target folder name
+- `folder:name`: Set default value to target folder name
 - `git:name`: Set default value to git username
 - `git:email`: Set default value to git email
 
@@ -131,13 +131,17 @@ As you may notice, there's a `context` argument in `post hook`, it's also availa
 }
 ```
 
-### newFolder
+### isNewFolder
 
-If it's generating to current working directory, the value of `newFolder` would be `null`, otherwise it's the folder name.
+Type: `boolean`
+
+Get if it's generating to a new project instead of curremt working directory.
 
 ### folderName
 
-No matter it's current directory or a new folder, this will always return the name of the folder, never `null`.
+Type: `string`
+
+No matter it's current directory or a new folder, this will always return the name of the folder.
 
 ### chalk
 
