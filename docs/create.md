@@ -123,9 +123,9 @@ module.exports = {
 
 ##### context
 
-###### targetFolder
+###### newFolder
 
-The target folder, it's `./` if generating to current working directory.
+If it's generating to current working directory, the value of `newFolder` would be `null`, otherwise it's the folder name.
 
 ###### chalk
 
