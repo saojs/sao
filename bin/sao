@@ -36,7 +36,12 @@ cli.command('*', 'Generate a new project', (input, flags) => {
   return sao(options)
     .catch(err => {
       spinner.stop()
-      console.log(err.stack)
+      if (err.name === 'SAOError') {
+        console.log(err.message)
+      } else {
+        console.log(err.stack)
+      }
+      process.exit(1)
     })
 })
 
