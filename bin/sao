@@ -2,6 +2,7 @@
 'use strict'
 const cac = require('cac')
 const ora = require('ora')
+const chalk = require('chalk')
 const update = require('update-notifier')
 
 const cli = cac()
@@ -23,6 +24,9 @@ cli.command('*', 'Generate a new project', (input, flags) => {
   event.on('download:stop', () => {
     spinner.stop()
   })
+  event.on('install-template:start', packageName => {
+    console.log(chalk.yellow(`> Installing ${packageName}...`))
+  })
 
   const options = Object.assign({
     template,
@@ -39,6 +43,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
 cli
   .option('c, config', 'Use custom config file')
   .option('git-cache', 'Use cached version for a repo template')
+  .option('i, install', 'Install relavant npm package before generating')
 
 cli.parse()
 
