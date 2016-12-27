@@ -6,7 +6,8 @@ self.$config = {
   nav: {
     default: [
       {title: 'Home', path: '/'},
-      {title: 'Creating a template', path: '/create'}
+      {title: 'Creating a template', path: '/create'},
+      {title: 'Exploring templates', path: '/explore'}
     ]
   }
 }
