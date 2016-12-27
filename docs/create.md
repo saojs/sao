@@ -135,13 +135,13 @@ As you may notice, there's a `context` argument in `post hook`, it's also availa
 
 Type: `boolean`
 
-Get if it's generating to a new project instead of curremt working directory.
+Get if it's generating to a new project rather than current working directory.
 
 ### folderName
 
 Type: `string`
 
-No matter it's current directory or a new folder, this will always return the name of the folder.
+No matter if it's current directory or a new folder, this will always return the name of the folder.
 
 ### chalk
 
