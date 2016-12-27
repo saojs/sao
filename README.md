@@ -7,6 +7,16 @@
 <a href="https://npmjs.com/package/sao"><img src="https://img.shields.io/npm/v/sao.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.com/package/sao"><img src="https://img.shields.io/npm/dm/sao.svg?style=flat" alt="NPM downloads"></a> <a href="https://circleci.com/gh/egoist/sao"><img src="https://img.shields.io/circleci/project/egoist/sao/master.svg?style=flat" alt="Build Status"></a> <a href="https://github.com/egoist/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a>
 </p>
 
+## Motivation
+
+[yeoman](https://github.com/yeoman/yo) is too complex, and [vue-cli](https://github.com/vuejs/vue-cli) has a narrow name, so I made **sao**.
+
+**sao** is compatible with:
+
+- regular git repo
+- sao template as git repo
+- sao template as npm package
+
 ## Quick Start
 
 ```bash
@@ -21,16 +31,6 @@ sao vue
 ```
 
 For detailed usage please head to https://sao.js.org
-
-## Motivation
-
-[yeoman](https://github.com/yeoman/yo) is too complex, and [vue-cli](https://github.com/vuejs/vue-cli) has a narrow name, so I made **sao**.
-
-**sao** is compatible with:
-
-- regular git repo
-- sao template as git repo
-- sao template as npm package
 
 ## Contributing
 

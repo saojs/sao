@@ -14,6 +14,13 @@ Futuristic scaffolding tool.
 - sao template as git repo
 - sao template as npm package
 
+## Install
+
+```bash
+yarn global add sao
+# npm i -g sao
+```
+
 ## Usage
 
 ### From Repo
