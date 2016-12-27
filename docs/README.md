@@ -74,9 +74,9 @@ If you're using a template from npm registry, you have to install that package f
 
 ```bash
 yarn global add template-foo
-// or
+# or
 npm i -g template-foo
-// then
+# then
 sao foo
 ```
 
