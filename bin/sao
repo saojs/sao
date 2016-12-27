@@ -7,6 +7,11 @@ const update = require('update-notifier')
 const cli = cac()
 
 cli.command('*', 'Generate a new project', (input, flags) => {
+  const template = input[0]
+  if (!template) {
+    return cli.showHelp()
+  }
+
   const sao = require('../lib')
   const event = require('../lib/event')
 
@@ -20,7 +25,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
   })
 
   const options = Object.assign({
-    template: input[0],
+    template,
     targetFolder: input[1]
   }, flags)
 
