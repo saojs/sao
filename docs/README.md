@@ -60,6 +60,15 @@ sao ../path/to/template
 
 ## CLI Usage
 
+### Generate to another folder
+
+```bash
+# such thing will make sao generate files to ./
+sao foo
+# specific the second arg as target folder instead of using ./
+sao foo my-project
+```
+
 ### Use cached git repo
 
 If you've already run something like `sao user/repo` once, you can use cached version later:
