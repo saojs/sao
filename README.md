@@ -16,6 +16,7 @@
 - regular git repo
 - sao template as git repo
 - sao template as npm package
+- sao template in local folder
 
 ## Quick Start
 
