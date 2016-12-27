@@ -56,7 +56,7 @@ You can use `role` to apply built-in options to the prompt, for example:
 module.exports = {
   prompts: {
     projectName: {
-      role: 'name',
+      role: 'folder:name',
       message: 'Type your project name:'
     }
   }
