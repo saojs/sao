@@ -15,6 +15,7 @@ Futuristic scaffolding tool.
 - regular git repo
 - sao template as git repo
 - sao template as npm package
+- sao template in local folder
 
 ## Install
 
