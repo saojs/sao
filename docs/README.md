@@ -108,7 +108,7 @@ For using repo over npm package:
 
 - pros: only `git push` is enough, looks less verbose
 - cons:
- - you can require external npm package in `sao.js` if you publish it to npm, since it's installed by `npm i -g` or `yarn global add`, while a repo is simply extracted after download.
+ - `user/repo` the name is longer than npm package
  - by default you need to download repo each time you run `sao`, however there's a `--git-cache` option to let you use previously downloaded version.
 
 ### Is it compatible with vue-cli?
@@ -116,5 +116,5 @@ For using repo over npm package:
 Some options are different, for example `post` option in `sao` is `completeMessage` in `vue-cli`, if you want to use a vue-cli template, use `config` option to point to `meta.json` or `meta.js`:
 
 ```bash
-sao vuejs-templates/webpack --config meta
+sao vuejs-templates/webpack --config meta.json
 ```
