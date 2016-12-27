@@ -31,6 +31,12 @@ yarn global add template-vue
 sao vue
 ```
 
+Or let `sao` create directory for you:
+
+```bash
+sao vue new-project
+```
+
 For detailed usage please head to https://sao.js.org
 
 ## Contributing
