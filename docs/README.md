@@ -21,7 +21,7 @@ yarn global add sao
 # npm i -g sao
 ```
 
-## Usage
+## Basic Usage
 
 ### From Repo
 
@@ -57,6 +57,36 @@ You can use relative path `.` or absolute path `/`:
 cd new-project
 sao ../path/to/template
 ```
+
+## CLI Usage
+
+### Use cached git repo
+
+If you've already run something like `sao user/repo` once, you can use cached version later:
+
+```bash
+sao user/repo --git-cache
+```
+
+### Install package before generating
+
+If you're using a template from npm registry, you have to install that package first:
+
+```bash
+yarn global add template-foo
+// or
+npm i -g template-foo
+// then
+sao foo
+```
+
+But sao gives you a short-hand option for this:
+
+```bash
+sao foo --install
+```
+
+It will automatically run Yarn or npm to install `template-foo` for you.
 
 ## FAQ
 
