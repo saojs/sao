@@ -71,7 +71,7 @@ sao foo
 sao foo my-project
 ```
 
-### 第一次是用一个模板
+### 第一次使用一个模板
 
 第一次使用一个模板需要带上 `--install` 选项，这样它会帮你下载 git repo 或者安装 npm 包:
 
