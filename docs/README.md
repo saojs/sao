@@ -37,8 +37,6 @@ cd new-project
 sao user/repo
 ```
 
-It will download the repo each time you run the command, however you can use `--git-cache` option to use cached version.
-
 ### From Package
 
 You can also generate project from an npm package:
@@ -92,8 +90,4 @@ Do what you prefer, no real difference here, except for npm package you need to 
 
 ### Is it compatible with vue-cli?
 
-Some options are different, for example `post` option in `sao` is `completeMessage` in `vue-cli`, if you want to use a vue-cli template, use `config` option to point to `meta.json` or `meta.js`:
-
-```bash
-sao vuejs-templates/webpack --config meta.json
-```
+Some options are same, some options are different, so no.
