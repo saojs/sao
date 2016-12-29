@@ -2307,9 +2307,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kopy@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/kopy/-/kopy-2.3.0.tgz#27aea619c30be302b515a5fcb836432e7c213b24"
+kopy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/kopy/-/kopy-3.0.0.tgz#4e76ddd2e194e753829a95273217ede7bdd16566"
   dependencies:
     async.each "^0.5.2"
     consolidate "^0.14.1"
@@ -3262,7 +3262,7 @@ set-immediate-shim@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
-shelljs@^0.7.5:
+shelljs, shelljs@^0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.5.tgz#2eef7a50a21e1ccf37da00df767ec69e30ad0675"
   dependencies:

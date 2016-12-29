@@ -123,7 +123,7 @@ module.exports = {
 
 ## context
 
-As you may notice, there's a `context` argument in `post hook`, it's also available in your template markup as underscore `_`, for example:
+As you may notice, there's a `context` argument in `post hook`.
 
 ```json
 {
@@ -146,3 +146,20 @@ No matter if it's current directory or a new folder, this will always return the
 ### chalk
 
 The [chalk](https://github.com/chalk/chalk) module as argument.
+
+### $
+
+The [shelljs](https://github.com/shelljs/shelljs) module as argument.
+
+### data
+
+The answers of prompts.
+
+<p class="warning">
+  Only some of them are available in templates, you can access them via underscore <code>\_</code>, for example <code>&lt;%= \_.folderName %&gt;</code>
+</p>
+
+The list of methods/variables available in templates:
+
+- isNewFolder
+- folderName
