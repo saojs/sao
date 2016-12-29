@@ -107,6 +107,14 @@ module.exports = {
 }
 ```
 
+### enforceNewFolder
+
+Enforce user to initialize project to a new folder, i.e. it has to be `sao template folder`
+
+### enforceCurrentFolder
+
+Enforce user to initialize project to current working directory, i.e. it has to be `sao template`
+
 ### Life Hooks
 
 #### post hook
