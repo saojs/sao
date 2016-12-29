@@ -151,6 +151,10 @@ Type: `string`
 
 No matter if it's current directory or a new folder, this will always return the name of the folder.
 
+### log
+
+A fancy log utility, available methods: `log.info(msg)` `log.error(msg)` `log.success(msg)` `log.warn(msg)`
+
 ### chalk
 
 The [chalk](https://github.com/chalk/chalk) module as argument.

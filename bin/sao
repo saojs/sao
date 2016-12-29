@@ -4,7 +4,7 @@ const cac = require('cac')
 const ora = require('ora')
 const chalk = require('chalk')
 const update = require('update-notifier')
-const utils = require('../lib/utils')
+const log = require('../lib/log')
 
 const cli = cac()
 
@@ -38,7 +38,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
     .catch(err => {
       spinner.stop()
       if (err.name === 'SAOError') {
-        console.log(`\n${utils.indent(`${chalk.bgRed.black(' ERROR ')} ${err.message}`)}\n`)
+        log.error(err.message)
       } else {
         console.log(err.stack)
       }
