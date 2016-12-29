@@ -165,6 +165,24 @@ Type: `string`
 
 No matter if it's current directory or a new folder, this will always return the name of the folder.
 
+### folderPath
+
+Type: `string`
+
+The path to dest folder.
+
+### install
+
+Type: `function`
+
+Run `yarn install` or `npm install` in dest folder path, just call `install()` is enough.
+
+### init
+
+Type: `function`
+
+Run `git init` in dest folder path, just call `init()` is enough.
+
 ### log
 
 A fancy log utility, available methods: `log.info(msg)` `log.error(msg)` `log.success(msg)` `log.warn(msg)`
