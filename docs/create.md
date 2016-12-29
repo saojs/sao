@@ -115,6 +115,20 @@ Enforce user to initialize project to a new folder, i.e. it has to be `sao templ
 
 Enforce user to initialize project to current working directory, i.e. it has to be `sao template`
 
+### move
+
+Similar to unix `mv` command:
+
+```js
+module.exports = {
+  move: {
+    'lib/foo-*.js': 'bar.js'
+  }
+}
+```
+
+This action will be performed after files are generated so that you can use `move` as rename. Check out [template-gi](https://github.com/egoist/template-gi/blob/master/sao.js) for real world usage.
+
 ### Life Hooks
 
 #### post hook
