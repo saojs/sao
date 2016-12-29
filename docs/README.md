@@ -88,7 +88,7 @@ When you run `sao` without `--install` option it will use cached version, if it'
 
 ### Store template in repo or npm package?
 
-Do what you prefer, no real difference here, except for npm package you need to publish it, but the name would shorter than `user/repo` you know.
+Do what you prefer, no real difference here, except for npm package you need to publish it, but the name would be shorter than `user/repo` you know.
 
 ### Is it compatible with vue-cli?
 
