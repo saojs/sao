@@ -72,44 +72,23 @@ sao foo
 sao foo my-project
 ```
 
-### Use cached git repo
+### Generate project for the first time
 
-If you've already run something like `sao user/repo` once, you can use cached version later:
-
-```bash
-sao user/repo --git-cache
-```
-
-### Install package before generating
-
-If you're using a template from npm registry, you have to install that package first:
+For the first time to generate project from a template, you need `--install` option:
 
 ```bash
-yarn global add template-foo
-# or
-npm i -g template-foo
-# then
-sao foo
+sao template --install
 ```
 
-But sao gives you a short-hand option for this:
+For example, if it's an npm package we'll install `template-template` for you, otherwise we download that git repo for you.
 
-```bash
-sao foo --install
-```
-
-It will automatically run Yarn or npm to install `template-foo` for you.
+When you run `sao` without `--install` option it will use cached version, if it's not cached yet, there would be a warning.
 
 ## FAQ
 
 ### Store template in repo or npm package?
 
-For using repo over npm package:
-
-- pros: only `git push` is enough, looks less verbose
-- cons:
- - `user/repo` the name is longer than npm package
- - by default you need to download repo each time you run `sao`, however there's a `--git-cache` option to let you use previously downloaded version.
+Do what you prefer, no real difference here, except for npm package you need to publish it, but the name would shorter than `user/repo` you know.
 
 ### Is it compatible with vue-cli?
 
