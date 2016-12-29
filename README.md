@@ -18,7 +18,7 @@
 - sao template as npm package
 - sao template in local folder
 
-💖 **Both repo and npm package can be used offline.**
+⚡ ️**Both repo and npm package can be used offline.**
 
 ## Quick Start
 
