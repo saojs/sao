@@ -228,7 +228,7 @@ Type: `function`
 
 [shelljs](https://github.com/shelljs/shelljs) 模块。
 
-### data
+### answers
 
 命令行提示的返回结果。
 

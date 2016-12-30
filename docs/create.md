@@ -223,7 +223,7 @@ The [chalk](https://github.com/chalk/chalk) module as argument.
 
 The [shelljs](https://github.com/shelljs/shelljs) module as argument.
 
-### data
+### answers
 
 The answers of prompts.
 
