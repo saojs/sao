@@ -51,6 +51,5 @@ cli
   .option('git-cache', 'Use cached version for a repo template')
   .option('i, install', 'Install relavant npm package before generating')
 
-cli.parse()
-
 update({pkg: cli.pkg}).notify()
+cli.parse()
