@@ -43,7 +43,7 @@
     "conf": "^0.11.2",
     "download-git-repo": "^0.2.1",
     "git-config-path": "^1.0.1",
-    "kopy": "^4.0.0",
+    "kopy": "^5.0.0",
     "mkdirp": "^0.5.1",
     "ora": "^0.4.0",
     "parse-git-config": "^1.1.1",

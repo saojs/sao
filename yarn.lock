@@ -2327,9 +2327,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kopy@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kopy/-/kopy-4.0.0.tgz#cdb5e6186e92c2b799f87eea55510243c2c09645"
+kopy@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/kopy/-/kopy-5.0.0.tgz#adb9c6e3d0393655b33f42fe0ae4ab750f9dc89e"
   dependencies:
     async.each "^0.5.2"
     inquirer "^2.0.0"
@@ -2339,6 +2339,7 @@ kopy@^4.0.0:
     metalsmith "^2.2.0"
     minimatch "^3.0.3"
     multimatch "^2.1.0"
+    path-exists "^3.0.0"
 
 latest-version@^2.0.0:
   version "2.0.0"
@@ -2919,6 +2920,10 @@ path-exists@^2.0.0:
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-2.1.0.tgz#0feb6c64f0fc518d9a754dd5efb62c7022761f4b"
   dependencies:
     pinkie-promise "^2.0.0"
+
+path-exists@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
