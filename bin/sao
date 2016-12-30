@@ -47,9 +47,9 @@ cli.command('*', 'Generate a new project', (input, flags) => {
 })
 
 cli
-  .option('c, config', 'Use custom config file')
-  .option('git-cache', 'Use cached version for a repo template')
-  .option('i, install', 'Install relavant npm package before generating')
+  .option('config', 'Use custom config file')
+  .option('install', 'Install relavant npm package before generating')
+  .option('reset', 'Reset stored prompt answers')
 
 update({pkg: cli.pkg}).notify()
 cli.parse()
