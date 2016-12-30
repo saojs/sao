@@ -134,6 +134,34 @@ module.exports = {
 
 这个行为会在文件生成之后被执行，你可以用这个作为重命名的功能，你可以参考 [template-gi](https://github.com/egoist/template-gi/blob/master/sao.js) 来查阅实际用例。
 
+### 自定义模板引擎
+
+你可以使用任何 [jstransfomer](https://github.com/jstransformers) 支持的模板引擎, 默认我们使用 [ejs](http://ejs.co):
+
+```js
+// 换成 handlebars:
+module.exports = {
+  template: 'handlebars',
+  templateOptions: {
+    helpers: {} // custom handlebars helpers
+  }
+}
+```
+
+别忘了在模版中安装相应的模块:
+
+```bash
+yarn add jstransfomer-handlebars
+```
+
+你也可以直接 require 这个模块:
+
+```js
+module.exports = {
+  template: require('jstransformer-handlebars')
+}
+```
+
 ### 生命周期
 
 #### post 钩子

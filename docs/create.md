@@ -129,6 +129,34 @@ module.exports = {
 
 This action will be performed after files are generated so that you can use `move` as rename. Check out [template-gi](https://github.com/egoist/template-gi/blob/master/sao.js) for real world usage.
 
+### Custom Template Engine
+
+You can use any template engine supported by [jstransfomer](https://github.com/jstransformers), by default we use [ejs](http://ejs.co):
+
+```js
+// change to handlebars
+module.exports = {
+  template: 'handlebars',
+  templateOptions: {
+    helpers: {} // custom handlebars helpers
+  }
+}
+```
+
+And don't forget to install that transformer in your template:
+
+```bash
+yarn add jstransfomer-handlebars
+```
+
+Alternatively, you can directly pass the module in the option:
+
+```js
+module.exports = {
+  template: require('jstransformer-handlebars')
+}
+```
+
 ### Life Hooks
 
 #### post hook
