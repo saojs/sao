@@ -49,7 +49,8 @@ cli.command('*', 'Generate a new project', (input, flags) => {
 cli
   .option('config', 'Use custom config file')
   .option('install', 'Install relavant npm package before generating')
-  .option('reset', 'Reset stored prompt answers')
+  .option('remove-store', 'Remove stored prompt answers')
+  .option('skip-store', 'Skip stored prompt answers, i.e. do not use them')
 
 update({pkg: cli.pkg}).notify()
 cli.parse()
