@@ -11,3 +11,4 @@ nav: zh
 |[template](https://github.com/egoist/template-template)|生成一个 SAO 模板|
 |[vue](https://github.com/egoist/template-vue)|快速开始一个 Vue 项目|
 |[gi](https://github.com/egoist/template-gi)|在你的项目中生成 .gitignore 文件|
+|[nm](https://github.com/egoist/template-nm)|快速开始一个 npm 模块|
