@@ -76,6 +76,10 @@ module.exports = {
 - `git:name`: 把默认值设置为 git 用户名
 - `git:email`: 把默认值设置为 git 邮箱
 
+#### store
+
+存储用户输入的内容供下次使用。
+
 ### Filters
 
 你还可以用从命令行提示获取的数据来过滤文件:

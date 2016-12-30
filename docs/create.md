@@ -71,6 +71,10 @@ List of built-in roles:
 - `git:name`: Set default value to git username
 - `git:email`: Set default value to git email
 
+#### store
+
+Store the typed answer to be used next time.
+
 ### Filters
 
 You can filter files with user prompts, for example:
