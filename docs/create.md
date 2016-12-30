@@ -48,7 +48,7 @@ Then you can just use the answers of prompts in your template, for example:
 }
 ```
 
-#### Role
+#### role
 
 You can use `role` to apply built-in options to the prompt, for example:
 
@@ -75,7 +75,7 @@ List of built-in roles:
 
 Store the typed answer to be used next time.
 
-### Filters
+### filters
 
 You can filter files with user prompts, for example:
 
