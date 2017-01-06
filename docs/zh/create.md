@@ -166,6 +166,10 @@ module.exports = {
 }
 ```
 
+<p class="tip">
+  如果是 handlebars 的话你其实可以不安装 `jstransfomer-handlebars`，因为 sao 已经自带了这个模板引擎。
+</p>
+
 ### 生命周期
 
 #### post 钩子

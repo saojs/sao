@@ -140,26 +140,28 @@ You can use any template engine supported by [jstransfomer](https://github.com/j
 ```js
 // change to handlebars
 module.exports = {
-  template: 'handlebars',
-  templateOptions: {
-    helpers: {} // custom handlebars helpers
-  }
+  template: 'marko',
+  templateOptions: {}
 }
 ```
 
 And don't forget to install that transformer in your template:
 
 ```bash
-yarn add jstransfomer-handlebars
+yarn add jstransfomer-marko
 ```
 
 Alternatively, you can directly pass the module in the option:
 
 ```js
 module.exports = {
-  template: require('jstransformer-handlebars')
+  template: require('jstransformer-marko')
 }
 ```
+
+<p class="tip">
+  Note that if you are setting `template` to `handlebars`, you don't need to install it in your template, we have that module built-in already.
+</p>
 
 ### Life Hooks
 
