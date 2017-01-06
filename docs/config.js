@@ -20,7 +20,6 @@ self.$config = {
     zh: [
       {title: '首页', path: '/zh/'},
       {title: '创建一个模板', path: '/zh/create'},
-      {title: '浏览模板', path: '/zh/explore', source: exploreSource},
       {title: '选择语言', type: 'dropdown', items: langs}
     ]
   }
