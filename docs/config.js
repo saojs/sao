@@ -3,6 +3,8 @@ var langs = [
   {title: '简体中文', path: '/zh/'}
 ]
 
+var exploreSource = 'https://raw.githubusercontent.com/egoist/awesome-sao/master/README.md'
+
 self.$config = {
   title: 'SAO',
   repo: 'egoist/sao',
@@ -12,13 +14,13 @@ self.$config = {
     default: [
       {title: 'Home', path: '/'},
       {title: 'Creating a template', path: '/create'},
-      {title: 'Exploring templates', path: '/explore'},
+      {title: 'Exploring templates', path: '/explore', source: exploreSource},
       {title: 'Choose language', type: 'dropdown', items: langs}
     ],
     zh: [
       {title: '首页', path: '/zh/'},
       {title: '创建一个模板', path: '/zh/create'},
-      {title: '浏览模板', path: '/zh/explore'},
+      {title: '浏览模板', path: '/zh/explore', source: exploreSource},
       {title: '选择语言', type: 'dropdown', items: langs}
     ]
   }
