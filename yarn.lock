@@ -2308,6 +2308,12 @@ jstransformer-ejs@^0.0.3:
   dependencies:
     ejs "^2.2.4"
 
+jstransformer-handlebars:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jstransformer-handlebars/-/jstransformer-handlebars-1.0.0.tgz#076d05b4ec8b43b874729ac57e59f0eadfb011aa"
+  dependencies:
+    handlebars "^4.0.1"
+
 jstransformer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/jstransformer/-/jstransformer-1.0.0.tgz#ed8bf0921e2f3f1ed4d5c1a44f68709ed24722c3"
