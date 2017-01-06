@@ -138,7 +138,7 @@ This action will be performed after files are generated so that you can use `mov
 You can use any template engine supported by [jstransfomer](https://github.com/jstransformers), by default we use [ejs](http://ejs.co):
 
 ```js
-// change to handlebars
+// change to marko
 module.exports = {
   template: 'marko',
   templateOptions: {}
