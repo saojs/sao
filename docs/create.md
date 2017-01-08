@@ -177,6 +177,17 @@ module.exports = {
 }
 ```
 
+### templateFolder
+
+By default, if there's config file, the `template` folder will be used as template folder, but you can also set a custom folder:
+
+```js
+module.exports = {
+  // copy root directory
+  templateFolder: './'
+}
+```
+
 ## context
 
 As you may notice, there's a `context` argument in `post hook`.
