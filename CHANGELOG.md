@@ -1,3 +1,11 @@
+## [Version 0.16.5](https://github.com/egoist/sao/releases/tag/v0.16.5) (2017-1-8)
+
+### Minor Changes
+
+- set custom template path: [`bb7b713`](https://github.com/egoist/sao/commit/bb7b713)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.4...v0.16.5)
+
 ## [Version 0.16.4](https://github.com/egoist/sao/releases/tag/v0.16.4) (2017-1-6)
 
 ### Minor Changes
