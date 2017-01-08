@@ -184,6 +184,17 @@ module.exports = {
 }
 ```
 
+### templateFolder
+
+默认会复制 `template` 目录里的内容，不过你也可以自定义一个目录:
+
+```js
+module.exports = {
+  // 复制根目录
+  templateFolder: './'
+}
+```
+
 ## context
 
 你可能注意到了，`post` 钩子又一个 `context` 参数:
