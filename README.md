@@ -41,6 +41,10 @@ sao vue new-project --install
 
 For detailed usage please head to https://sao.js.org
 
+## Resource
+
+- [awesome-sao](https://github.com/egoist/awesome-sao) - A curated list of delightful SAO resources.
+
 ## Contributing
 
 1. Fork it!
