@@ -188,7 +188,7 @@ module.exports = {
 }
 ```
 
-## context
+### context
 
 As you may notice, there's a `context` argument in `post hook`:
 
@@ -201,49 +201,49 @@ module.exports = {
 }
 ```
 
-### isNewFolder
+#### isNewFolder
 
 Type: `boolean`
 
 Get if it's generating to a new project rather than current working directory.
 
-### folderName
+#### folderName
 
 Type: `string`
 
 No matter if it's current directory or a new folder, this will always return the name of the folder.
 
-### folderPath
+#### folderPath
 
 Type: `string`
 
 The path to dest folder.
 
-### install
+#### install
 
 Type: `function`
 
 Run `yarn install` or `npm install` in dest folder path, just call `install()` is enough.
 
-### init
+#### init
 
 Type: `function`
 
 Run `git init` in dest folder path, just call `init()` is enough.
 
-### log
+#### log
 
 A fancy log utility, available methods: `log.info(msg)` `log.error(msg)` `log.success(msg)` `log.warn(msg)`
 
-### chalk
+#### chalk
 
 The [chalk](https://github.com/chalk/chalk) module as argument.
 
-### $
+#### $
 
 The [shelljs](https://github.com/shelljs/shelljs) module as argument.
 
-### answers
+#### answers
 
 The answers of prompts.
 
