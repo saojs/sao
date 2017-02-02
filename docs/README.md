@@ -33,7 +33,7 @@ You can generate project from a git repo:
 ```bash
 cd new-project
 # for a regular git repo
-# it simply copie all contents inside to current working directory
+# it copies all contents in the template to current working directory
 sao user/repo
 ```
 
@@ -45,9 +45,9 @@ You can also generate project from an npm package:
 # if the name does not contains slash `/`
 # it will be recognized as an npm package and prefixed with `template-`
 # and you should install it before running `sao`
-yarn global add template-vue-starter
+yarn global add template-vue
 cd new-project
-sao vue-starter
+sao vue
 ```
 
 ### From Local Directory
@@ -62,6 +62,8 @@ sao ../path/to/template
 ## CLI Usage
 
 ### Generate to another folder
+
+Sometimes you want to create a new folder instead of using `cwd`
 
 ```bash
 # such thing will make sao generate files to ./
@@ -86,7 +88,7 @@ When you run `sao` without `--install` option it will use cached version, if it'
 
 ### Store template in repo or npm package?
 
-Do what you prefer, no real difference here, except for npm package you need to publish it, but the name would be shorter than `user/repo` you know.
+Do what you prefer, no real difference here, except when you choose npm package you need to publish it, but the name would be shorter than `user/repo` you know.
 
 ### Is it compatible with vue-cli?
 
