@@ -195,59 +195,62 @@ module.exports = {
 }
 ```
 
-## context
+### context
 
 你可能注意到了，`post` 钩子又一个 `context` 参数:
 
-```json
-{
-  "name": "<%= _.folderName %>"
+```js
+module.exports = {
+  post(context) {
+    console.log(context.isNewFolder)
+    // ...
+  }
 }
 ```
 
-### isNewFolder
+#### isNewFolder
 
 Type: `boolean`
 
 目标文件夹是否是新文件夹。
 
-### folderName
+#### folderName
 
 Type: `string`
 
 目标文件夹的名字。
 
-### folderPath
+#### folderPath
 
 Type: `string`
 
 目标文件夹的路径。
 
-### install
+#### install
 
 Type: `function`
 
 在目标文件夹执行 `yarn install` 或者 `npm install`，直接调用 `install()` 就行了。
 
-### init
+#### init
 
 Type: `function`
 
 在目标文件夹执行 `git init`，直接调用 `init()` 就行了。
 
-### log
+#### log
 
 一个生成易读日志的组件，你可以调用: `log.info(msg)` `log.error(msg)` `log.success(msg)` `log.warn(msg)`
 
-### chalk
+#### chalk
 
 [chalk](https://github.com/chalk/chalk) 模块
 
-### $
+#### $
 
 [shelljs](https://github.com/shelljs/shelljs) 模块。
 
-### answers
+#### answers
 
 命令行提示的返回结果。
 
