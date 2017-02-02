@@ -163,6 +163,17 @@ module.exports = {
   Note that if you are setting `template` to `handlebars`, you don't need to install it in your template, we have that module built-in already.
 </p>
 
+### templateFolder
+
+By default, if there's config file, the `template` folder will be used as template folder, but you can also set a custom folder:
+
+```js
+module.exports = {
+  // copy root directory
+  templateFolder: './'
+}
+```
+
 ### Life Hooks
 
 #### post hook
@@ -177,24 +188,16 @@ module.exports = {
 }
 ```
 
-### templateFolder
+## context
 
-By default, if there's config file, the `template` folder will be used as template folder, but you can also set a custom folder:
+As you may notice, there's a `context` argument in `post hook`:
 
 ```js
 module.exports = {
-  // copy root directory
-  templateFolder: './'
-}
-```
-
-## context
-
-As you may notice, there's a `context` argument in `post hook`.
-
-```json
-{
-  "name": "<%= _.folderName %>"
+  post(context) {
+    console.log(context.isNewFolder)
+    // ...
+  }
 }
 ```
 
@@ -245,7 +248,7 @@ The [shelljs](https://github.com/shelljs/shelljs) module as argument.
 The answers of prompts.
 
 <p class="warning">
-  Only some of them are available in templates, you can access them via underscore <code>\_</code>, for example <code>&lt;%= \_.folderName %&gt;</code>
+  You can also access some of them in template files via underscore <code>\_</code>, for example <code>&lt;%= \_.folderName %&gt;</code>
 </p>
 
 The list of methods/variables available in templates:
