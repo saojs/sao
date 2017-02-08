@@ -1,3 +1,12 @@
+## [Version 0.16.6](https://github.com/egoist/sao/releases/tag/v0.16.6) (2017-2-8)
+
+### Patches
+
+- add resource section: [`bd87b32`](https://github.com/egoist/sao/commit/bd87b32)
+- fix move: [`fb62de0`](https://github.com/egoist/sao/commit/fb62de0)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.5...v0.16.6)
+
 ## [Version 0.16.5](https://github.com/egoist/sao/releases/tag/v0.16.5) (2017-1-8)
 
 ### Minor Changes
