@@ -9,6 +9,10 @@ your-template/
   └── template/
 ```
 
+<p class="warning">
+  Note that if you want to publish template to npm registry, don't add `.gitignore` to template folder, npm will rename it to `.npmignore`. You can give it another name and use [move](#move) to rename it after generated.
+</p>
+
 ## Config File
 
 The default config is `./sao.js` in your template, if config file exists `sao` will copy `./template` folder in your template, otherwise it copy root directory.

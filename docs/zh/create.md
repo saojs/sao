@@ -13,6 +13,10 @@ your-template/
   └── template/
 ```
 
+<p class="warning">
+  如果你要把模板发布到 npm，请不要在 template 目录中存放 `.gitignore` 文件，因为 npm 会自动把它重命名为 `.npmignore`。你可以用个临时的文件名然后用 [move](#move) 来重命名。 
+</p>
+
 ## 配置文件
 
 默认的配置文件是 `sao.js`，如果项目中有这个文件那它就会复制 `template` 目录，反之则直接复制根目录。
