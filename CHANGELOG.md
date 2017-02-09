@@ -1,3 +1,12 @@
+## [Version 0.16.7](https://github.com/egoist/sao/releases/tag/v0.16.7) (2017-2-9)
+
+### Minor Changes
+
+- add `complete` as alias to `post`: [`32a1fbc`](https://github.com/egoist/sao/commit/32a1fbc)
+- support expression in `when`: [`a77a0e4`](https://github.com/egoist/sao/commit/a77a0e4)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.6...v0.16.7)
+
 ## [Version 0.16.6](https://github.com/egoist/sao/releases/tag/v0.16.6) (2017-2-8)
 
 ### Patches
