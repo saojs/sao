@@ -5,11 +5,26 @@ const ora = require('ora')
 const chalk = require('chalk')
 const update = require('update-notifier')
 const log = require('../lib/log')
+const {getTemplates, logArray} = require('../lib/utils')
 
 const cli = cac()
 
 cli.command('*', 'Generate a new project', (input, flags) => {
   const template = input[0]
+
+  if (flags.templates) {
+    const templates = getTemplates()
+
+    if (templates.length === 0) {
+      console.log(`No avaliable templates, using 'yarn global add template-name' install one now !`)
+      return
+    }
+
+    console.log(`\nAvailable templates:\n`)
+    logArray(templates)
+    return
+  }
+
   if (!template) {
     return cli.showHelp()
   }
@@ -51,6 +66,7 @@ cli
   .option('install', 'Install relavant npm package before generating')
   .option('remove-store', 'Remove stored prompt answers')
   .option('skip-store', 'Skip stored prompt answers, i.e. do not use them')
+  .option('templates', 'Show templates global installed')
 
 update({pkg: cli.pkg}).notify()
 cli.parse()
