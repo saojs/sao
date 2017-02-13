@@ -1,3 +1,11 @@
+## [Version 0.16.9](https://github.com/egoist/sao/releases/tag/v0.16.9) (2017-2-13)
+
+### Patches
+
+- ensure config dir: [`a72abc2`](https://github.com/egoist/sao/commit/a72abc2)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.8...v0.16.9)
+
 ## [Version 0.16.8](https://github.com/egoist/sao/releases/tag/v0.16.8) (2017-2-13)
 
 ### Minor Changes
