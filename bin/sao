@@ -4,8 +4,9 @@ const cac = require('cac')
 const ora = require('ora')
 const chalk = require('chalk')
 const update = require('update-notifier')
+const table = require('text-table')
 const log = require('../lib/log')
-const {getTemplates, logArray} = require('../lib/utils')
+const {getTemplates, readGlobalPackage} = require('../lib/utils')
 
 const cli = cac()
 
@@ -15,13 +16,32 @@ cli.command('*', 'Generate a new project', (input, flags) => {
   if (flags.templates) {
     const templates = getTemplates()
 
-    if (templates.length === 0) {
-      console.log(`No avaliable templates, using 'yarn global add template-name' install one now !`)
-      return
+    console.log(chalk.cyan(`\n  Templates installed from npm:\n`))
+
+    if (templates.packages.length === 0) {
+      console.log('  none')
+    } else {
+      console.log(table(templates.packages.map(item => {
+        const pkg = readGlobalPackage(item)
+        return [
+          `  ${item.replace(/-([\s\S]+)/, (m, p1) => `-${chalk.bold(p1)}`)}`,
+          chalk.dim(`v${pkg.version}`)
+        ]
+      })))
     }
 
-    console.log(`\nAvailable templates:\n`)
-    logArray(templates)
+    console.log(chalk.cyan(`\n  Templates installed from git:\n`))
+
+    if (templates.repos.length === 0) {
+      console.log('  none')
+    } else {
+      for (const item of templates.repos) {
+        console.log(`  ${item.replace(/-([\s\S]+)/, (m, p1) => `/${chalk.bold(p1)}`)}`)
+      }
+    }
+
+    console.log()
+
     return
   }
 
@@ -66,7 +86,7 @@ cli
   .option('install', 'Install relavant npm package before generating')
   .option('remove-store', 'Remove stored prompt answers')
   .option('skip-store', 'Skip stored prompt answers, i.e. do not use them')
-  .option('templates', 'Show templates global installed')
+  .option('templates', 'Show installed templates')
 
 update({pkg: cli.pkg}).notify()
 cli.parse()

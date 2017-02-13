@@ -51,6 +51,7 @@
     "parse-git-config": "^1.1.1",
     "require-from-string": "^1.2.1",
     "shelljs": "^0.7.5",
+    "text-table": "^0.2.0",
     "tildify": "^1.2.0",
     "update-notifier": "^1.0.3",
     "user-home": "^2.0.0",
