@@ -6,15 +6,19 @@ const chalk = require('chalk')
 const update = require('update-notifier')
 const table = require('text-table')
 const log = require('../lib/log')
-const {getTemplates, readGlobalPackage} = require('../lib/utils')
+const config = require('../lib/config')
+const utils = require('../lib/utils')
 
 const cli = cac()
 
 cli.command('*', 'Generate a new project', (input, flags) => {
   const template = input[0]
 
+  // initialize config folder
+  config.ensureConfigDir()
+
   if (flags.templates) {
-    const templates = getTemplates()
+    const templates = utils.getTemplates()
 
     console.log(chalk.cyan(`\n  Templates installed from npm:\n`))
 
@@ -22,7 +26,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
       console.log('  none')
     } else {
       console.log(table(templates.packages.map(item => {
-        const pkg = readGlobalPackage(item)
+        const pkg = utils.readGlobalPackage(item)
         return [
           `  ${item.replace(/-([\s\S]+)/, (m, p1) => `-${chalk.bold(p1)}`)}`,
           chalk.dim(`v${pkg.version}`)
