@@ -1,3 +1,11 @@
+## [Version 0.16.8](https://github.com/egoist/sao/releases/tag/v0.16.8) (2017-2-13)
+
+### Minor Changes
+
+- add option `templates` show templates list avaliable: [`10cb175`](https://github.com/egoist/sao/commit/10cb175) ([#21](https://github.com/egoist/sao/issues/21))
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.7...v0.16.8)
+
 ## [Version 0.16.7](https://github.com/egoist/sao/releases/tag/v0.16.7) (2017-2-9)
 
 ### Minor Changes
