@@ -1,3 +1,11 @@
+## [Version 0.16.10](https://github.com/egoist/sao/releases/tag/v0.16.10) (2017-2-17)
+
+### Bug fixes
+
+- delete cached repo before downloading, fixed [#22](https://github.com/egoist/sao/issues/22): [`e9eb195`](https://github.com/egoist/sao/commit/e9eb195)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.9...v0.16.10)
+
 ## [Version 0.16.9](https://github.com/egoist/sao/releases/tag/v0.16.9) (2017-2-13)
 
 ### Patches
