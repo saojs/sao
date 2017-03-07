@@ -44,7 +44,7 @@
     "download-git-repo": "^0.2.1",
     "git-config-path": "^1.0.1",
     "jstransformer-handlebars": "^1.0.0",
-    "kopy": "^5.0.3",
+    "kopy": "^5.0.5",
     "mkdirp": "^0.5.1",
     "node-fetch": "^1.6.3",
     "ora": "^1.1.0",

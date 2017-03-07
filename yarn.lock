@@ -969,8 +969,8 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
 
 ejs@^2.2.4:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.5.tgz#6ef4e954ea7dcf54f66aad2fe7aa421932d9ed77"
+  version "2.5.6"
+  resolved "https://registry.npmjs.org/ejs/-/ejs-2.5.6.tgz#479636bfa3fe3b1debd52087f0acb204b4f19c88"
 
 enable@1:
   version "1.3.2"
@@ -2349,7 +2349,7 @@ jsprim@^1.2.2:
 
 jstransformer-ejs@^0.0.3:
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/jstransformer-ejs/-/jstransformer-ejs-0.0.3.tgz#04d9201469274fcf260f1e7efd732d487fa234b6"
+  resolved "https://registry.npmjs.org/jstransformer-ejs/-/jstransformer-ejs-0.0.3.tgz#04d9201469274fcf260f1e7efd732d487fa234b6"
   dependencies:
     ejs "^2.2.4"
 
@@ -2378,9 +2378,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kopy@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.npmjs.org/kopy/-/kopy-5.0.3.tgz#b494ce0a165b79d640f604fbbe6f742dff741a22"
+kopy@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.npmjs.org/kopy/-/kopy-5.0.5.tgz#4d716f42f7f7c91ea73ade335deb1feb7f1486c6"
   dependencies:
     async.each "^0.5.2"
     inquirer "^2.0.0"
