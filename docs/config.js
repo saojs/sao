@@ -5,7 +5,7 @@ var langs = [
 
 var exploreSource = 'https://raw.githubusercontent.com/egoist/awesome-sao/master/README.md'
 
-self.$config = {
+docute.init({
   title: 'SAO',
   repo: 'egoist/sao',
   'edit-link': 'https://github.com/egoist/sao/tree/master/docs',
@@ -23,4 +23,4 @@ self.$config = {
       {title: '选择语言', type: 'dropdown', items: langs}
     ]
   }
-}
+})
