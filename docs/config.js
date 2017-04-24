@@ -1,9 +1,9 @@
-var langs = [
-  {title: 'English', path: '/'},
-  {title: '简体中文', path: '/zh/'}
+const langs = [
+  { title: 'English', path: '/' },
+  { title: '简体中文', path: '/zh/' }
 ]
 
-var exploreSource = 'https://raw.githubusercontent.com/egoist/awesome-sao/master/README.md'
+const exploreSource = 'https://raw.githubusercontent.com/egoist/awesome-sao/master/README.md'
 
 docute.init({
   title: 'SAO',
@@ -12,15 +12,15 @@ docute.init({
   twitter: 'rem_rin_rin',
   nav: {
     default: [
-      {title: 'Home', path: '/'},
-      {title: 'Creating a template', path: '/create'},
-      {title: 'Exploring templates', path: '/explore', source: exploreSource},
-      {title: 'Choose language', type: 'dropdown', items: langs}
+      { title: 'Home', path: '/' },
+      { title: 'Creating a template', path: '/create' },
+      { title: 'Exploring templates', path: '/explore', source: exploreSource },
+      { title: 'Choose language', type: 'dropdown', items: langs }
     ],
     zh: [
-      {title: '首页', path: '/zh/'},
-      {title: '创建一个模板', path: '/zh/create'},
-      {title: '选择语言', type: 'dropdown', items: langs}
+      { title: '首页', path: '/zh/' },
+      { title: '创建一个模板', path: '/zh/create' },
+      { title: '选择语言', type: 'dropdown', items: langs }
     ]
   }
 })
