@@ -1,3 +1,11 @@
+## [Version 0.16.11](https://github.com/egoist/sao/releases/tag/v0.16.11) (2017-4-24)
+
+### New features
+
+- ask user whether to install missing template: [`30df582`](https://github.com/egoist/sao/commit/30df582)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.10...v0.16.11)
+
 ## [Version 0.16.10](https://github.com/egoist/sao/releases/tag/v0.16.10) (2017-2-17)
 
 ### Bug fixes
