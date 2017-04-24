@@ -1,3 +1,11 @@
+## [Version 0.16.12](https://github.com/egoist/sao/releases/tag/v0.16.12) (2017-4-24)
+
+### Bug fixes
+
+- upgrade deps: [`87d46f3`](https://github.com/egoist/sao/commit/87d46f3)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.11...v0.16.12)
+
 ## [Version 0.16.11](https://github.com/egoist/sao/releases/tag/v0.16.11) (2017-4-24)
 
 ### New features
