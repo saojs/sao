@@ -14,7 +14,7 @@
   },
   "bin": "bin/sao",
   "scripts": {
-    "test": "eslint lib/*.js bin/*"
+    "test": "jest && eslint lib/*.js bin/*"
   },
   "main": "lib/index.js",
   "files": [

@@ -6,7 +6,7 @@ const chalk = require('chalk')
 const update = require('update-notifier')
 const table = require('text-table')
 const log = require('../lib/log')
-const config = require('../lib/config')
+const configUtils = require('../lib/config-utils')
 const utils = require('../lib/utils')
 
 const cli = cac()
@@ -15,7 +15,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
   const template = input[0]
 
   // initialize config folder
-  config.ensureConfigDir()
+  configUtils.ensureConfigDir()
 
   if (flags.templates) {
     const templates = utils.getTemplates()
