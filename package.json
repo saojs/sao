@@ -35,7 +35,9 @@
   },
   "xo": {
     "extends": "rem",
-    "envs": ["jest"],
+    "envs": [
+      "jest"
+    ],
     "ignores": [
       "docs/**"
     ],
@@ -50,12 +52,14 @@
     "conf": "^0.12.0",
     "download-git-repo": "^1.0.0",
     "git-config-path": "^1.0.1",
+    "inquirer": "^3.0.6",
     "jstransformer-handlebars": "^1.0.0",
     "kopy": "^5.1.0",
     "mkdirp": "^0.5.1",
     "node-fetch": "^1.6.3",
     "ora": "^1.2.0",
     "parse-git-config": "^1.1.1",
+    "path-exists": "^3.0.0",
     "require-from-string": "^1.2.1",
     "shelljs": "^0.7.7",
     "text-table": "^0.2.0",
