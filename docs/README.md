@@ -72,18 +72,6 @@ sao foo
 sao foo my-project
 ```
 
-### Generate project for the first time
-
-For the first time to generate project from a template, you need `--install` option:
-
-```bash
-sao template --install
-```
-
-For example, if it's an npm package we'll install `template-template` for you, otherwise we download that git repo for you.
-
-When you run `sao` without `--install` option it will use cached version, if it's not cached yet, there would be a warning.
-
 ## FAQ
 
 ### Store template in repo or npm package?

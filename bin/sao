@@ -87,7 +87,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
 
 cli
   .option('config', 'Use custom config file')
-  .option('install', 'Install relavant npm package before generating')
+  .option('install', 'Always install template before generating')
   .option('remove-store', 'Remove stored prompt answers')
   .option('skip-store', 'Skip stored prompt answers, i.e. do not use them')
   .option('templates', 'Show installed templates')
