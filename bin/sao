@@ -70,7 +70,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
 
   const options = Object.assign({
     template,
-    targetFolder: input[1]
+    targetPath: input[1]
   }, flags)
 
   return sao(options)
