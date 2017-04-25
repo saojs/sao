@@ -1,3 +1,19 @@
+## [Version 0.17.0](https://github.com/egoist/sao/releases/tag/v0.17.0) (2017-4-25)
+
+### New features
+
+- add mockPrompt support: [`daf508e`](https://github.com/egoist/sao/commit/daf508e)
+- upgrade kopy: [`4ad28b1`](https://github.com/egoist/sao/commit/4ad28b1)
+- mock without writing any files: [`020f205`](https://github.com/egoist/sao/commit/020f205)
+- support validation in mockPrompt: [`c492648`](https://github.com/egoist/sao/commit/c492648)
+
+### Bug fixes
+
+- set default value for mock data: [`029f6ee`](https://github.com/egoist/sao/commit/029f6ee)
+- fake targetPath for mockPrompt: [`a04b370`](https://github.com/egoist/sao/commit/a04b370)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.16.12...v0.17.0)
+
 ## [Version 0.16.12](https://github.com/egoist/sao/releases/tag/v0.16.12) (2017-4-24)
 
 ### Bug fixes
