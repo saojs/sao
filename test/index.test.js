@@ -16,7 +16,7 @@ test('simple template', () => {
 
 // Not a template (no sao.js), simply copy the whole root foler
 test('non-template', () => {
-  return sao.generate({
+  return sao.mockPrompt({
     fromPath: path.join(__dirname, 'fixture/non-template'),
     targetPath: path.join(__dirname, 'output/non-template')
   }).then(files => {
