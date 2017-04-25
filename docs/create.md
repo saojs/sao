@@ -52,28 +52,15 @@ Then you can just use the answers of prompts in your template, for example:
 }
 ```
 
-#### role
+#### default value keywords
 
-You can use `role` to apply built-in options to the prompt, for example:
+In [Inquirer](https://github.com/SBoudrias/Inquirer.js) you can use `default` property to set default value, so here we provided some keywords for you to set access some native data, for example, use `default: ':gitUser:'` to set default value to system git username.
 
-```js
-module.exports = {
-  prompts: {
-    projectName: {
-      role: 'folder:name',
-      message: 'Type your project name:'
-    }
-  }
-}
-```
+List of keywords:
 
-Then the default value `projectName` will be the target folder name.
-
-List of built-in roles:
-
-- `folder:name`: Set default value to target folder name
-- `git:name`: Set default value to git username
-- `git:email`: Set default value to git email
+- `:folderName:` Set default value to target folder name
+- `:gitUser:` Set default value to git username
+- `:gitEmail:` Set default value to git email
 
 #### store
 
