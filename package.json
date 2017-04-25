@@ -31,7 +31,8 @@
     "xo": "^0.18.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": ["/output/"]
   },
   "xo": {
     "extends": "rem",
