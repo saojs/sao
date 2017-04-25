@@ -10,6 +10,7 @@ test('simple template', () => {
   }).then(files => {
     const filenames = Object.keys(files)
     expect(filenames).toEqual(['foo.js', 'bar/bar.js', '.gitignore'])
+    expect(files['foo.js'].contents.toString()).toMatch('no')
   })
 })
 

@@ -33,7 +33,8 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "/output/"
+      "/output/",
+      "/fixture/"
     ]
   },
   "xo": {
@@ -42,7 +43,9 @@
       "jest"
     ],
     "ignores": [
-      "docs/**"
+      "docs/**",
+      "test/fixture/**",
+      "test/output/**"
     ],
     "rules": {
       "guard-for-in": 0
