@@ -32,7 +32,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["/output/"]
+    "testPathIgnorePatterns": [
+      "/output/"
+    ]
   },
   "xo": {
     "extends": "rem",
@@ -55,7 +57,7 @@
     "git-config-path": "^1.0.1",
     "inquirer": "^3.0.6",
     "jstransformer-handlebars": "^1.0.0",
-    "kopy": "^5.1.1",
+    "kopy": "^6.0.0",
     "mkdirp": "^0.5.1",
     "node-fetch": "^1.6.3",
     "ora": "^1.2.0",

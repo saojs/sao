@@ -2438,9 +2438,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kopy@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/kopy/-/kopy-5.1.1.tgz#6294947b9148fda8fadb89f0cf16d4594c77dc95"
+kopy@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/kopy/-/kopy-6.0.0.tgz#464e5f87accaf3a47216bc601f7c4f7d4613fdda"
   dependencies:
     async.each "^0.5.2"
     inquirer "^2.0.0"

@@ -8,7 +8,8 @@ test('simple template', () => {
   }, {
     test: false
   }).then(files => {
-    expect(files).toEqual(['foo.js', 'bar/bar.js', '.gitignore'])
+    const filenames = Object.keys(files)
+    expect(filenames).toEqual(['foo.js', 'bar/bar.js', '.gitignore'])
   })
 })
 
@@ -18,6 +19,7 @@ test('non-template', () => {
     fromPath: path.join(__dirname, 'fixture/non-template'),
     targetPath: path.join(__dirname, 'output/non-template')
   }).then(files => {
-    expect(files).toEqual(['a.js', 'b.js'])
+    const filenames = Object.keys(files)
+    expect(filenames).toEqual(['a.js', 'b.js'])
   })
 })
