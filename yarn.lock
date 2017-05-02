@@ -693,9 +693,9 @@ concat-stream@^1.4.7, concat-stream@^1.5.2:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-conf@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.npmjs.org/conf/-/conf-0.12.0.tgz#8498c599e2487fec703505d181c113875b8c310c"
+conf@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/conf/-/conf-1.0.0.tgz#3547170d339bb4d38bf5e0e86c2e5af976b47ffa"
   dependencies:
     dot-prop "^4.1.0"
     env-paths "^1.0.0"
@@ -3990,9 +3990,9 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yarn-install@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/yarn-install/-/yarn-install-0.2.1.tgz#43841c12d7099a481f89fbfa6ca49d3bf92d15e3"
+yarn-install@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/yarn-install/-/yarn-install-0.3.0.tgz#d2e76d2f6c6e41ca3bcbd1e0c8698e3858c01415"
   dependencies:
     cac "^3.0.3"
     chalk "^1.1.3"
