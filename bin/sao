@@ -79,7 +79,7 @@ cli.command('*', 'Generate a new project', (input, flags) => {
       if (err.name === 'SAOError') {
         log.error(err.message)
       } else {
-        console.log(err.stack)
+        log.error(err.stack)
       }
       process.exit(1)
     })
