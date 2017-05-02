@@ -1,3 +1,18 @@
+## [Version 0.18.0](https://github.com/egoist/sao/releases/tag/v0.18.0) (2017-5-2)
+
+### Breaking changes
+
+- use keyword to set default value in prompts: [`4fc2d3b`](https://github.com/egoist/sao/commit/4fc2d3b)
+
+### Bug fixes
+
+- output warning for scoped npm package: [`7f57986`](https://github.com/egoist/sao/commit/7f57986)
+- only install production dependencies for git repo: [`455c234`](https://github.com/egoist/sao/commit/455c234)
+- tweak logger: [`f9ae3b2`](https://github.com/egoist/sao/commit/f9ae3b2)
+- disable trimming in logger: [`1365478`](https://github.com/egoist/sao/commit/1365478)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.17.0...v0.18.0)
+
 ## [Version 0.17.0](https://github.com/egoist/sao/releases/tag/v0.17.0) (2017-4-25)
 
 ### New features
