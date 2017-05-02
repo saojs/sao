@@ -7,9 +7,8 @@ test('simple template', () => {
     targetPath: path.join(__dirname, 'output/simple')
   }, {
     test: false
-  }).then(files => {
-    const filenames = Object.keys(files)
-    expect(filenames).toEqual(['foo.js', 'bar/bar.js', '.gitignore'])
+  }).then(({ fileList, files }) => {
+    expect(fileList).toEqual(['.gitignore', 'bar/bar.js', 'foo.js'])
     expect(files['foo.js'].contents.toString()).toMatch('no')
   })
 })
@@ -19,8 +18,7 @@ test('non-template', () => {
   return sao.mockPrompt({
     fromPath: path.join(__dirname, 'fixture/non-template'),
     targetPath: path.join(__dirname, 'output/non-template')
-  }).then(files => {
-    const filenames = Object.keys(files)
-    expect(filenames).toEqual(['a.js', 'b.js'])
+  }).then(({ fileList }) => {
+    expect(fileList).toEqual(['a.js', 'b.js'])
   })
 })
