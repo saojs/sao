@@ -165,6 +165,29 @@ module.exports = {
 }
 ```
 
+### Helpers
+
+#### installDependencies
+
+Type: `boolean`<br>
+Default: `false`
+
+Install npm dependencies for generate project.
+
+#### gitInit
+
+Type: `boolean`<br>
+Default: `false`
+
+Run `git init` in generated project.
+
+#### showTip
+
+Type: `boolean`<br>
+Default: `false`
+
+Output tip if files are generated successfully, when there's no [post hook](#post-hook) it will be `true` by default.
+
 ### Life Hooks
 
 #### post hook
