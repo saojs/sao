@@ -1,3 +1,11 @@
+## [Version 0.19.3](https://github.com/egoist/sao/releases/tag/v0.19.3) (2017-5-3)
+
+### Bug fixes
+
+- fix keyword: [`2277cf0`](https://github.com/egoist/sao/commit/2277cf0)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.19.2...v0.19.3)
+
 ## [Version 0.19.0](https://github.com/egoist/sao/releases/tag/v0.19.0) (2017-5-2)
 
 ### Breaking changes
