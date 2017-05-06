@@ -28,8 +28,7 @@ yarn global add sao
 cd new-project
 # from git repo
 sao egoist/template-vue
-# or from npm package
-yarn global add template-vue
+# or from npm package (template-vue)
 sao vue
 ```
 
