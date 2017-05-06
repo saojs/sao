@@ -62,6 +62,8 @@ Mocked value for prompts.
 
 #### Return value
 
+It returns a Promise which resolves `res`:
+
 ##### res.fileList
 
 An array of the path to generated files, eg:
