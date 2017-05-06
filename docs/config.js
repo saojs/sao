@@ -15,6 +15,10 @@ docute.init({
       { title: 'Home', path: '/' },
       { title: 'Creating a template', path: '/create' },
       { title: 'Exploring templates', path: '/explore', source: exploreSource },
+      { title: 'Advanced', type: 'dropdown', items: [{
+        title: 'Writing Tests',
+        path: '/advanced/test'
+      }] },
       { title: 'Choose language', type: 'dropdown', items: langs }
     ],
     zh: [
