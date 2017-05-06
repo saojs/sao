@@ -50,9 +50,7 @@ it('does not add license file', () => {
 
 #### template
 
-##### fromPath
-
-Type: `object`
+##### template.fromPath
 
 The path to your template, most likely it will be the directory to `sao.js`.
 
