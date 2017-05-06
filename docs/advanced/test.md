@@ -11,7 +11,7 @@ module.exports = {
     license: {
       type: 'confirm',
       message: 'Add a LICENSE file to your file?',
-      default: false
+      default: true
     }
   }
 }
