@@ -92,5 +92,7 @@ cli
   .option('skip-store', 'Skip stored prompt answers, i.e. do not use them')
   .option('templates', 'Show installed templates')
 
+cli.boolean(['install', 'templates', 'remove-store', 'skip-store'])
+
 update({pkg: cli.pkg}).notify()
 cli.parse()
