@@ -1,3 +1,14 @@
+## [Version 0.19.4](https://github.com/egoist/sao/releases/tag/v0.19.4) (2017-5-18)
+
+### Bug fixes
+
+- tweaks: [`c0382f9`](https://github.com/egoist/sao/commit/c0382f9)
+- tweaks: [`19f0c2f`](https://github.com/egoist/sao/commit/19f0c2f)
+- tweaks: [`69a3139`](https://github.com/egoist/sao/commit/69a3139)
+- ensure boolean arguments, fixed [#27](https://github.com/egoist/sao/issues/27): [`9368403`](https://github.com/egoist/sao/commit/9368403)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.19.3...v0.19.4)
+
 ## [Version 0.19.3](https://github.com/egoist/sao/releases/tag/v0.19.3) (2017-5-3)
 
 ### Bug fixes
