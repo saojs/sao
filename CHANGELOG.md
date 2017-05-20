@@ -1,3 +1,11 @@
+## [Version 0.19.6](https://github.com/egoist/sao/releases/tag/v0.19.6) (2017-5-21)
+
+### Bug fixes
+
+- add color to folderName: [`3cd2657`](https://github.com/egoist/sao/commit/3cd2657)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.19.5...v0.19.6)
+
 ## [Version 0.19.4](https://github.com/egoist/sao/releases/tag/v0.19.4) (2017-5-18)
 
 ### Bug fixes
