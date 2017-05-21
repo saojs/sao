@@ -2346,9 +2346,9 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.1.5"
 
-kopy@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.npmjs.org/kopy/-/kopy-7.0.1.tgz#b4b8c071d59c20b8d651a2902026cffd0453e960"
+kopy@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.npmjs.org/kopy/-/kopy-7.0.3.tgz#da8c1796dcb28e65766a0f7fc585dc9b5f35d304"
   dependencies:
     inquirer "^3.0.6"
     is-binary-path "^2.0.0"

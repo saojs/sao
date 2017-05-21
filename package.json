@@ -14,7 +14,8 @@
   },
   "bin": "bin/sao",
   "scripts": {
-    "test": "jest && xo"
+    "test": "jest && npm run lint",
+    "lint": "xo"
   },
   "main": "lib/index.js",
   "files": [
@@ -38,7 +39,7 @@
     ]
   },
   "xo": {
-    "extends": "rem",
+    "extends": "rem/prettier",
     "envs": [
       "jest"
     ],
@@ -60,7 +61,7 @@
     "git-config-path": "^1.0.1",
     "inquirer": "^3.0.6",
     "jstransformer-handlebars": "^1.0.0",
-    "kopy": "^7.0.1",
+    "kopy": "^7.0.3",
     "mkdirp": "^0.5.1",
     "node-fetch": "^1.6.3",
     "ora": "^1.2.0",
