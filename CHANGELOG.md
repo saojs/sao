@@ -1,3 +1,11 @@
+## [Version 0.19.8](https://github.com/egoist/sao/releases/tag/v0.19.8) (2017-5-21)
+
+### Bug fixes
+
+- accept string in mockPrompt: [`826bc4d`](https://github.com/egoist/sao/commit/826bc4d)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.19.7...v0.19.8)
+
 ## [Version 0.19.6](https://github.com/egoist/sao/releases/tag/v0.19.6) (2017-5-21)
 
 ### Bug fixes
