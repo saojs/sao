@@ -3,7 +3,6 @@
 const cac = require('cac')
 const ora = require('ora')
 const chalk = require('chalk')
-const update = require('update-notifier')
 const table = require('text-table')
 const log = require('../lib/log')
 const configUtils = require('../lib/config-utils')
@@ -94,5 +93,4 @@ cli
 
 cli.boolean(['install', 'templates', 'remove-store', 'skip-store'])
 
-update({pkg: cli.pkg}).notify()
 cli.parse()
