@@ -124,6 +124,20 @@ module.exports = {
 
 This action will be performed after files are generated so that you can use `move` as rename. Check out [template-gi](https://github.com/egoist/template-gi/blob/master/sao.js) for real world usage.
 
+If you want to access `answers` in `move`, use a function instead:
+
+```js
+```js
+module.exports = {
+  move(answers) {
+    return {
+      'app-template.js': answer.typescript ? 'app.ts' : 'app.js'
+    }
+  }
+}
+```
+```
+
 ### Custom Template Engine
 
 You can use any template engine supported by [jstransfomer](https://github.com/jstransformers), by default we use [ejs](http://ejs.co):
