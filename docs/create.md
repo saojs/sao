@@ -127,7 +127,6 @@ This action will be performed after files are generated so that you can use `mov
 If you want to access `answers` in `move`, use a function instead:
 
 ```js
-```js
 module.exports = {
   move(answers) {
     return {
@@ -135,7 +134,6 @@ module.exports = {
     }
   }
 }
-```
 ```
 
 ### Custom Template Engine
