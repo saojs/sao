@@ -1,3 +1,11 @@
+## [Version 0.19.9](https://github.com/egoist/sao/releases/tag/v0.19.9) (2017-7-6)
+
+### Bug fixes
+
+- log eval error: [`fdcad9e`](https://github.com/egoist/sao/commit/fdcad9e)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.19.8...v0.19.9)
+
 ## [Version 0.19.8](https://github.com/egoist/sao/releases/tag/v0.19.8) (2017-5-21)
 
 ### Bug fixes
