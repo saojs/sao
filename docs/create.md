@@ -235,7 +235,7 @@ module.exports = {
 
 Type: `boolean`
 
-Get if it's generating to a new project rather than current working directory.
+Whether it's generating to a new project or current working directory.
 
 ###### folderName
 
@@ -247,7 +247,7 @@ No matter if it's current directory or a new folder, this will always return the
 
 Type: `string`
 
-The path to dest folder.
+The absolute path to dest folder.
 
 ###### install
 
