@@ -30,16 +30,17 @@ it('adds license file', () => {
   return sao.mockPrompt(template, {
     // Here is the mocked prompts value
     // It uses the `default` value by default
-  }).then(res => {
-    expect(res.fileList).toContain('LICENSE')
+  }).then(stream => {
+    expect(stream.fileList).toContain('LICENSE')
   })
 })
 
 it('does not add license file', () => {
   return sao.mockPrompt(template, {
     license: false
-  }).then(res => {
-    expect(res.fileList).not.toContain('LICENSE')
+  }).then(stream => {
+    expect(stream.fileList).not.toContain('LICENSE')
+    expect(JSON.parse(stream.fileContents('package.json'))).toHaveProperty('author')
   })
 })
 ```
@@ -64,9 +65,9 @@ Mocked value for prompts.
 
 #### Return value
 
-It returns a Promise which resolves `res`:
+It returns a Promise resolving [`stream`](https://github.com/egoist/majo/blob/master/docs/api.md):
 
-##### res.fileList
+##### stream.fileList
 
 An array of the path to generated files, eg:
 
@@ -78,7 +79,7 @@ An array of the path to generated files, eg:
 ]
 ```
 
-##### res.files
+##### stream.files
 
 An object of the generated file tree eg:
 
@@ -91,3 +92,5 @@ An object of the generated file tree eg:
   }
 }
 ```
+
+For more please check out [majo stream API](https://github.com/egoist/majo/blob/master/docs/api.md).
