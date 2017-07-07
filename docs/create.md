@@ -200,6 +200,8 @@ Default: `false`
 
 Output tip if files are generated successfully, when there's no [post hook](#post-hook) it will be `true` by default.
 
+The tip is basically telling user that the process has done and whether they should `cd` into the generated folder.
+
 ### Life Hooks
 
 #### post hook
@@ -214,64 +216,62 @@ module.exports = {
 }
 ```
 
-### context
+#### arguments
 
-As you may notice, there's a `context` argument in `post hook`:
+As you may notice, there're `context` and `stream` arguments in `post hook`:
 
 ```js
 module.exports = {
-  post(context) {
+  post(context, stream) {
     console.log(context.isNewFolder)
     // ...
   }
 }
 ```
 
-#### isNewFolder
+##### context
+
+###### isNewFolder
 
 Type: `boolean`
 
 Get if it's generating to a new project rather than current working directory.
 
-#### folderName
+###### folderName
 
 Type: `string`
 
 No matter if it's current directory or a new folder, this will always return the name of the folder.
 
-#### folderPath
+###### folderPath
 
 Type: `string`
 
 The path to dest folder.
 
-#### install
+###### install
 
 Type: `function`
 
 Run `yarn install` or `npm install` in dest folder path, just call `install()` is enough.
 
-#### init
+###### init
 
 Type: `function`
 
 Run `git init` in dest folder path, just call `init()` is enough.
 
-#### log
+###### log
 
 A fancy log utility, available methods: `log.info(msg)` `log.error(msg)` `log.success(msg)` `log.warn(msg)`
 
-#### chalk
+###### chalk
 
 The [chalk](https://github.com/chalk/chalk) module as argument.
 
-#### $
+###### $
 
 The [shelljs](https://github.com/shelljs/shelljs) module as argument.
-
-#### answers
-
-The answers of prompts.
 
 <p class="warning">
   You can also access some of them in template files via underscore <code>\_</code>, for example <code>&lt;%= \_.folderName %&gt;</code>
@@ -281,3 +281,9 @@ The list of methods/variables available in templates:
 
 - isNewFolder
 - folderName
+
+##### stream
+
+See https://github.com/egoist/kopy#copysrc-dest-options.
+
+eg. the answers of prompts `stream.meta.answers`.
