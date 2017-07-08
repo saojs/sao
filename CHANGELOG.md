@@ -1,3 +1,11 @@
+## [Version 0.20.1](https://github.com/egoist/sao/releases/tag/v0.20.1) (2017-7-9)
+
+### Bug fixes
+
+- ensure git name and email: [`f94760a`](https://github.com/egoist/sao/commit/f94760a) ([#32](https://github.com/egoist/sao/issues/32))
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.0...v0.20.1)
+
 ## [Version 0.19.9](https://github.com/egoist/sao/releases/tag/v0.19.9) (2017-7-6)
 
 ### Bug fixes
