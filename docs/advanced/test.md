@@ -45,7 +45,7 @@ it('does not add license file', () => {
 })
 ```
 
-Check out the test for [template-nm](https://github.com/egoist/template-nm/blob/master/test.js) as an offcial example.
+Check out the test for [template-nm](https://github.com/egoist/template-nm/blob/master/test/test.js) as an offcial example.
 
 ## API
 
