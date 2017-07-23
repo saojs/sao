@@ -1,3 +1,11 @@
+## [Version 0.20.2](https://github.com/egoist/sao/releases/tag/v0.20.2) (2017-7-23)
+
+### New features
+
+- allow to use npm 5: [`46a2c70`](https://github.com/egoist/sao/commit/46a2c70)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.1...v0.20.2)
+
 ## [Version 0.20.1](https://github.com/egoist/sao/releases/tag/v0.20.1) (2017-7-9)
 
 ### Bug fixes
