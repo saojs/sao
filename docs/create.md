@@ -263,7 +263,7 @@ Yarn > npm
 
 Run `yarn install` or `npm install` in dest folder path, just call `install()` is enough.
 
-##### npmInstall
+###### npmInstall
 
 Like `yarnInstall` but npm^5 > Yarn > npm 4
 
