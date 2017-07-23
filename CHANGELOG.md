@@ -1,3 +1,12 @@
+## [Version 0.20.3](https://github.com/egoist/sao/releases/tag/v0.20.3) (2017-7-23)
+
+### Bug fixes
+
+- tweaks: [`9544c48`](https://github.com/egoist/sao/commit/9544c48)
+- clean up: [`83d7b6a`](https://github.com/egoist/sao/commit/83d7b6a)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.2...v0.20.3)
+
 ## [Version 0.20.2](https://github.com/egoist/sao/releases/tag/v0.20.2) (2017-7-23)
 
 ### New features
