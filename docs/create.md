@@ -186,7 +186,7 @@ Default: `false`
 
 Yarn > npm
 
-Install npm dependencies for generate project.
+Install npm dependencies for generated project.
 
 #### npmInstall
 
