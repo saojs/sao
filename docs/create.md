@@ -184,13 +184,13 @@ module.exports = {
 Type: `boolean`<br>
 Default: `false`
 
-Yarn > npm
+*Prefer Yarn over npm*
 
 Install npm dependencies for generated project.
 
 #### npmInstall
 
-Like `yarnInstall` but npm^5 > Yarn > npm 4
+*Prefer npm^5 over Yarn over npm 4*
 
 #### gitInit
 
@@ -259,13 +259,13 @@ The absolute path to dest folder.
 
 Type: `function`
 
-Yarn > npm
+*Prefer Yarn over npm*
 
-Run `yarn install` or `npm install` in dest folder path, just call `install()` is enough.
+Run `yarn install` or `npm install` in dest folder path, just call `context.yarnInstall()`.
 
 ###### npmInstall
 
-Like `yarnInstall` but npm^5 > Yarn > npm 4
+*Prefer npm^5 over Yarn over npm 4*
 
 ###### gitInit
 
