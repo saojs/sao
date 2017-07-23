@@ -179,12 +179,18 @@ module.exports = {
 
 ### Helpers
 
-#### installDependencies
+#### yarnInstall
 
 Type: `boolean`<br>
 Default: `false`
 
+Yarn > npm
+
 Install npm dependencies for generate project.
+
+#### npmInstall
+
+Like `yarnInstall` but npm^5 > Yarn > npm 4
 
 #### gitInit
 
@@ -249,13 +255,19 @@ Type: `string`
 
 The absolute path to dest folder.
 
-###### install
+###### yarnInstall
 
 Type: `function`
 
+Yarn > npm
+
 Run `yarn install` or `npm install` in dest folder path, just call `install()` is enough.
 
-###### init
+##### npmInstall
+
+Like `yarnInstall` but npm^5 > Yarn > npm 4
+
+###### gitInit
 
 Type: `function`
 
