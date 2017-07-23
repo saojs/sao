@@ -34,6 +34,8 @@ sao vue
 
 For detailed usage please head to https://sao.js.org
 
+Check out the example template that is maintained and actively used by me: [template-nm](https://github.com/egoist/template-nm)
+
 ## Resource
 
 - [awesome-sao](https://github.com/egoist/awesome-sao) - A curated list of delightful SAO resources.
