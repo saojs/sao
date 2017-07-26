@@ -53,13 +53,13 @@
     }
   },
   "dependencies": {
-    "cac": "^3.0.4",
+    "cac": "^4.0.0",
     "chalk": "^2.0.1",
     "co": "^4.6.0",
     "conf": "^1.1.2",
     "download-git-repo": "^1.0.1",
     "git-config-path": "^1.0.1",
-    "inquirer": "^3.2.0",
+    "inquirer": "^3.2.1",
     "jstransformer-handlebars": "^1.0.0",
     "kopy": "^8.0.1",
     "mkdirp": "^0.5.1",

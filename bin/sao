@@ -10,7 +10,7 @@ const utils = require('../lib/utils')
 
 const cli = cac()
 
-cli.command('*', 'Generate a new project', (input, flags) => {
+const defaultCommand = cli.command('*', 'Generate a new project', (input, flags) => {
   const template = input[0]
 
   // initialize config folder
@@ -84,13 +84,23 @@ cli.command('*', 'Generate a new project', (input, flags) => {
     })
 })
 
-cli
+defaultCommand
   .option('config', 'Use custom config file')
-  .option('install', 'Always install template before generating')
-  .option('remove-store', 'Remove stored prompt answers')
-  .option('skip-store', 'Skip stored prompt answers, i.e. do not use them')
-  .option('templates', 'Show installed templates')
-
-cli.boolean(['install', 'templates', 'remove-store', 'skip-store'])
+  .option('install', {
+    desc: 'Always install template before generating',
+    type: 'boolean'
+  })
+  .option('remove-store', {
+    desc: 'Remove stored prompt answers',
+    type: 'boolean'
+  })
+  .option('skip-store', {
+    desc: 'Skip stored prompt answers, i.e. do not use them',
+    type: 'boolean'
+  })
+  .option('templates', {
+    desc: 'Show installed templates',
+    type: 'boolean'
+  })
 
 cli.parse()
