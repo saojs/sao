@@ -1,3 +1,11 @@
+## [Version 0.20.4](https://github.com/egoist/sao/releases/tag/v0.20.4) (2017-7-26)
+
+### New features
+
+- use cac 4: [`43a9236`](https://github.com/egoist/sao/commit/43a9236)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.3...v0.20.4)
+
 ## [Version 0.20.3](https://github.com/egoist/sao/releases/tag/v0.20.3) (2017-7-23)
 
 ### Bug fixes
