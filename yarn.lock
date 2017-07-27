@@ -3975,9 +3975,9 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yarn-install@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.npmjs.org/yarn-install/-/yarn-install-0.4.1.tgz#813d1a9dc7c7c1ead24b60a07f692d6f72cfafdf"
+yarn-install@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.npmjs.org/yarn-install/-/yarn-install-0.5.1.tgz#f3c55e8646b6ac8da360b2f8e31afe5c4a067340"
   dependencies:
     cac "^3.0.3"
     chalk "^1.1.3"

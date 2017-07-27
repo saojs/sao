@@ -63,8 +63,8 @@ const defaultCommand = cli.command('*', 'Generate a new project', (input, flags)
   event.on('download:stop', () => {
     spinner.stop()
   })
-  event.on('install-template:start', packageName => {
-    console.log(chalk.yellow(`> Installing ${packageName}...`))
+  event.on('install-template:start', (packageName, pm) => {
+    console.log(chalk.yellow(`> Installing ${packageName} with ${pm}...`))
   })
 
   const options = Object.assign({
@@ -100,6 +100,10 @@ defaultCommand
   })
   .option('templates', {
     desc: 'Show installed templates',
+    type: 'boolean'
+  })
+  .option('force-npm', {
+    desc: 'Always use npm^5 instead of yarn to install templates and dependencies',
     type: 'boolean'
   })
 
