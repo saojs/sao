@@ -1,3 +1,11 @@
+## [Version 0.20.5](https://github.com/egoist/sao/releases/tag/v0.20.5) (2017-7-28)
+
+### New features
+
+- add --force-npm option: [`dd6e256`](https://github.com/egoist/sao/commit/dd6e256)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.4...v0.20.5)
+
 ## [Version 0.20.4](https://github.com/egoist/sao/releases/tag/v0.20.4) (2017-7-26)
 
 ### New features
