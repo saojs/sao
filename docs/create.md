@@ -248,7 +248,7 @@ The list of methods/variables available in templates:
 - folderPath
 - pm
 
-##### pm
+###### pm
 
 Type: `string`<br>
 Value: `yarn` `npm`
