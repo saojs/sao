@@ -237,6 +237,32 @@ module.exports = {
 
 ##### context
 
+<p class="tip">
+  You can also access some of following variables in template files via underscore <code>\_</code>, for example <code>&lt;%= \_.folderName %&gt;</code>
+</p>
+
+The list of methods/variables available in templates:
+
+- isNewFolder
+- folderName
+- folderPath
+- pm
+
+##### pm
+
+Type: `string`<br>
+Value: `yarn` `npm`
+
+Get the package manager we're using *yarn* while generating project.
+
+This could be helpful if you want to document something related it, eg. in some markdown file
+
+````js
+```bash
+<%= _.pm %> run test
+```
+````
+
 ###### isNewFolder
 
 Type: `boolean`
@@ -284,15 +310,6 @@ The [chalk](https://github.com/chalk/chalk) module as argument.
 ###### $
 
 The [shelljs](https://github.com/shelljs/shelljs) module as argument.
-
-<p class="warning">
-  You can also access some of them in template files via underscore <code>\_</code>, for example <code>&lt;%= \_.folderName %&gt;</code>
-</p>
-
-The list of methods/variables available in templates:
-
-- isNewFolder
-- folderName
 
 ##### stream
 
