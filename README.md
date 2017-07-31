@@ -9,14 +9,14 @@
 
 ## Motivation
 
-[yeoman](https://github.com/yeoman/yo) is too complex, and [vue-cli](https://github.com/vuejs/vue-cli) has a narrow name, so I made **sao**.
+**yeoman** is too complex, while **vue-cli** is more than a scaffolding tool and lacks some important features like *unit testing*, so I made **SAO**, basically it combines the powerful features of **yeoman** and the simplicity of **vue-cli**.
 
-**sao** is compatible with:
+**SAO** is compatible with:
 
-- regular git repo
-- sao template as git repo
-- sao template as npm package
-- sao template in local folder
+- Regular git repo (simply download it)
+- SAO template as git repo
+- SAO template as npm package
+- SAO template in local folder
 
 ⚡ ️**Both repo and npm package can be used offline.**
 
@@ -25,18 +25,16 @@
 ```bash
 yarn global add sao
 
-cd new-project
-# from git repo
-sao egoist/template-vue
-# or from npm package (template-vue)
-sao vue
+# Example template for creating a Next.js project
+# Generate from git repo
+sao egoist/template-next new-project
+# Or from npm package (npm.im/template-next)
+sao next new-project
 ```
 
 For detailed usage please head to https://sao.js.org
 
-Check out the example template that is maintained and actively used by me: [template-nm](https://github.com/egoist/template-nm)
-
-## Resource
+## Related
 
 - [awesome-sao](https://github.com/egoist/awesome-sao) - A curated list of delightful SAO resources.
 
