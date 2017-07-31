@@ -1,3 +1,12 @@
+## [Version 0.20.6](https://github.com/egoist/sao/releases/tag/v0.20.6) (2017-7-31)
+
+### New features
+
+- add pm in templateContext: [`a974697`](https://github.com/egoist/sao/commit/a974697)
+- change log level for installing missing template: [`86f0e5b`](https://github.com/egoist/sao/commit/86f0e5b)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.5...v0.20.6)
+
 ## [Version 0.20.5](https://github.com/egoist/sao/releases/tag/v0.20.5) (2017-7-28)
 
 ### New features
