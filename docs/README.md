@@ -8,7 +8,7 @@ Futuristic scaffolding tool.
 
 ## Motivation
 
-**yeoman** is too complex, while **vue-cli** is more than a scaffolding tool and lacks some important features like *unit testing*, so I made **SAO**, basically it combines the powerful features of **yeoman** and the simplicity of **vue-cli**.
+**yeoman** is too complex, while **vue-cli** is more than a scaffolding tool and lacks of some important features like *unit testing*, so I made **SAO**, basically it combines the powerful features of **yeoman** and the simplicity of **vue-cli**.
 
 **SAO** is compatible with:
 
