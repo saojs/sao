@@ -8,14 +8,14 @@ Futuristic scaffolding tool.
 
 ## Motivation
 
-[yeoman](https://github.com/yeoman/yo) is too complex, and [vue-cli](https://github.com/vuejs/vue-cli) has a narrow name, so I made **sao**.
+**yeoman** is too complex, while **vue-cli** is more than a scaffolding tool and lacks some important features like *unit testing*, so I made **SAO**, basically it combines the powerful features of **yeoman** and the simplicity of **vue-cli**.
 
-**sao** is compatible with:
+**SAO** is compatible with:
 
-- regular git repo
-- sao template as git repo
-- sao template as npm package
-- sao template in local folder
+- Regular git repo (simply download it)
+- SAO template as git repo
+- SAO template as npm package
+- SAO template in local folder
 
 ## Install
 
@@ -32,8 +32,6 @@ You can generate project from a git repo:
 
 ```bash
 cd new-project
-# for a regular git repo
-# it copies all contents in the template to current working directory
 sao user/repo
 ```
 
@@ -42,12 +40,10 @@ sao user/repo
 You can also generate project from an npm package:
 
 ```bash
-# if the name does not contains slash `/`
-# it will be recognized as an npm package and prefixed with `template-`
-# and you should install it before running `sao`
-yarn global add template-vue
+# If the name does not contains slash `/`
+# It will be recognized as an npm package and prefixed with `template-`
 cd new-project
-sao vue
+sao next
 ```
 
 ### From Local Directory
@@ -61,14 +57,14 @@ sao ../path/to/template
 
 ## CLI Usage
 
-### Generate to another folder
+### Generate to a new folder
 
-Sometimes you want to create a new folder instead of using `cwd`
+Sometimes you want to create a new folder instead of generating to `cwd`
 
 ```bash
-# such thing will make sao generate files to ./
+# Such command will make SAO generate files to ./
 sao foo
-# specific the second arg as target folder instead of using ./
+# Specify the second arg as target folder instead of using ./
 sao foo my-project
 ```
 
@@ -76,8 +72,8 @@ sao foo my-project
 
 ### Store template in repo or npm package?
 
-Do what you prefer, no real difference here, except when you choose npm package you need to publish it, but the name would be shorter than `user/repo` you know and by using npm package you can receive update notifier when a new version of it is available.
+If you use npm as the template host you can receive update notifier when a new version of relevant template is avaliable, while this is not possible when you're using git repo.
 
 ### Is it compatible with vue-cli?
 
-Some options are same, some options are different, so no.
+Some options are the same, some options are different, so nah.

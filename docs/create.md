@@ -208,7 +208,7 @@ Output tip if files are generated successfully, when there's no [post hook](#pos
 
 The tip is basically telling user that the process has done and whether they should `cd` into the generated folder.
 
-### Life Hooks
+### Lifecycle Hooks
 
 #### post hook
 
