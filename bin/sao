@@ -108,5 +108,9 @@ defaultCommand
     desc: 'Always use npm^5 instead of yarn to install templates and dependencies',
     type: 'boolean'
   })
+  .option('clone', {
+    desc: 'Use git clone instead of an http download',
+    type: 'boolean'
+  })
 
 cli.parse()
