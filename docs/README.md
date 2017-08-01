@@ -35,6 +35,21 @@ cd new-project
 sao user/repo
 ```
 
+It also supports advanced repo usage:
+
+```bash
+# Use --clone to download private git repo
+sao user/repo --clone
+
+# Use other git hosts
+sao gitlab:user/repo
+sao bitbucket:user/repo
+
+# Specify git tag/branch
+sao user/repo#1.0
+sao user/repo#dev
+```
+
 ### From Package
 
 You can also generate project from an npm package:
