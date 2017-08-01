@@ -19,33 +19,41 @@ module.exports = {
 
 ```js
 // test.js
-const sao = require('sao')
+import test from 'ava'
+import sao from 'sao'
 
 const template = {
   fromPath: '/path/to/template'
 }
 
-// Example is using jest/jasmine syntax
-it('adds license file', () => {
-  return sao.mockPrompt(template, {
+test('default values', async t => {
+  const stream = await sao.mockPrompt(template, {
     // Here is the mocked prompts value
     // It uses the `default` value by default
-  }).then(stream => {
-    expect(stream.fileList).toContain('LICENSE')
   })
+
+  t.snapshot(stream.fileList, 'Generated files')
+  const pkg = JSON.parse(stream.fileContents('package.json'))
+  t.is(pkg.license, 'MIT')
 })
 
-it('does not add license file', () => {
-  return sao.mockPrompt(template, {
+test('no license file', async t => {
+  const stream = await sao.mockPrompt(template, {
     license: false
-  }).then(stream => {
-    expect(stream.fileList).not.toContain('LICENSE')
-    expect(JSON.parse(stream.fileContents('package.json'))).toHaveProperty('author')
   })
+
+  t.snapshot(stream.fileList, 'Generated files')
+  const pkg = JSON.parse(stream.fileContents('package.json'))
+  t.false('license' in pkg)
 })
 ```
 
-Check out the test for [template-nm](https://github.com/egoist/template-nm/blob/master/test/test.js) as an offcial example.
+Here we're using AVA [snapshot test](https://github.com/avajs/ava#snapshot-testing) so that we don't have to write expected file list manually.
+
+Examples:
+
+- [template-nm](https://github.com/egoist/template-nm/blob/master/test/test.js)
+- [template-next](https://github.com/egoist/template-next/blob/master/test/test.js)
 
 ## API
 
