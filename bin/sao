@@ -77,6 +77,8 @@ const defaultCommand = cli.command('*', 'Generate a new project', (input, flags)
       spinner.stop()
       if (err.name === 'SAOError') {
         log.error(err.message)
+      } else if (err.name === 'HTTPError') {
+        log.error(`${err.statusMessage}: ${err.host}${err.path}`)
       } else {
         log.error(err.stack)
       }
