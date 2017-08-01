@@ -1,3 +1,11 @@
+## [Version 0.20.8](https://github.com/egoist/sao/releases/tag/v0.20.8) (2017-8-1)
+
+### New features
+
+- support private git repos: [`c4e91d4`](https://github.com/egoist/sao/commit/c4e91d4)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.7...v0.20.8)
+
 ## [Version 0.20.7](https://github.com/egoist/sao/releases/tag/v0.20.7) (2017-8-1)
 
 ### Bug fixes
