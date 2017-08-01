@@ -1,3 +1,13 @@
+## [Version 0.20.7](https://github.com/egoist/sao/releases/tag/v0.20.7) (2017-8-1)
+
+### Bug fixes
+
+- tweaks: [`8fb6c53`](https://github.com/egoist/sao/commit/8fb6c53)
+- tweaks: [`229fcbf`](https://github.com/egoist/sao/commit/229fcbf)
+- output detailed error message for http error: [`3ec1a60`](https://github.com/egoist/sao/commit/3ec1a60)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.6...v0.20.7)
+
 ## [Version 0.20.6](https://github.com/egoist/sao/releases/tag/v0.20.6) (2017-7-31)
 
 ### New features
