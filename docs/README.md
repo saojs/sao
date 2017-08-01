@@ -55,7 +55,7 @@ sao user/repo#dev
 You can also generate project from an npm package:
 
 ```bash
-# If the name does not contains slash `/`
+# If the name does not contain slash `/`
 # It will be recognized as an npm package and prefixed with `template-`
 cd new-project
 sao next
