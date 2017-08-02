@@ -179,37 +179,6 @@ module.exports = {
 }
 ```
 
-### Helpers
-
-#### yarnInstall
-
-Type: `boolean`<br>
-Default: `false`
-
-*Prefer Yarn over npm*
-
-Install npm dependencies for generated project.
-
-#### npmInstall
-
-*Prefer npm^5 over Yarn over npm 4*
-
-#### gitInit
-
-Type: `boolean`<br>
-Default: `false`
-
-Run `git init` in generated project.
-
-#### showTip
-
-Type: `boolean`<br>
-Default: `false`
-
-Output tip if files are generated successfully, when there's no [post hook](#post-hook) it will be `true` by default.
-
-The tip is basically telling user that the process has done and whether they should `cd` into the generated folder.
-
 ### Lifecycle Hooks
 
 #### post hook
@@ -283,9 +252,17 @@ Type: `string`
 
 The absolute path to dest folder.
 
+###### showTip
+
+Type: `function`<br>
+Shorthand: Set `showTip: true` in config file.
+
+Show success message when a new project is generated successfully.
+
 ###### yarnInstall
 
-Type: `function`
+Type: `function`<br>
+Shorthand: Set `yarnInstall: true` in config file.
 
 *Prefer Yarn over npm*
 
@@ -293,11 +270,15 @@ Run `yarn install` or `npm install` in dest folder path, just call `context.yarn
 
 ###### npmInstall
 
+Type: `function`<br>
+Shorthand: Set `npmInstall: true` in config file.
+
 *Prefer npm^5 over Yarn over npm 4*
 
 ###### gitInit
 
-Type: `function`
+Type: `function`<br>
+Shorthand: Set `gitInit: true` in config file.
 
 Run `git init` in dest folder path, just call `init()` is enough.
 
