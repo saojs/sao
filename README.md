@@ -37,6 +37,7 @@ For detailed usage please head to https://sao.js.org
 ## Related
 
 - [awesome-sao](https://github.com/egoist/awesome-sao) - A curated list of delightful SAO resources.
+- [SAO articles on medium.com](https://medium.com/saojs).
 
 ## Contributing
 
