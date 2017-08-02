@@ -1,5 +1,7 @@
 # Creating a template
 
+The easiest way to kick start a new template is using the template for it: [template-template](https://github.com/egoist/template-template).
+
 ## Folder Structure
 
 ```bash
