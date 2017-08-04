@@ -1,3 +1,15 @@
+## [Version 0.21.0](https://github.com/egoist/sao/releases/tag/v0.21.0) (2017-8-4)
+
+### Breaking changes
+
+- Refactor, support npm scoped package: [`63d8441`](https://github.com/egoist/sao/commit/63d8441)
+
+### Bug fixes
+
+- tweaks: [`ae1d2b9`](https://github.com/egoist/sao/commit/ae1d2b9)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.20.8...v0.21.0)
+
 ## [Version 0.20.8](https://github.com/egoist/sao/releases/tag/v0.20.8) (2017-8-1)
 
 ### New features
