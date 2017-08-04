@@ -111,5 +111,9 @@ defaultCommand
     desc: 'Use git clone instead of an http download',
     type: 'boolean'
   })
+  .option('update-notify', {
+    desc: 'Show notifier when relevant template has updates',
+    default: true
+  })
 
 cli.parse()
