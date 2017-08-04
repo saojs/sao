@@ -1,3 +1,11 @@
+## [Version 0.21.2](https://github.com/egoist/sao/releases/tag/v0.21.2) (2017-8-5)
+
+### Bug fixes
+
+- fix checking isNewFolder: [`a52a80c`](https://github.com/egoist/sao/commit/a52a80c)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.1...v0.21.2)
+
 ## [Version 0.21.1](https://github.com/egoist/sao/releases/tag/v0.21.1) (2017-8-4)
 
 ### New features
