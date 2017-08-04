@@ -24,7 +24,9 @@
   ],
   "keywords": [
     "generator",
-    "template"
+    "template",
+    "scaffolding",
+    "sao"
   ],
   "devDependencies": {
     "eslint-config-rem": "^3.2.0",
