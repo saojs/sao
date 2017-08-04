@@ -1,3 +1,16 @@
+## [Version 0.21.1](https://github.com/egoist/sao/releases/tag/v0.21.1) (2017-8-4)
+
+### New features
+
+- add option to disable template update notifier: [`8550513`](https://github.com/egoist/sao/commit/8550513)
+
+### Bug fixes
+
+- tweaks: [`5bf21ba`](https://github.com/egoist/sao/commit/5bf21ba)
+- Do not install dependencies if repo does not have config file: [`7df56f1`](https://github.com/egoist/sao/commit/7df56f1)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.0...v0.21.1)
+
 ## [Version 0.21.0](https://github.com/egoist/sao/releases/tag/v0.21.0) (2017-8-4)
 
 ### Breaking changes
