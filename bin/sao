@@ -4,11 +4,39 @@ const cac = require('cac')
 const ora = require('ora')
 const chalk = require('chalk')
 const table = require('text-table')
-const log = require('../lib/log')
-const configUtils = require('../lib/config-utils')
 const utils = require('../lib/utils')
+const log = require('../lib/utils/log')
+const configUtils = require('../lib/utils/config')
 
 const cli = cac()
+
+const printTemplates = ([packages, repos]) => {
+  console.log(chalk.cyan(`\n  Templates installed from npm:\n`))
+
+  if (packages.length === 0) {
+    console.log('  none')
+  } else {
+    console.log(table(packages.map(item => {
+      const pkg = utils.readGlobalPackage(item)
+      return [
+        `  ${item.replace(/-([\s\S]+)/, (m, p1) => `-${chalk.bold(p1)}`)}`,
+        chalk.dim(`v${pkg.version}`)
+      ]
+    })))
+  }
+
+  console.log(chalk.cyan(`\n  Templates installed from git:\n`))
+
+  if (repos.length === 0) {
+    console.log('  none')
+  } else {
+    for (const repo of repos) {
+      console.log(`  ${repo.replace(/::([\s\S]+)/, (m, p1) => `/${chalk.bold(p1)}`)}`)
+    }
+  }
+
+  console.log()
+}
 
 const defaultCommand = cli.command('*', 'Generate a new project', (input, flags) => {
   const template = input[0]
@@ -17,35 +45,7 @@ const defaultCommand = cli.command('*', 'Generate a new project', (input, flags)
   configUtils.ensureConfigDir()
 
   if (flags.templates) {
-    const templates = utils.getTemplates()
-
-    console.log(chalk.cyan(`\n  Templates installed from npm:\n`))
-
-    if (templates.packages.length === 0) {
-      console.log('  none')
-    } else {
-      console.log(table(templates.packages.map(item => {
-        const pkg = utils.readGlobalPackage(item)
-        return [
-          `  ${item.replace(/-([\s\S]+)/, (m, p1) => `-${chalk.bold(p1)}`)}`,
-          chalk.dim(`v${pkg.version}`)
-        ]
-      })))
-    }
-
-    console.log(chalk.cyan(`\n  Templates installed from git:\n`))
-
-    if (templates.repos.length === 0) {
-      console.log('  none')
-    } else {
-      for (const item of templates.repos) {
-        console.log(`  ${item.replace(/-([\s\S]+)/, (m, p1) => `/${chalk.bold(p1)}`)}`)
-      }
-    }
-
-    console.log()
-
-    return
+    return utils.getTemplates().then(printTemplates)
   }
 
   if (!template) {
@@ -53,17 +53,16 @@ const defaultCommand = cli.command('*', 'Generate a new project', (input, flags)
   }
 
   const sao = require('../lib')
-  const event = require('../lib/event')
 
   const spinner = ora()
-  event.on('download:start', () => {
+  sao.on('download:start', () => {
     spinner.text = 'Downloading...'
     spinner.start()
   })
-  event.on('download:stop', () => {
+  sao.on('download:stop', () => {
     spinner.stop()
   })
-  event.on('install-template:start', (packageName, pm) => {
+  sao.on('install-template:start', (packageName, pm) => {
     console.log(chalk.yellow(`> Installing ${packageName} with ${pm}...`))
   })
 
