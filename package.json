@@ -14,7 +14,7 @@
   },
   "bin": "bin/sao",
   "scripts": {
-    "test": "jest && npm run lint",
+    "test": "npm run lint && jest",
     "lint": "xo"
   },
   "main": "lib/index.js",
