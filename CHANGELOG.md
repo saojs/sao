@@ -1,3 +1,15 @@
+## [Version 0.21.3](https://github.com/egoist/sao/releases/tag/v0.21.3) (2017-8-5)
+
+### New features
+
+- support explict npm package name, closed [#35](https://github.com/egoist/sao/issues/35): [`45b1815`](https://github.com/egoist/sao/commit/45b1815)
+
+### Bug fixes
+
+- use actual package version to store prompt answers: [`207f44e`](https://github.com/egoist/sao/commit/207f44e)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.2...v0.21.3)
+
 ## [Version 0.21.2](https://github.com/egoist/sao/releases/tag/v0.21.2) (2017-8-5)
 
 ### Bug fixes
