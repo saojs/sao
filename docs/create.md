@@ -219,6 +219,12 @@ The list of methods/variables available in templates:
 - folderPath
 - pm
 
+###### answers
+
+Type: `object`
+
+Prompts answers.
+
 ###### pm
 
 Type: `string`<br>
@@ -297,5 +303,3 @@ The [shelljs](https://github.com/shelljs/shelljs) module as argument.
 ##### stream
 
 See https://github.com/egoist/kopy#copysrc-dest-options.
-
-eg. the answers of prompts `stream.meta.answers`.

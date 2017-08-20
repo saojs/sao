@@ -59,6 +59,10 @@ You can also generate project from an npm package:
 # It will be recognized as an npm package and prefixed with `template-`
 cd new-project
 sao next
+
+# Use a package without `template-prefix`
+# It will install package `foo` instead of `template-foo`
+sao npm:foo
 ```
 
 ### From Local Directory
