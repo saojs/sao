@@ -8,7 +8,7 @@ const exploreSource = 'https://raw.githubusercontent.com/egoist/awesome-sao/mast
 docute.init({
   title: 'SAO',
   repo: 'egoist/sao',
-  'edit-link': 'https://github.com/egoist/sao/tree/master/docs',
+  'edit-link': 'https://github.com/egoist/sao/tree/master/docs/',
   twitter: 'rem_rin_rin',
   nav: {
     default: [
