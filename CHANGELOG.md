@@ -1,3 +1,16 @@
+## [Version 0.21.5](https://github.com/egoist/sao/releases/tag/v0.21.5) (2017-8-20)
+
+### New features
+
+- respect sao property in package.json: [`cfb50ab`](https://github.com/egoist/sao/commit/cfb50ab)
+
+### Bug fixes
+
+- Added "Type `cd ${folderName}` to get started": [`b0bf29b`](https://github.com/egoist/sao/commit/b0bf29b)
+- support custom configFileName in sao.mockPrompt: [`9af5cd4`](https://github.com/egoist/sao/commit/9af5cd4)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.4...v0.21.5)
+
 ## [Version 0.21.4](https://github.com/saojs/sao/releases/tag/v0.21.4) (2017-8-20)
 
 ### New features
