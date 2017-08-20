@@ -1,3 +1,16 @@
+## [Version 0.21.4](https://github.com/egoist/sao/releases/tag/v0.21.4) (2017-8-20)
+
+### New features
+
+- inject answers into ctx: [`53dc6e9`](https://github.com/egoist/sao/commit/53dc6e9)
+
+### Bug fixes
+
+- simplify targetPath in sao.mockPrompt: [`b5ff5c9`](https://github.com/egoist/sao/commit/b5ff5c9)
+- Closes #44, sets logger levels to lowercase: [`2cb2a0c`](https://github.com/egoist/sao/commit/2cb2a0c) ([#45](https://github.com/egoist/sao/issues/45))
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.3...v0.21.4)
+
 ## [Version 0.21.3](https://github.com/egoist/sao/releases/tag/v0.21.3) (2017-8-5)
 
 ### New features
