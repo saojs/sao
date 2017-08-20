@@ -17,9 +17,19 @@ your-template/
 
 ## Config File
 
-The default config is `./sao.js` in your template, if config file exists `sao` will copy `./template` folder in your template, otherwise it copy root directory.
+The default config is `./sao.js` in your template, if config file exists `sao` will copy `./template` folder in your template, otherwise it copy root directory as a normal folder.
 
-You can also use `--config` option to set custom config file.
+You can use `--config` option to use a custom config file.
+
+Alternatively, if you are a template author, you can also set the value of `sao` property to the path of config file in `package.json`, eg:
+
+```js
+// package.json
+{
+  "name": "template-something",
+  "sao": "./path/to/meta.js"
+}
+```
 
 ### Prompts
 
