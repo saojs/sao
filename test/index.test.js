@@ -5,8 +5,7 @@ test('simple template', () => {
   return sao
     .mockPrompt(
       {
-        fromPath: path.join(__dirname, 'fixture/simple'),
-        targetPath: path.join(__dirname, 'output/simple')
+        fromPath: path.join(__dirname, 'fixture/simple')
       },
       {
         test: false
@@ -22,8 +21,7 @@ test('simple template', () => {
 test('non-template', () => {
   return sao
     .mockPrompt({
-      fromPath: path.join(__dirname, 'fixture/non-template'),
-      targetPath: path.join(__dirname, 'output/non-template')
+      fromPath: path.join(__dirname, 'fixture/non-template')
     })
     .then(({ fileList }) => {
       expect(fileList).toEqual(['a.js', 'b.js'])
