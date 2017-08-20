@@ -4,7 +4,7 @@
 
 <p align="center">
 <br>
-<a href="https://npmjs.com/package/sao"><img src="https://img.shields.io/npm/v/sao.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.com/package/sao"><img src="https://img.shields.io/npm/dm/sao.svg?style=flat" alt="NPM downloads"></a> <a href="https://circleci.com/gh/egoist/sao"><img src="https://img.shields.io/circleci/project/egoist/sao/master.svg?style=flat" alt="Build Status"></a> <a href="https://github.com/egoist/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a> <a href="https://chat.egoist.moe"><img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg?style=flat" alt="chat"></a>
+<a href="https://npmjs.com/package/sao"><img src="https://img.shields.io/npm/v/sao.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.com/package/sao"><img src="https://img.shields.io/npm/dm/sao.svg?style=flat" alt="NPM downloads"></a> <a href="https://circleci.com/gh/saojs/sao"><img src="https://img.shields.io/circleci/project/saojs/sao/master.svg?style=flat" alt="Build Status"></a> <a href="https://github.com/egoist/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a> <a href="https://chat.egoist.moe"><img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg?style=flat" alt="chat"></a>
 </p>
 
 ## Motivation
@@ -50,6 +50,6 @@ For detailed usage please head to https://sao.js.org
 ## Author
 
 **sao** © [EGOIST](https://github.com/egoist), Released under the [MIT](https://egoist.mit-license.org/) License.<br>
-Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/sao/contributors)).
+Authored and maintained by EGOIST with help from contributors ([list](https://github.com/saojs/sao/contributors)).
 
 > [egoist.moe](https://egoist.moe) · GitHub [@egoist](https://github.com/egoist) · Twitter [@_egoistlily](https://twitter.com/_egoistlily)
