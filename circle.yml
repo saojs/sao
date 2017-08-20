@@ -1,13 +1,24 @@
-machine:
-  pre:
-    - mkdir ~/.yarn-cache
-  node:
-    version: 7
-
-dependencies:
-  pre:
-    - curl -o- -L https://yarnpkg.com/install.sh | bash
-  cache_directories:
-    - "~/.yarn-cache"
-  override:
-    - yarn install
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    branches:
+      ignore:
+        - gh-pages # list of branches to ignore
+        - /release\/.*/ # or ignore regexes
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: install dependences
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: yarn test
