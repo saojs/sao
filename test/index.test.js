@@ -1,29 +1,35 @@
-const path = require('path')
-const sao = require('..')
+import path from 'path'
+import test from 'ava'
+import sao from '..'
 
-test('simple template', () => {
-  return sao
-    .mockPrompt(
-      {
-        fromPath: path.join(__dirname, 'fixture/simple')
-      },
-      {
-        test: false
-      }
-    )
-    .then(({ fileList, files }) => {
-      expect(fileList).toEqual(['.gitignore', 'bar/bar.js', 'foo.js'])
-      expect(files['foo.js'].contents.toString()).toMatch('no')
-    })
+test('simple template', async t => {
+  const res = await sao.mockPrompt(
+    {
+      fromPath: path.join(__dirname, 'fixture/simple')
+    },
+    {
+      test: false
+    }
+  )
+
+  t.deepEqual(res.fileList, ['.gitignore', 'bar/bar.js', 'foo.js'])
+  t.is(res.fileContents('foo.js'), 'no\n')
 })
 
 // Not a template (no sao.js), simply copy the whole root foler
-test('non-template', () => {
-  return sao
-    .mockPrompt({
-      fromPath: path.join(__dirname, 'fixture/non-template')
-    })
-    .then(({ fileList }) => {
-      expect(fileList).toEqual(['a.js', 'b.js'])
-    })
+test('non-template', async t => {
+  const res = await sao.mockPrompt({
+    fromPath: path.join(__dirname, 'fixture/non-template')
+  })
+
+  t.deepEqual(res.fileList, ['a.js', 'b.js'])
+})
+
+test('invalid prompt', async t => {
+  await t.throws(
+    sao.mockPrompt({
+      fromPath: path.join(__dirname, 'fixture/invalid-prompt')
+    }),
+    'Validation failed at prompt: "name"'
+  )
 })
