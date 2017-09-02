@@ -2188,9 +2188,9 @@ inquirer@^0.12.0:
     strip-ansi "^3.0.0"
     through "^2.3.6"
 
-inquirer@^3.2.1:
-  version "3.2.2"
-  resolved "https://registry.npmjs.org/inquirer/-/inquirer-3.2.2.tgz#c2aaede1507cc54d826818737742d621bef2e823"
+inquirer@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.npmjs.org/inquirer/-/inquirer-3.2.3.tgz#1c7b1731cf77b934ec47d22c9ac5aa8fe7fbe095"
   dependencies:
     ansi-escapes "^2.0.0"
     chalk "^2.0.0"
@@ -2600,11 +2600,11 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
-kopy@^8.0.1:
-  version "8.1.0"
-  resolved "https://registry.npmjs.org/kopy/-/kopy-8.1.0.tgz#bafa132b1d88887dd8008dcdf6f80cbacf9d2e9f"
+kopy@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.npmjs.org/kopy/-/kopy-8.2.0.tgz#0878a242d55a1898db2227c49783e10b60b97edd"
   dependencies:
-    inquirer "^3.2.1"
+    inquirer "^3.2.3"
     is-binary-path "^2.0.0"
     jstransformer "^1.0.0"
     jstransformer-ejs "^0.0.3"

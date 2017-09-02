@@ -33,3 +33,13 @@ test('invalid prompt', async t => {
     'Validation failed at prompt: "name"'
   )
 })
+
+test('set default value of confirm', async t => {
+  const res = await sao.mockPrompt({
+    fromPath: path.join(__dirname, 'fixture/confirm')
+  })
+  t.deepEqual(res.meta.answers, {
+    foo: true,
+    bar: false
+  })
+})
