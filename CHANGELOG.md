@@ -1,3 +1,14 @@
+## [Version 0.21.6](https://github.com/egoist/sao/releases/tag/v0.21.6) (2017-9-2)
+
+### Bug fixes
+
+- refactor generation: [`dd137ad`](https://github.com/egoist/sao/commit/dd137ad)
+- fix for regular template: [`46da217`](https://github.com/egoist/sao/commit/46da217)
+- fix path in showTip, closed [#54](https://github.com/egoist/sao/issues/54): [`31e3020`](https://github.com/egoist/sao/commit/31e3020)
+- update kopy to use mockPrompts option: [`d4a037c`](https://github.com/egoist/sao/commit/d4a037c)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.5...v0.21.6)
+
 ## [Version 0.21.5](https://github.com/egoist/sao/releases/tag/v0.21.5) (2017-8-20)
 
 ### New features
