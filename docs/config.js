@@ -25,7 +25,7 @@ docute.init({
         title: 'Writing Tests',
         path: '/advanced/test'
       }] },
-      { title: 'Choose language', type: 'dropdown', items: langs }
+//       { title: 'Choose language', type: 'dropdown', items: langs }
     ],
     zh: [
       { title: '首页', path: '/zh/' },
