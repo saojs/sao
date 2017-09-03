@@ -1,3 +1,11 @@
+## [Version 0.21.8](https://github.com/egoist/sao/releases/tag/v0.21.8) (2017-9-3)
+
+### Bug fixes
+
+- read template pkg when template is ready: [`54ddf85`](https://github.com/egoist/sao/commit/54ddf85)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.7...v0.21.8)
+
 ## [Version 0.21.7](https://github.com/egoist/sao/releases/tag/v0.21.7) (2017-9-3)
 
 ### Bug fixes
