@@ -1,3 +1,11 @@
+## [Version 0.21.7](https://github.com/egoist/sao/releases/tag/v0.21.7) (2017-9-3)
+
+### Bug fixes
+
+- expose logger: [`269c92c`](https://github.com/egoist/sao/commit/269c92c)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.6...v0.21.7)
+
 ## [Version 0.21.6](https://github.com/egoist/sao/releases/tag/v0.21.6) (2017-9-2)
 
 ### Bug fixes
