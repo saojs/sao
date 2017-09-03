@@ -1,3 +1,11 @@
+## [Version 0.21.9](https://github.com/egoist/sao/releases/tag/v0.21.9) (2017-9-3)
+
+### Bug fixes
+
+- ensure the template exists: [`8a7ee99`](https://github.com/egoist/sao/commit/8a7ee99)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.21.8...v0.21.9)
+
 ## [Version 0.21.8](https://github.com/egoist/sao/releases/tag/v0.21.8) (2017-9-3)
 
 ### Bug fixes
