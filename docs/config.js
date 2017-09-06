@@ -24,6 +24,9 @@ docute.init({
       { title: 'Advanced', type: 'dropdown', items: [{
         title: 'Writing Tests',
         path: '/advanced/test'
+      }, {
+        title: 'Standalone CLI',
+        path: '/advanced/standalone-cli'
       }] },
 //       { title: 'Choose language', type: 'dropdown', items: langs }
     ],
