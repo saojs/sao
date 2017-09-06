@@ -1,3 +1,11 @@
+## [Version 0.21.10](https://github.com/saojs/sao/releases/tag/v0.21.10) (2017-9-6)
+
+### Bug fixes
+
+- fix template engine: [`5f09c2d`](https://github.com/saojs/sao/commit/5f09c2d)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.21.8...v0.21.10)
+
 ## [Version 0.21.9](https://github.com/egoist/sao/releases/tag/v0.21.9) (2017-9-3)
 
 ### Bug fixes
