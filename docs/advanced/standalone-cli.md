@@ -30,9 +30,9 @@ sao({
 })
 ```
 
-*Then you can already run `node cli.js` to generate project from your template, basically it's equivalent to `sao npm:foo`.*
+*You can already run `node cli.js` to generate project from your template, basically it's equivalent to `sao npm:foo`.*
 
-Finally you can configure the [`bin`](https://docs.npmjs.com/files/package.json#bin) field in `package.json`:
+Finally configure the [`bin`](https://docs.npmjs.com/files/package.json#bin) field in `package.json` and you're all set:
 
 ```json
 {
