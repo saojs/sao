@@ -57,3 +57,4 @@ foo my-new-project
 
 - [lass](https://github.com/lassjs/lass) - scaffolds a modern package boilerplate for Node.js
 - [lad](https://github.com/ladjs/lad) - scaffolds a Koa webapp and API framework for Node.js
+- [create-nuxt-app](https://github.com/nuxt-community/create-nuxt-app) - Create a Nuxt.js app
