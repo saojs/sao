@@ -1,3 +1,15 @@
+## [Version 0.22.1](https://github.com/saojs/sao/releases/tag/v0.22.1) (2017-9-7)
+
+### New features
+
+- Check if existing package version matches expected package version: [`dc933cb`](https://github.com/saojs/sao/commit/dc933cb)
+
+### Bug fixes
+
+- tweaks: [`c194b3f`](https://github.com/saojs/sao/commit/c194b3f)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.0...v0.22.1)
+
 ## [Version 0.22.0](https://github.com/saojs/sao/releases/tag/v0.22.0) (2017-9-7)
 
 ### Breaking changes
