@@ -1,3 +1,11 @@
+## [Version 0.22.0](https://github.com/saojs/sao/releases/tag/v0.22.0) (2017-9-7)
+
+### Breaking changes
+
+- Store package template in a custom directory: [`3cfcf19`](https://github.com/saojs/sao/commit/3cfcf19) ([#57](https://github.com/saojs/sao/issues/57))
+
+[...full changes](https://github.com/saojs/sao/compare/v0.21.10...v0.22.0)
+
 ## [Version 0.21.10](https://github.com/saojs/sao/releases/tag/v0.21.10) (2017-9-6)
 
 ### Bug fixes
