@@ -11,21 +11,30 @@ const configUtils = require('../lib/utils/config')
 const cli = cac()
 
 const printTemplates = ([packages, repos]) => {
-  console.log(chalk.cyan(`\n  Templates installed from npm:\n`))
+  const tildify = require('tildify')
+
+  console.log(chalk.cyan(`\n  Templates installed in ${tildify(configUtils.packagesDir)} from npm:\n`))
 
   if (packages.length === 0) {
     console.log('  none')
   } else {
+    const highlightPackageName = name => /^template-/.test(name)
+      ? name.replace(/-([\s\S]+)/, (m, p1) => `-${chalk.bold(p1)}`)
+      : chalk.bold(name)
     console.log(table(packages.map(item => {
-      const pkg = utils.readGlobalPackage(item)
+      const pkg = utils.readTemplatePkg(item)
       return [
-        `  ${item.replace(/-([\s\S]+)/, (m, p1) => `-${chalk.bold(p1)}`)}`,
+        `  ${
+          /^@/.test(item)
+            ? item.replace(/@([^\/]+)\/([\s\S]+)/, (m, p1, p2) => `@${p1}/${highlightPackageName(p2)}`)
+            : highlightPackageName(item)
+        }`,
         chalk.dim(`v${pkg.version}`)
       ]
     })))
   }
 
-  console.log(chalk.cyan(`\n  Templates installed from git:\n`))
+  console.log(chalk.cyan(`\n  Templates installed in ${tildify(configUtils.reposDir)} from git:\n`))
 
   if (repos.length === 0) {
     console.log('  none')
@@ -41,11 +50,10 @@ const printTemplates = ([packages, repos]) => {
 const defaultCommand = cli.command('*', 'Generate a new project', (input, flags) => {
   const template = input[0]
 
-  // initialize config folder
-  configUtils.ensureConfigDir()
-
   if (flags.templates) {
-    return utils.getTemplates().then(printTemplates)
+    return utils.getTemplates().then(printTemplates).catch(err => {
+      console.log(err.stack)
+    })
   }
 
   if (!template) {
