@@ -1,3 +1,11 @@
+## [Version 0.22.2](https://github.com/egoist/sao/releases/tag/v0.22.2) (2017-9-11)
+
+### New features
+
+- replace shelljs with cross-spawn: [`74df2ec`](https://github.com/egoist/sao/commit/74df2ec)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.22.1...v0.22.2)
+
 ## [Version 0.22.1](https://github.com/saojs/sao/releases/tag/v0.22.1) (2017-9-7)
 
 ### New features
