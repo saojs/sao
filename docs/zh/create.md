@@ -250,10 +250,6 @@ Type: `function`
 
 [chalk](https://github.com/chalk/chalk) 模块
 
-#### $
-
-[shelljs](https://github.com/shelljs/shelljs) 模块。
-
 #### answers
 
 命令行提示的返回结果。

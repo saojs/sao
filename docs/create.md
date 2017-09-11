@@ -306,10 +306,6 @@ A fancy log utility, available methods: `log.info(msg)` `log.error(msg)` `log.su
 
 The [chalk](https://github.com/chalk/chalk) module as argument.
 
-###### $
-
-The [shelljs](https://github.com/shelljs/shelljs) module as argument.
-
 ##### stream
 
 See https://github.com/egoist/kopy#copysrc-dest-options.
