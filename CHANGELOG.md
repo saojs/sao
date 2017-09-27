@@ -1,3 +1,11 @@
+## [Version 0.22.3](https://github.com/egoist/sao/releases/tag/v0.22.3) (2017-9-27)
+
+### Bug fixes
+
+- replace : with %, fixed [#63](https://github.com/egoist/sao/issues/63): [`acc6dc6`](https://github.com/egoist/sao/commit/acc6dc6)
+
+[...full changes](https://github.com/egoist/sao/compare/v0.22.2...v0.22.3)
+
 ## [Version 0.22.2](https://github.com/egoist/sao/releases/tag/v0.22.2) (2017-9-11)
 
 ### New features
