@@ -40,7 +40,7 @@ const printTemplates = ([packages, repos]) => {
     console.log('  none')
   } else {
     for (const repo of repos) {
-      console.log(`  ${repo.replace(/::([\s\S]+)/, (m, p1) => `/${chalk.bold(p1)}`)}`)
+      console.log(`  ${repo.replace(/%%([\s\S]+)/, (m, p1) => `/${chalk.bold(p1)}`)}`)
     }
   }
 
