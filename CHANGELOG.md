@@ -1,3 +1,11 @@
+## [Version 0.22.4](https://github.com/saojs/sao/releases/tag/v0.22.4) (2017-10-13)
+
+### New features
+
+- allow to use addtional data in template: [`68eef8f`](https://github.com/saojs/sao/commit/68eef8f)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.3...v0.22.4)
+
 ## [Version 0.22.3](https://github.com/egoist/sao/releases/tag/v0.22.3) (2017-9-27)
 
 ### Bug fixes
