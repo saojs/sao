@@ -80,7 +80,7 @@ Store the typed answer to be used next time.
 
 ### data
 
-Besides `prompts`, you may want to directly feed some data to the template without prompting user to type anything:
+Besides `prompts`, you may want to directly feed the template some data without prompting user to type anything:
 
 ```js
 module.exports = {
@@ -103,7 +103,7 @@ module.exports = {
 `data` could also be a plain object.
 
 <p class="warning">
-  `_` underscore is a reserved key name in `data` because we will inject some helper methods heres, see [context](#context).
+  `_` underscore is a reserved key name in `data` because we will inject some helper methods here, see [context](#context).
 </p>
 
 ### filters
