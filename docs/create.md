@@ -78,6 +78,34 @@ List of keywords:
 
 Store the typed answer to be used next time.
 
+### data
+
+Besides `prompts`, you may want to directly feed some data to the template without prompting user to type anything:
+
+```js
+module.exports = {
+  prompts: {
+    name: {
+      message: 'Type the package name',
+      default: ':folderName:'
+    }
+  },
+  // The first arg is the prompts answers
+  data(answers) {
+    return {
+      year: new Date().getFullYear(),
+      moduleName: pascalCase(answer.name)
+    }
+  }
+}
+```
+
+`data` could also be a plain object.
+
+<p class="warning">
+  `_` underscore is a reserved key name in `data` because we will inject some helper methods heres, see [context](#context).
+</p>
+
 ### filters
 
 You can filter files with user prompts, for example:

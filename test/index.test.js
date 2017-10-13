@@ -43,3 +43,15 @@ test('set default value of confirm', async t => {
     bar: false
   })
 })
+
+test('inject template data', async t => {
+  const res = await sao.mockPrompt(
+    {
+      fromPath: path.join(__dirname, 'fixture/template-data')
+    },
+    {
+      name: 'world'
+    }
+  )
+  t.snapshot(res.meta.merged)
+})
