@@ -94,7 +94,7 @@ module.exports = {
   data(answers) {
     return {
       year: new Date().getFullYear(),
-      moduleName: pascalCase(answer.name)
+      moduleName: pascalCase(answers.name)
     }
   }
 }
