@@ -1,3 +1,11 @@
+## [Version 0.22.5](https://github.com/egoist/sao/releases/tag/v0.22.5) (2017-10-21)
+
+### Bug fixes
+
+- Add Github username: [`aefcfd9`](https://github.com/egoist/sao/commit/aefcfd9) ([#64](https://github.com/egoist/sao/issues/64))
+
+[...full changes](https://github.com/egoist/sao/compare/v0.22.4...v0.22.5)
+
 ## [Version 0.22.4](https://github.com/saojs/sao/releases/tag/v0.22.4) (2017-10-13)
 
 ### New features
