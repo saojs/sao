@@ -59,6 +59,7 @@
     "conf": "^1.1.2",
     "cross-spawn": "^5.1.0",
     "download-git-repo": "^1.0.1",
+    "filenamify-url": "^1.0.0",
     "fs-extra": "^4.0.1",
     "git-config-path": "^1.0.1",
     "globby": "^6.1.0",
