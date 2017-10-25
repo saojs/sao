@@ -27,6 +27,9 @@ docute.init({
       }, {
         title: 'Standalone CLI',
         path: '/advanced/standalone-cli'
+      }, {
+        title: 'API',
+        path: '/advanced/api'
       }] },
 //       { title: 'Choose language', type: 'dropdown', items: langs }
     ],
