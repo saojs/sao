@@ -41,18 +41,18 @@ It also supports advanced repo usage:
 # Use `git clone` to download private GitHub repo
 sao user/repo --clone
 
-# Use other popular git hosts
-sao gitlab:user/repo
-sao bitbucket:user/repo
-
 # Specify git tag/branch
 sao user/repo#1.0
 sao user/repo#dev
 ```
 
-You can even use custom git host:
+You can even use custom git hosts:
 
 ```bash
+# Use other popular git hosts like gitlab and bitbucket
+sao gitlab:user/repo
+sao bitbucket:user/repo
+# Or any git upstream
 sao domain.com:user/repo
 
 # Example: self-host gitlab
