@@ -45,9 +45,14 @@ sao user/repo --clone
 sao gitlab:user/repo
 sao bitbucket:user/repo
 
+# Use custom git host
+sao gitlab:gitlab.mydomain.com:user/repo
+sao gitlab.mydomain.com:user/repo
+
 # Specify git tag/branch
 sao user/repo#1.0
 sao user/repo#dev
+sao gitlab:gitlab.mydomain.com:user/repo#dev
 ```
 
 ### From Package
