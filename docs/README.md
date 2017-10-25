@@ -28,7 +28,7 @@ yarn global add sao
 
 ### From Repo
 
-You can generate project from a git repo:
+You can generate project from a GitHub repo:
 
 ```bash
 cd new-project
@@ -38,16 +38,27 @@ sao user/repo
 It also supports advanced repo usage:
 
 ```bash
-# Use --clone to download private git repo
+# Use `git clone` to download private GitHub repo
 sao user/repo --clone
-
-# Use other git hosts
-sao gitlab:user/repo
-sao bitbucket:user/repo
 
 # Specify git tag/branch
 sao user/repo#1.0
 sao user/repo#dev
+```
+
+You can even use custom git hosts:
+
+```bash
+# Use other popular git hosts like gitlab and bitbucket
+sao gitlab:user/repo
+sao bitbucket:user/repo
+# Or any git upstream
+sao domain.com:user/repo
+
+# Example: self-host gitlab
+sao gitlab.domain.com:user/repo --clone
+# Example: public repos on coding.net
+sao git.coding.net:user/repo
 ```
 
 ### From Package
