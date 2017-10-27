@@ -30,7 +30,7 @@ test('invalid prompt', async t => {
     sao.mockPrompt({
       fromPath: path.join(__dirname, 'fixture/invalid-prompt')
     }),
-    'Validation failed at prompt: "name"'
+    'Validation failed at prompt "name"'
   )
 })
 

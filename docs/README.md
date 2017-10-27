@@ -24,7 +24,7 @@ yarn global add sao
 # npm i -g sao
 ```
 
-## Basic Usage
+## Usage
 
 ### From Repo
 
@@ -85,8 +85,6 @@ cd new-project
 sao ../path/to/template
 ```
 
-## CLI Usage
-
 ### Generate to a new folder
 
 Sometimes you want to create a new folder instead of generating to `cwd`
@@ -96,6 +94,18 @@ Sometimes you want to create a new folder instead of generating to `cwd`
 sao foo
 # Specify the second arg as target folder instead of using ./
 sao foo my-project
+```
+
+### Template caching
+
+By default both npm package and git repo are cached, SAO will download the template if it does not exist in `~/.sao` directory and use cached template later on.
+
+You can use `--update` flag to update cached template before generating project, eg:
+
+```bash
+sao nm node-project --update
+# or type less
+sao nm node-project -u
 ```
 
 ## FAQ

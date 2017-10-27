@@ -96,7 +96,11 @@ const defaultCommand = cli.command('*', 'Generate a new project', (input, flags)
 defaultCommand
   .option('config', 'Use custom config file')
   .option('install', {
-    desc: 'Always install template before generating',
+    desc: 'Same as --update (deprecated)'
+  })
+  .option('update', {
+    alias: 'u',
+    desc: 'Update cached template before generating',
     type: 'boolean'
   })
   .option('remove-store', {
