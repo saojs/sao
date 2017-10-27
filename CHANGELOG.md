@@ -1,3 +1,11 @@
+## [Version 0.22.8](https://github.com/saojs/sao/releases/tag/v0.22.8) (2017-10-27)
+
+### Bug fixes
+
+- add --update flag and deprecate --install: [`19546b7`](https://github.com/saojs/sao/commit/19546b7)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.7...v0.22.8)
+
 ## [Version 0.22.7](https://github.com/saojs/sao/releases/tag/v0.22.7) (2017-10-27)
 
 ### Bug fixes
