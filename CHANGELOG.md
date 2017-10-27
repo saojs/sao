@@ -1,3 +1,11 @@
+## [Version 0.22.7](https://github.com/saojs/sao/releases/tag/v0.22.7) (2017-10-27)
+
+### Bug fixes
+
+- don't install deps when repo does not have dependencies: [`1976d77`](https://github.com/saojs/sao/commit/1976d77)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.6...v0.22.7)
+
 ## [Version 0.22.5](https://github.com/egoist/sao/releases/tag/v0.22.5) (2017-10-21)
 
 ### Bug fixes
