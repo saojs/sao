@@ -1,3 +1,11 @@
+## [Version 0.22.9](https://github.com/saojs/sao/releases/tag/v0.22.9) (2017-11-2)
+
+### Bug fixes
+
+- fix template update notifier: [`8a79a4a`](https://github.com/saojs/sao/commit/8a79a4a)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.8...v0.22.9)
+
 ## [Version 0.22.8](https://github.com/saojs/sao/releases/tag/v0.22.8) (2017-10-27)
 
 ### Bug fixes
