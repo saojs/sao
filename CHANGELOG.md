@@ -1,3 +1,11 @@
+## [Version 0.22.10](https://github.com/saojs/sao/releases/tag/v0.22.10) (2017-12-6)
+
+### Bug fixes
+
+- remove the type for force-npm: [`2788f6d`](https://github.com/saojs/sao/commit/2788f6d)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.9...v0.22.10)
+
 ## [Version 0.22.9](https://github.com/saojs/sao/releases/tag/v0.22.9) (2017-11-2)
 
 ### Bug fixes
