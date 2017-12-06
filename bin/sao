@@ -116,8 +116,7 @@ defaultCommand
     type: 'boolean'
   })
   .option('force-npm', {
-    desc: 'Always use npm^5 instead of yarn to install templates and dependencies',
-    type: 'boolean'
+    desc: 'Always use npm^5 instead of yarn to install templates and dependencies'
   })
   .option('clone', {
     desc: 'Use git clone instead of an http download',
