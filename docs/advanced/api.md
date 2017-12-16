@@ -80,11 +80,11 @@ CLI alias: `--yes` `-y`
 
 Get template data from cli options. If `mockPrompts` is set we skip `prompt`.
 
-To override the value of specific ones you can use:
+To override the value of specific ones in CLI you can use:
 
 `--mockPrompts.foo 123 --mockPrompts.bar abc` which will be parsed to:
 
-```
+```js
 {
   mockPrompts: { 
     ...defaultValues,
