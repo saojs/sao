@@ -75,14 +75,23 @@ Always use `npm` instead of `yarn` to install templates and dependencies.
 
 ### mockPrompts
 
-Type: `object`
+Type: `object`<br>
+CLI alias: `--yes` `-y`
 
 Get template data from cli options. If `mockPrompts` is set we skip `prompt`.
 
-` --mockPrompts.foo 123 --mockPrompts.bar abc` will be parsed to:
+To override the value of specific ones you can use:
+
+`--mockPrompts.foo 123 --mockPrompts.bar abc` which will be parsed to:
 
 ```
-{mockPrompts : {foo: 123, bar: 'abc'}}
+{
+  mockPrompts: { 
+    ...defaultValues,
+    foo: 123, 
+    bar: 'abc'
+  }
+}
 ```
 
 ### clone
