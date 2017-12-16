@@ -103,6 +103,10 @@ defaultCommand
     desc: 'Update cached template before generating',
     type: 'boolean'
   })
+  .option('yes', {
+    alias: ['y', 'mockPrompts'],
+    desc: 'Skip prompt and use default values'
+  })
   .option('remove-store', {
     desc: 'Remove stored prompt answers',
     type: 'boolean'

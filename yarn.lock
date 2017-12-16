@@ -1407,6 +1407,12 @@ eslint-config-prettier@^1.7.0:
   dependencies:
     get-stdin "^5.0.1"
 
+eslint-config-prettier@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.9.0.tgz#5ecd65174d486c22dff389fe036febf502d468a3"
+  dependencies:
+    get-stdin "^5.0.1"
+
 eslint-config-rem@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/eslint-config-rem/-/eslint-config-rem-3.2.0.tgz#8f9db2f7dded1875a12689a3e28ab4ae137cfac3"
@@ -1489,7 +1495,7 @@ eslint-plugin-no-use-extend-native@^0.3.2:
     is-obj-prop "^1.0.0"
     is-proto-prop "^1.0.0"
 
-eslint-plugin-prettier@^2.0.1:
+eslint-plugin-prettier@^2.0.1, eslint-plugin-prettier@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/eslint-plugin-prettier/-/eslint-plugin-prettier-2.3.1.tgz#e7a746c67e716f335274b88295a9ead9f544e44d"
   dependencies:
@@ -3307,6 +3313,10 @@ preserve@^0.2.0:
 prettier@^1.2.2:
   version "1.7.4"
   resolved "https://registry.npmjs.org/prettier/-/prettier-1.7.4.tgz#5e8624ae9363c80f95ec644584ecdf55d74f93fa"
+
+prettier@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.9.2.tgz#96bc2132f7a32338e6078aeb29727178c6335827"
 
 pretty-ms@^0.2.1:
   version "0.2.2"

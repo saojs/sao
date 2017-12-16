@@ -73,6 +73,27 @@ Type: `boolean`
 
 Always use `npm` instead of `yarn` to install templates and dependencies.
 
+### mockPrompts
+
+Type: `object` `boolean`<br>
+CLI alias: `--yes` `-y`
+
+Get template data from cli options. If `mockPrompts` is set we skip `prompt`.
+
+To override the value of specific ones in CLI you can use:
+
+`--mockPrompts.foo 123 --mockPrompts.bar abc` which will be parsed to:
+
+```js
+{
+  mockPrompts: { 
+    ...defaultValues,
+    foo: 123, 
+    bar: 'abc'
+  }
+}
+```
+
 ### clone
 
 Type: `boolean`

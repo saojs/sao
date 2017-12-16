@@ -30,7 +30,10 @@
   ],
   "devDependencies": {
     "ava": "^0.22.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-config-rem": "^3.2.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "prettier": "^1.9.2",
     "xo": "^0.18.2"
   },
   "ava": {
@@ -39,7 +42,10 @@
     ]
   },
   "xo": {
-    "extends": "rem/prettier",
+    "extends": [
+      "prettier",
+      "rem"
+    ],
     "envs": [
       "jest"
     ],
@@ -49,8 +55,16 @@
       "test/output/**"
     ],
     "rules": {
-      "guard-for-in": 0
-    }
+      "guard-for-in": 0,
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   },
   "dependencies": {
     "boxen": "^1.2.2",
