@@ -1,3 +1,11 @@
+## [Version 0.22.11](https://github.com/saojs/sao/releases/tag/v0.22.11) (2017-12-16)
+
+### New features
+
+- Get template data from cli options: [`fa34b82`](https://github.com/saojs/sao/commit/fa34b82) ([#71](https://github.com/saojs/sao/issues/71))
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.10...v0.22.11)
+
 ## [Version 0.22.10](https://github.com/saojs/sao/releases/tag/v0.22.10) (2017-12-6)
 
 ### Bug fixes
