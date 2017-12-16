@@ -73,6 +73,18 @@ Type: `boolean`
 
 Always use `npm` instead of `yarn` to install templates and dependencies.
 
+### mockPrompts
+
+Type: `object`
+
+Get template data from cli options. If `mockPrompts` is set we skip `prompt`.
+
+` --mockPrompts.foo 123 --mockPrompts.bar abc` will be parsed to:
+
+```
+{mockPrompts : {foo: 123, bar: 'abc'}}
+```
+
 ### clone
 
 Type: `boolean`
