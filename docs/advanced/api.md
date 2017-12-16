@@ -75,7 +75,7 @@ Always use `npm` instead of `yarn` to install templates and dependencies.
 
 ### mockPrompts
 
-Type: `object`<br>
+Type: `object` `boolean`<br>
 CLI alias: `--yes` `-y`
 
 Get template data from cli options. If `mockPrompts` is set we skip `prompt`.
