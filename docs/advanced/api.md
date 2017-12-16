@@ -49,11 +49,11 @@ Default: `sao.js`
 
 Path to config file.
 
-### install
+### update
 
 Type: `boolean`
 
-Always install template before generating even if it already exists.
+Always update template before generating even if it already exists.
 
 ### removeStore
 
