@@ -54,4 +54,4 @@ Authored and maintained by EGOIST with help from contributors ([list](https://gi
 
 > [egoist.moe](https://egoist.moe) · GitHub [@egoist](https://github.com/egoist) · Twitter [@_egoistlily](https://twitter.com/_egoistlily)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Ux4hdW1RzN8XpYzVUoWJFxg9/saojs/sao'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Ux4hdW1RzN8XpYzVUoWJFxg9/saojs/sao.svg' /></a>
+
