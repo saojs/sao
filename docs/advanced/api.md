@@ -26,54 +26,56 @@ sao.on('install-template:start', (packageName, pm) => {
 })
 ```
 
-## Options
+## sao(options)
 
-### template
+### options
+
+#### template
 
 Type: `string`<br>
 Required: `true`
 
 The template name, it supports all the types in SAO CLI, like npm package, git repo and local path.
 
-### targetPath
+#### targetPath
 
 Type: `string`<br>
 Default: `./`
 
 The path to generate project.
 
-### config
+#### config
 
 Type: `string`<br>
 Default: `sao.js`
 
 Path to config file.
 
-### update
+#### update
 
 Type: `boolean`
 
 Always update template before generating even if it already exists.
 
-### removeStore
+#### removeStore
 
 Type: `boolean`
 
 Remove stored prompt answers.
 
-### skipStore
+#### skipStore
 
 Type: `boolean`
 
 Skip stored prompt answers.
 
-### forceNpm
+#### forceNpm
 
 Type: `boolean`
 
 Always use `npm` instead of `yarn` to install templates and dependencies.
 
-### mockPrompts
+#### mockPrompts
 
 Type: `object` `boolean`<br>
 CLI alias: `--yes` `-y`
@@ -94,14 +96,42 @@ To override the value of specific ones in CLI you can use:
 }
 ```
 
-### clone
+#### clone
 
 Type: `boolean`
 
 Use `git clone` to download repo.
 
-### updateNotify
+#### updateNotify
 
 Type: `boolean`
 
 Print update notifier when relevant template has been updated, only works for npm packages.
+
+## sao.mockPrompts(template, prompts)
+
+Returns a Promise which resolves to `stream`.
+
+### template
+
+Type: `string` `object`
+
+```js
+{
+  fromPath: string,
+  templateContext: object
+}
+```
+
+### prompts
+
+Type: `object`
+
+Mocked prompts. eg:
+
+```js
+{
+  useReact: false,
+  supportEslint: true
+}
+```

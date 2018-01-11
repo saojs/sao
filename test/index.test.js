@@ -55,3 +55,13 @@ test('inject template data', async t => {
   )
   t.snapshot(res.meta.merged)
 })
+
+test('template context', async t => {
+  const res = await sao.mockPrompt({
+    fromPath: path.join(__dirname, 'fixture/template-context'),
+    configOptions: {
+      lol: 'i am lol'
+    }
+  })
+  t.is(res.fileContents('lol.txt'), 'i am lol []\n')
+})

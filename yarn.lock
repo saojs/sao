@@ -717,9 +717,9 @@ cac@^3.0.3:
     suffix "^0.1.0"
     text-table "^0.2.0"
 
-cac@^4.2.0:
-  version "4.2.4"
-  resolved "https://registry.npmjs.org/cac/-/cac-4.2.4.tgz#019f35db752f13ee57ba7499e524de940c89528e"
+cac@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/cac/-/cac-4.3.4.tgz#ec994ca18ea4b4a1a2338cf5d49d070e19774377"
   dependencies:
     chalk "^2.0.1"
     minimost "^1.0.0"
