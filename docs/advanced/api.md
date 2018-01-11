@@ -51,6 +51,15 @@ Default: `sao.js`
 
 Path to config file.
 
+#### configOptions
+
+Type: `object`<br>
+Default: `{ flags }`
+
+Options for config file when it exports a function, we merge your options with the defaults with `Object.assign({ flags }, yourOptions)`.
+
+`flags` are camelcased.
+
 #### update
 
 Type: `boolean`

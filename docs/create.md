@@ -31,6 +31,20 @@ Alternatively, if you are a template author, you can also set the value of `sao`
 }
 ```
 
+### Exporting a function
+
+You can export a function which returns the config in config file:
+
+```js
+module.exports = options = {
+  return {
+    // your config
+  }
+}
+```
+
+See more about the argument: [options](/advanced/api#configoptions).
+
 ### Prompts
 
 You can use [ejs](http://ejs.co/) syntax in your template, and use prompts to retrieve data from user.
