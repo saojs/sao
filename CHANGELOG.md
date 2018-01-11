@@ -1,3 +1,11 @@
+## [Version 0.22.12](https://github.com/saojs/sao/releases/tag/v0.22.12) (2018-1-11)
+
+### New features
+
+- add configOptions, closed [#68](https://github.com/saojs/sao/issues/68): [`425f8cf`](https://github.com/saojs/sao/commit/425f8cf)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.11...v0.22.12)
+
 ## [Version 0.22.11](https://github.com/saojs/sao/releases/tag/v0.22.11) (2017-12-16)
 
 ### New features
