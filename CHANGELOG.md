@@ -1,3 +1,11 @@
+## [Version 0.22.13](https://github.com/saojs/sao/releases/tag/v0.22.13) (2018-2-14)
+
+### Bug fixes
+
+- fix circular require, closed [#77](https://github.com/saojs/sao/issues/77): [`3f5b202`](https://github.com/saojs/sao/commit/3f5b202)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.12...v0.22.13)
+
 ## [Version 0.22.12](https://github.com/saojs/sao/releases/tag/v0.22.12) (2018-1-11)
 
 ### New features
