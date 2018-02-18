@@ -65,6 +65,12 @@ Examples:
 
 The path to your template, most likely it will be the directory to `sao.js`.
 
+##### template.targetPath
+
+Default: `/fake-path/output`
+
+The path to generate files. Note that it won't really write files to disk.
+
 #### mockedPromptValue
 
 Type: `object`
