@@ -46,15 +46,6 @@ test('no license file', async t => {
   const pkg = JSON.parse(stream.fileContents('package.json'))
   t.false('license' in pkg)
 })
-
-test('init to current working directory', async t => {
-  const stream = await sao.mockPrompt(template, {
-    license: false,
-    targetPath: './'
-  })
-
-  t.snapshot(stream.fileList, 'Generated files');
-})
 ```
 
 Here we're using AVA [snapshot test](https://github.com/avajs/ava#snapshot-testing) so that we don't have to write expected file list manually.
@@ -73,6 +64,12 @@ Examples:
 ##### template.fromPath
 
 The path to your template, most likely it will be the directory to `sao.js`.
+
+##### template.targetPath
+
+Default: `/fake-path/output`
+
+The path to generate files. Note that it won't really write files to disk.
 
 #### mockedPromptValue
 
