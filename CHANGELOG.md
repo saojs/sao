@@ -1,3 +1,11 @@
+## [Version 0.22.14](https://github.com/saojs/sao/releases/tag/v0.22.14) (2018-2-18)
+
+### Bug fixes
+
+- Fix/mock prompt override: [`f15d80e`](https://github.com/saojs/sao/commit/f15d80e) ([#81](https://github.com/saojs/sao/issues/81))
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.13...v0.22.14)
+
 ## [Version 0.22.13](https://github.com/saojs/sao/releases/tag/v0.22.13) (2018-2-14)
 
 ### Bug fixes
