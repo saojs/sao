@@ -1,3 +1,11 @@
+## [Version 0.22.15](https://github.com/saojs/sao/releases/tag/v0.22.15) (2018-3-20)
+
+### New features
+
+- Support passing `dependencies` to `yarnInstall`: [`202ae02`](https://github.com/saojs/sao/commit/202ae02) ([#84](https://github.com/saojs/sao/issues/84))
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.14...v0.22.15)
+
 ## [Version 0.22.14](https://github.com/saojs/sao/releases/tag/v0.22.14) (2018-2-18)
 
 ### Bug fixes
