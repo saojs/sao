@@ -1,0 +1,7 @@
+{
+  "name": "my-project",
+  "private": true,
+  "dependencies": {
+    "noop3": "999.999.999"
+  }
+}
