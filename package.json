@@ -87,6 +87,6 @@
     "tildify": "^1.2.0",
     "update-notifier": "^2.2.0",
     "user-home": "^2.0.0",
-    "yarn-install": "^0.5.1"
+    "yarn-install": "^1.0.0"
   }
 }
