@@ -1,3 +1,11 @@
+## [Version 0.22.16](https://github.com/saojs/sao/releases/tag/v0.22.16) (2018-4-9)
+
+### Bug fixes
+
+- update yarn-install, fixes [#87](https://github.com/saojs/sao/issues/87): [`5f03720`](https://github.com/saojs/sao/commit/5f03720)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.15...v0.22.16)
+
 ## [Version 0.22.15](https://github.com/saojs/sao/releases/tag/v0.22.15) (2018-3-20)
 
 ### New features
