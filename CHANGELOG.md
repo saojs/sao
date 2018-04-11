@@ -1,3 +1,11 @@
+## [Version 0.22.17](https://github.com/saojs/sao/releases/tag/v0.22.17) (2018-4-11)
+
+### Bug fixes
+
+- Make yarn-install happy, fixes [#88](https://github.com/saojs/sao/issues/88): [`f444027`](https://github.com/saojs/sao/commit/f444027)
+
+[...full changes](https://github.com/saojs/sao/compare/v0.22.16...v0.22.17)
+
 ## [Version 0.22.16](https://github.com/saojs/sao/releases/tag/v0.22.16) (2018-4-9)
 
 ### Bug fixes
