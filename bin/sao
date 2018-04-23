@@ -130,5 +130,9 @@ defaultCommand
     desc: 'Show notifier when relevant template has updates',
     default: true
   })
+  .option('registry', {
+    desc: 'Specfic a custom npm registry to use',
+    type: 'string',
+  })
 
 cli.parse()
