@@ -132,7 +132,7 @@ defaultCommand
   })
   .option('registry', {
     desc: 'Specfic a custom npm registry to use',
-    type: 'string',
+    type: 'string'
   })
 
 cli.parse()
