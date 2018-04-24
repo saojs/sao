@@ -82,12 +82,12 @@ const defaultCommand = cli.command('*', 'Generate a new project', (input, flags)
   return sao(options)
     .catch(err => {
       spinner.stop()
-      if (err.name === 'SAOError') {
-        log.error(err.message)
-      } else if (err.name === 'HTTPError') {
-        log.error(`${err.statusMessage}: ${err.host}${err.path}`)
-      } else {
-        log.error(err.stack)
+      switch (err.name) {
+        case 'SAOError': log.error(err.message)
+          break
+        case 'HTTPError': log.error(`${err.statusMessage}: ${err.host}${err.path}`)
+          break
+        default: log.error(err.stack)
       }
       process.exit(1)
     })
