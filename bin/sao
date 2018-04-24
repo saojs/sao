@@ -118,12 +118,11 @@ defaultCommand
     type: 'boolean'
   })
   .option('templates', {
-    alias: 'l',
     desc: 'Show installed templates',
     type: 'boolean'
   })
   .option('force-npm', {
-    alias: 'f',
+    alias: 'npm',
     desc: 'Always use npm^5 instead of yarn to install templates and dependencies',
     type: 'boolean'
   })
