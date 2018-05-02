@@ -54,6 +54,11 @@
     "xo": "^0.18.0"
   },
   "xo": {
-    "extends": "rem"
+    "extends": "rem",
+    "envs": ["jest"],
+    "rules": {
+      "unicorn/filename-case": "off",
+      "no-await-in-loop": "off"
+    }
   }
 }
