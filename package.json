@@ -1,6 +1,6 @@
 {
   "name": "sao",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Project scaffolding for humans.",
   "repository": {
     "url": "EGOIST/sao",
@@ -55,7 +55,9 @@
   },
   "xo": {
     "extends": "rem",
-    "envs": ["jest"],
+    "envs": [
+      "jest"
+    ],
     "rules": {
       "unicorn/filename-case": "off",
       "no-await-in-loop": "off"
