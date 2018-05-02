@@ -3,12 +3,10 @@
 To install it globally:
 
 ```bash
-npm i -g sao
+yarn global add sao@next
+# or npm
+npm i -g sao@next
 ```
-
-::: danger
-For now, install `sao-next` instead since it's WIP.
-:::
 
 ## Run a generator
 
