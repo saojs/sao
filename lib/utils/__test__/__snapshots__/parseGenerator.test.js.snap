@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`git: egoist/poi 1`] = `
+Object {
+  "generator": undefined,
+  "name": "egoist/poi",
+  "repo": "poi",
+  "type": "git",
+  "user": "egoist",
+  "version": undefined,
+}
+`;
+
+exports[`git: egoist/poi:foo:bar 1`] = `
+Object {
+  "generator": Array [
+    "foo",
+    "bar",
+  ],
+  "name": "egoist/poi",
+  "repo": "poi",
+  "type": "git",
+  "user": "egoist",
+  "version": undefined,
+}
+`;
+
+exports[`git: gitlab:egoist/repo 1`] = `
+Object {
+  "generator": undefined,
+  "name": "gitlab:egoist/repo",
+  "repo": "repo",
+  "type": "git",
+  "user": "gitlab:egoist",
+  "version": undefined,
+}
+`;
+
+exports[`local: ./foo 1`] = `
+Object {
+  "generator": undefined,
+  "name": "./foo",
+  "path": "./foo",
+  "type": "local",
+}
+`;
+
+exports[`local: ./foo:foo:bar:baz 1`] = `
+Object {
+  "generator": Array [
+    "foo",
+    "bar",
+    "baz",
+  ],
+  "name": "./foo",
+  "path": "./foo",
+  "type": "local",
+}
+`;
+
+exports[`local: /foo:hehehehe:as 1`] = `
+Object {
+  "generator": Array [
+    "hehehehe",
+    "as",
+  ],
+  "name": "/foo",
+  "path": "/foo",
+  "type": "local",
+}
+`;
+
+exports[`npm: foo 1`] = `
+Object {
+  "generator": undefined,
+  "module": "sao-foo",
+  "name": "sao-foo",
+  "type": "npm",
+}
+`;
+
+exports[`npm: foo:hehe 1`] = `
+Object {
+  "generator": Array [
+    "hehe",
+  ],
+  "module": "sao-foo",
+  "name": "sao-foo",
+  "type": "npm",
+}
+`;
+
+exports[`npm: npm:haha:bar 1`] = `
+Object {
+  "generator": Array [
+    "bar",
+  ],
+  "module": "haha",
+  "name": "haha",
+  "type": "npm",
+}
+`;
+
+exports[`npm: npm:hehe 1`] = `
+Object {
+  "generator": undefined,
+  "module": "hehe",
+  "name": "hehe",
+  "type": "npm",
+}
+`;

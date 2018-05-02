@@ -1,0 +1,59 @@
+{
+  "name": "sao",
+  "version": "0.0.0",
+  "description": "Project scaffolding for humans.",
+  "repository": {
+    "url": "EGOIST/sao",
+    "type": "git"
+  },
+  "bin": "bin/sao.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "publishConfig": {
+    "tag": "next"
+  },
+  "scripts": {
+    "test": "npm run lint && echo 'no tests!'",
+    "lint": "xo"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "EGOIST <0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cac": "^5.0.10",
+    "chalk": "^2.4.0",
+    "conf": "^1.4.0",
+    "download-git-repo": "^1.0.2",
+    "fast-glob": "^2.2.0",
+    "git-config-path": "^1.0.1",
+    "inquirer": "^5.2.0",
+    "install-packages": "^0.2.1",
+    "jstransformer": "^1.0.0",
+    "jstransformer-ejs": "^0.2.0",
+    "jstransformer-handlebars": "^1.1.0",
+    "majo": "^0.6.2",
+    "micromatch": "^3.1.10",
+    "ora": "^2.0.0",
+    "parse-git-config": "^2.0.2",
+    "parse-package-name": "^0.1.0",
+    "resolve": "^1.7.1",
+    "update-notifier": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^0.0.41",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.6",
+    "eslint-config-rem": "^3.0.0",
+    "jest": "^22.4.3",
+    "vuepress": "^0.8.4",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem"
+  }
+}
