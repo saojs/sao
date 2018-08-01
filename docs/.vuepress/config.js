@@ -9,16 +9,17 @@ module.exports = {
     nav: [
       {
         text: 'Guide',
-        link: '/guide/getting-started'
+        link: '/guide/introduction'
       }
     ],
     sidebar: [
       {
         title: 'Guide',
         children: [
+          '/guide/introduction',
           '/guide/getting-started',
-          '/guide/create-a-generator',
-          '/guide/share-your-generator',
+          '/guide/creating-a-generator',
+          '/guide/sharing-your-generator',
           '/guide/saofile',
           '/guide/the-sao-instance',
           '/guide/migrate-from-v0'

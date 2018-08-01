@@ -1,29 +1,37 @@
 # Getting Started
 
-To install it globally:
+## Installation
+
+SAO is a CLI library writen in JavaScript, so you can install it from npm:
 
 ```bash
-yarn global add sao@next
-# or npm
-npm i -g sao@next
+npm i -g sao
 ```
 
-## Run a generator
+Alternatively, a lot of you may use Yarn instead:
+
+```bash
+yarn global add sao
+```
+
+Then try the command `sao -v` in your terminal, if everything works fine you'd see a version number.
+
+## Using a generator
 
 ```bash
 sao nm my-project
 ```
 
-By running this command, SAO will install `sao-nm` in `~/.sao/packages` and generate files into `my-project` directory.
+By running this command, SAO will install a generator which is [sao-nm](https://npm.im/sao-nm) from npm in `~/.sao/packages` and use it to generate files into `my-project` directory.
 
 If you want it to generate into current directoy, just omit the second argument: `sao nm`.
 
 A generator could be either:
 
-- __Local path__, e.g. `sao ./path/to/my-generator`
+- __Local directory__, e.g. `sao ./path/to/my-generator`
 - __An npm package__, e.g. `sao react` will be package `sao-react`.
-  - To use a package that does not follow the `sao-*` naming convention, just prefix the name like this: `sao npm:foo`, then it will use the `foo` package instead of `sao-foo`.
-- __A git repository__, e.g. `sao egoist/sao-nm` will use `githb.com/egoist/sao-nm`, you can use follwing prefixes for other git hosts:
+  - To use an npm package that does not follow the `sao-*` naming convention, just prefix the name like this: `sao npm:foo`, then it will use the `foo` package instead of `sao-foo`.
+- __A git repository__, e.g. `sao egoist/sao-nm` will use `github.com/egoist/sao-nm`, you can use following prefixes for other git hosts:
   - `gitlab:` For GitLab.
   - `bitbucket:` For BitBucket.
 
@@ -36,5 +44,3 @@ sao nm:circleci
 ```
 
 Run the `circleci` generator of the `nm` generator to generate a `circle.yml` in current directory.
-
-Note that this is still an __exprimental__ feature.

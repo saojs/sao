@@ -1,10 +1,12 @@
 # SAO Config File
 
 ::: tip
-Make sure you have read the guide of how to [create a generator](./create-a-generator.md) first!
+Make sure you have read the guide for [creating a generator](./creating-a-generator.md) first!
 :::
 
-Each root option in the `saofile.js` can also be a function which can access [SAO instance](./the-sao-instance.md) via `this`.
+::: tip NOTE
+Each root property in the `saofile.js` can also be a function which can access [SAO instance](./the-sao-instance.md) via `this`.
+:::
 
 ## Prompts
 
@@ -146,7 +148,7 @@ Executed when all actions are completed.
 
 ```js
 module.exports = {
-  async complete() {
+  async completed() {
     await this.gitInit()
     await this.npmInstall()
     this.showCompleteTips()

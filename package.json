@@ -17,7 +17,8 @@
   },
   "scripts": {
     "test": "npm run lint && echo 'no tests!'",
-    "lint": "xo"
+    "lint": "xo",
+    "docs": "vuepress dev docs"
   },
   "engines": {
     "node": ">=8"
@@ -50,7 +51,7 @@
     "@types/node": "^9.6.6",
     "eslint-config-rem": "^3.0.0",
     "jest": "^22.4.3",
-    "vuepress": "^0.8.4",
+    "vuepress": "^0.13.0",
     "xo": "^0.18.0"
   },
   "xo": {

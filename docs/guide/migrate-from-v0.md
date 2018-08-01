@@ -26,5 +26,5 @@ New complete list of root options:
 - transformer
 - transformerOptions
 - actions
-- complete
-- generators (experimental)
+- completed
+- generators
