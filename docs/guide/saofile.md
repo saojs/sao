@@ -140,7 +140,7 @@ actions: [
 
 ## Hooks
 
-### `complete`
+### `completed`
 
 Executed when all actions are completed.
 
