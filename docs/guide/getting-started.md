@@ -5,14 +5,16 @@
 SAO is a CLI library writen in JavaScript, so you can install it from npm:
 
 ```bash
-npm i -g sao
+npm i -g sao@next
 ```
 
 Alternatively, a lot of you may use Yarn instead:
 
 ```bash
-yarn global add sao
+yarn global add sao@next
 ```
+
+Note that SAO 1.0 is currently in beta, it is published at `next` channel on npm registry.
 
 Then try the command `sao -v` in your terminal, if everything works fine you'd see a version number.
 
