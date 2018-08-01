@@ -1,7 +1,6 @@
 module.exports = {
   title: 'SAO',
   description: 'Project scaffolding for humans.',
-  serviceWorker: true,
   themeConfig: {
     repo: 'saojs/sao',
     docsDir: 'docs',
