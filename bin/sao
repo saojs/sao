@@ -134,7 +134,7 @@ defaultCommand
     desc: 'Specfic a custom npm registry to use',
     type: 'string'
   })
-  .option('quite', {
+  .option('quiet', {
     desc: 'disable logs',
     type: 'boolean',
     default: false
