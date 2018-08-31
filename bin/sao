@@ -135,7 +135,7 @@ defaultCommand
     type: 'string'
   })
   .option('quiet', {
-    desc: 'disable logs',
+    desc: 'Disable logs except error',
     type: 'boolean',
     default: false
   })
