@@ -9,7 +9,7 @@
 
 ## Motivation
 
-**yeoman** is too complex, while **vue-cli** is more than a scaffolding tool and lacks of some important features like *unit testing*, so I made **SAO**, basically it combines the powerful features of **yeoman** and the simplicity of **vue-cli**.
+**SAO** was made because **yeoman**, while powerful, is too complex. **vue-cli**, on the other hand, is more than a scaffolding tool and lacks some important features like *unit testing*. **SAO** combines the powerful core features of **yeoman** with the simplicity of **vue-cli** into a single application.
 
 **SAO** is compatible with:
 
