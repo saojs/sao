@@ -14,7 +14,8 @@ cli
       const options = Object.assign(
         {
           generator: input[0],
-          outDir: input[1] || '.'
+          outDir: input[1] || '.',
+          updateCheck: true
         },
         flags
       )

@@ -1,6 +1,6 @@
 {
   "name": "sao",
-  "version": "0.0.0-managed-by-semantic-release",
+  "version": "0.0.0",
   "description": "Futuristic scaffolding tool.",
   "repository": {
     "url": "https://github.com/saojs/sao.git",
@@ -38,7 +38,9 @@
     "parse-package-name": "^0.1.0",
     "resolve-from": "^4.0.0",
     "strip-ansi": "^5.0.0",
-    "wcwidth": "^1.0.1"
+    "update-notifier": "^2.5.0",
+    "wcwidth": "^1.0.1",
+    "yarn-global": "^1.1.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
