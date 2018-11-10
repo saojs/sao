@@ -1,7 +1,7 @@
 {
   "name": "sao",
   "version": "0.0.0",
-  "description": "Futuristic scaffolding tool.",
+  "description": "Futuristic scaffolding tool ⚔",
   "repository": {
     "url": "https://github.com/saojs/sao.git",
     "type": "git"
@@ -82,5 +82,18 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "keywords": [
+    "sao",
+    "generator",
+    "egoist",
+    "yeoman",
+    "template",
+    "scaffold",
+    "automation",
+    "kirito",
+    "simple",
+    "easy",
+    "workflow"
+  ]
 }
