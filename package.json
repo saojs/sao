@@ -1,6 +1,6 @@
 {
   "name": "sao",
-  "version": "0.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Futuristic scaffolding tool ⚔",
   "repository": {
     "url": "https://github.com/saojs/sao.git",
