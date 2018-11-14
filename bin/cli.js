@@ -37,6 +37,11 @@ cli
     type: 'boolean',
     alias: 'u'
   })
+  .option('clone', {
+    desc: 'Clone repository instead of archive download',
+    type: 'boolean',
+    alias: 'c'
+  })
   .option('yes', {
     desc: 'Use the default options',
     alias: 'y'
