@@ -56,6 +56,9 @@ cli
   .option('generators', {
     desc: 'Show installed generators',
     type: 'boolean'
+  .option('registry', {
+    desc: 'Use a custom registry for npm and yarn',
+    type: 'string'
   })
 
 cli.command('set-alias', 'Set an alias for a generator path', input => {
