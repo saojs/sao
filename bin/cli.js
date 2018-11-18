@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const cac = require('cac').default
 const SAOError = require('../lib/SAOError')
+const getGenerators = require('../lib/utils/getGenerators')
+const printGenerators = require('../lib/utils/printGenerators')
 
 const cli = cac()
 
@@ -11,7 +13,7 @@ cli
       desc: 'Run a generator',
       alias: 'run'
     },
-    (input, flags) => {
+    async (input, flags) => {
       const options = Object.assign(
         {
           generator: input[0],
@@ -20,6 +22,11 @@ cli
         },
         flags
       )
+
+      if (options.generators) {
+        const generators = await getGenerators()
+        return printGenerators(generators)
+      }
 
       if (!options.generator) {
         return cli.showHelp()
@@ -45,6 +52,10 @@ cli
   .option('yes', {
     desc: 'Use the default options',
     alias: 'y'
+  })
+  .option('generators', {
+    desc: 'Show installed generators',
+    type: 'boolean'
   })
 
 cli.command('set-alias', 'Set an alias for a generator path', input => {
