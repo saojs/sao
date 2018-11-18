@@ -47,7 +47,7 @@ cli
     alias: 'y'
   })
   .option('registry', {
-    desc: 'override default registry used by npm or yarn',
+    desc: 'Use a custom registry for npm and yarn',
     type: 'string'
   })
 
