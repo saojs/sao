@@ -46,6 +46,10 @@ cli
     desc: 'Use the default options',
     alias: 'y'
   })
+  .option('registry', {
+    desc: 'Use a custom registry for npm and yarn',
+    type: 'string'
+  })
 
 cli.command('set-alias', 'Set an alias for a generator path', input => {
   const store = require('../lib/store')
