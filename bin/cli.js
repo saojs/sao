@@ -23,11 +23,6 @@ cli
         flags
       )
 
-      if (options.generators) {
-        const generators = await getGenerators()
-        return printGenerators(generators)
-      }
-
       if (!options.generator) {
         return cli.showHelp()
       }
@@ -52,10 +47,6 @@ cli
   .option('yes', {
     desc: 'Use the default options',
     alias: 'y'
-  })
-  .option('generators', {
-    desc: 'Show installed generators',
-    type: 'boolean'
   })
   .option('registry', {
     desc: 'Use a custom registry for npm and yarn',
@@ -82,6 +73,11 @@ cli.command('get-alias', 'Get the generator for an alias', input => {
   const { escapeDots } = require('../lib/utils/common')
 
   console.log(store.get(`alias.${escapeDots(input[0])}`))
+})
+
+cli.command('list-generators', 'List installed generators', async () => {
+  const generators = await getGenerators()
+  return printGenerators(generators)
 })
 
 cli.on('error', error => {
