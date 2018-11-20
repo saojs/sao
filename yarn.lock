@@ -3805,6 +3805,13 @@ is-binary-path@^1.0.0:
   dependencies:
     binary-extensions "^1.0.0"
 
+is-binary-path@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.0.0.tgz#0e61cea6974b24dda8bcc8366ce58a69265d1a36"
+  integrity sha1-DmHOppdLJN2ovMg2bOWKaSZdGjY=
+  dependencies:
+    binary-extensions "^1.0.0"
+
 is-buffer@^1.1.4, is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"

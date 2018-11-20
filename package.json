@@ -29,6 +29,7 @@
     "hash-sum": "^1.0.2",
     "ini": "^1.3.5",
     "inquirer": "^6.2.0",
+    "is-binary-path": "^2.0.0",
     "joycon": "^2.1.2",
     "jstransformer": "^1.0.0",
     "jstransformer-ejs": "^0.2.0",
