@@ -20,7 +20,7 @@
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cac": "^5.0.15",
+    "cac": "^6.0.1",
     "chalk": "^2.4.1",
     "conf": "^2.0.0",
     "cross-spawn": "^6.0.5",

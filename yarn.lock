@@ -1112,17 +1112,12 @@ byte-size@^4.0.3:
   resolved "https://registry.npmjs.org/byte-size/-/byte-size-4.0.4.tgz#29d381709f41aae0d89c631f1c81aec88cd40b23"
   integrity sha512-82RPeneC6nqCdSwCX2hZUz3JPOvN5at/nTEw/CMf05Smu3Hrpo9Psb7LjN+k+XndNArG1EY8L4+BM3aTM4BCvw==
 
-cac@^5.0.15:
-  version "5.0.15"
-  resolved "https://registry.npmjs.org/cac/-/cac-5.0.15.tgz#01fb2de24d8fc81050e4ec6ee1fe2b81003431ad"
-  integrity sha512-8jTquyS9whajPHyT34giTxj3dUtim/+g01/3A7nJ2YPlat9O5SjsQ0hynF3lZp0+Pe7f9dh571jyDYBM9gVFdw==
+cac@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/cac/-/cac-6.0.1.tgz#a0de49a3d64190534fefd907d214622edff30249"
+  integrity sha512-9pYdRwP5buE/OHLYF/RUT6iLEbQsBstI36uiVPf9jfiOokH5LyT7UZxIJvzhMnhHdEe9/FlypZzh1cbQAXj20A==
   dependencies:
-    chalk "^2.4.1"
-    joycon "^2.1.2"
     minimost "^1.2.0"
-    redent "^2.0.0"
-    string-width "^2.1.1"
-    text-table "^0.2.0"
 
 cacache@^10.0.4:
   version "10.0.4"
