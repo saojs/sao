@@ -169,11 +169,6 @@
     into-stream "^4.0.0"
     lodash "^4.17.4"
 
-"@types/minimist@^1.2.0":
-  version "1.2.0"
-  resolved "http://registry.npmjs.org/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
-  integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
-
 JSONStream@^1.0.4, JSONStream@^1.3.4:
   version "1.3.5"
   resolved "https://registry.npmjs.org/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -1112,12 +1107,12 @@ byte-size@^4.0.3:
   resolved "https://registry.npmjs.org/byte-size/-/byte-size-4.0.4.tgz#29d381709f41aae0d89c631f1c81aec88cd40b23"
   integrity sha512-82RPeneC6nqCdSwCX2hZUz3JPOvN5at/nTEw/CMf05Smu3Hrpo9Psb7LjN+k+XndNArG1EY8L4+BM3aTM4BCvw==
 
-cac@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/cac/-/cac-6.0.1.tgz#a0de49a3d64190534fefd907d214622edff30249"
-  integrity sha512-9pYdRwP5buE/OHLYF/RUT6iLEbQsBstI36uiVPf9jfiOokH5LyT7UZxIJvzhMnhHdEe9/FlypZzh1cbQAXj20A==
+cac@^6.1.3:
+  version "6.1.3"
+  resolved "https://registry.npmjs.org/cac/-/cac-6.1.3.tgz#30d3de5c255231288eb00040241c600e47af2a40"
+  integrity sha512-IxFpgHi/ZNCWifRlCjM/HE+nLjGadXNNnVdG3Bf6VxcxGUM9Ofoo6eKHZ+YwkP3WrXCLofWkDINZgxFH4+ng7Q==
   dependencies:
-    minimost "^1.2.0"
+    minimist "^1.2.0"
 
 cacache@^10.0.4:
   version "10.0.4"
@@ -5123,14 +5118,6 @@ minimist@~0.0.1:
   version "0.0.10"
   resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
   integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
-
-minimost@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/minimost/-/minimost-1.2.0.tgz#a37f91d60395fc003180d208ca9e0316bcc4e3a2"
-  integrity sha512-/+eWyOtXw41WIUV9rBgrXna11bxbqymebSeW2arsfp/MCGCwe+2czzsOueEtLZgH4xb4QXhje5H9MLCsCPibLA==
-  dependencies:
-    "@types/minimist" "^1.2.0"
-    minimist "^1.2.0"
 
 minipass@^2.2.1, minipass@^2.3.3, minipass@^2.3.4:
   version "2.3.5"

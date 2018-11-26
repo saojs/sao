@@ -16,10 +16,6 @@ cli
       flags
     )
 
-    if (!options.generator) {
-      return cli.showHelp()
-    }
-
     return require('../')(options)
       .run()
       .catch(err => {
