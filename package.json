@@ -33,14 +33,13 @@
     "joycon": "^2.1.2",
     "jstransformer": "^1.0.0",
     "jstransformer-ejs": "^0.2.0",
+    "log-update": "^2.3.0",
     "majo": "^0.6.2",
     "micromatch": "^3.1.10",
     "ora": "^3.0.0",
     "parse-package-name": "^0.1.0",
     "resolve-from": "^4.0.0",
-    "strip-ansi": "^5.0.0",
     "update-notifier": "^2.5.0",
-    "wcwidth": "^1.0.1",
     "yarn-global": "^1.1.0"
   },
   "devDependencies": {

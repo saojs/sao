@@ -23,7 +23,7 @@
 ## Quick Start
 
 ```bash
-yarn global add sao
+npm i -g sao
 
 # An official generator for creating a Node.js project
 # Generate from git repo

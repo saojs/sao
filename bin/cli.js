@@ -24,12 +24,13 @@ cli
   })
   .option(
     '--npm-client <client>',
-    `Use a specific npm client ('yarn' or 'npm')`
+    `Use a specific npm client ('yarn' | 'npm' | 'pnpm')`
   )
   .option('-u, --update', 'Update cached generator')
   .option('-c, --clone', 'Clone repository instead of archive download')
   .option('-y, --yes', 'Use the default options')
-  .option('--registry <registry>', 'Use a custom registry for npm and yarn')
+  .option('--registry <registry>', 'Use a custom registry for package manager')
+  .option('--debug', 'Show debug logs')
 
 cli
   .command('set-alias <name> <value>', 'Set an alias for a generator path')
