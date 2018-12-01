@@ -2,7 +2,7 @@
 const cac = require('cac')
 const pkg = require('../package')
 
-const cli = cac()
+const cli = cac('sao')
 
 cli
   .command('<generator> [outDir]', 'Run a generator')

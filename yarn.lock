@@ -1107,12 +1107,10 @@ byte-size@^4.0.3:
   resolved "https://registry.npmjs.org/byte-size/-/byte-size-4.0.4.tgz#29d381709f41aae0d89c631f1c81aec88cd40b23"
   integrity sha512-82RPeneC6nqCdSwCX2hZUz3JPOvN5at/nTEw/CMf05Smu3Hrpo9Psb7LjN+k+XndNArG1EY8L4+BM3aTM4BCvw==
 
-cac@^6.1.3:
-  version "6.1.3"
-  resolved "https://registry.npmjs.org/cac/-/cac-6.1.3.tgz#30d3de5c255231288eb00040241c600e47af2a40"
-  integrity sha512-IxFpgHi/ZNCWifRlCjM/HE+nLjGadXNNnVdG3Bf6VxcxGUM9Ofoo6eKHZ+YwkP3WrXCLofWkDINZgxFH4+ng7Q==
-  dependencies:
-    minimist "^1.2.0"
+cac@^6.3.8:
+  version "6.3.8"
+  resolved "https://registry.npmjs.org/cac/-/cac-6.3.8.tgz#b998bef470a72ae485b990380ddcbc4340ebc6e6"
+  integrity sha512-/Us1Vy9uE064H4T7KWairSW5Qv+CJP2wjqtKpTq+XjBoeOsxxCtImVnRupc2JOQUDd9+zyIV1Cu5ghTMvVF6KQ==
 
 cacache@^10.0.4:
   version "10.0.4"
