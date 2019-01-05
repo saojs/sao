@@ -27,7 +27,7 @@ npm i -g sao
 
 # An official generator for creating a Node.js project
 # Generate from git repo
-sao egoist/sao-nm my-module
+sao saojs/sao-nm my-module
 # Or from npm package (npm.im/sao-nm)
 sao nm my-module
 ```
