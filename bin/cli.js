@@ -30,6 +30,7 @@ cli
   .option('-c, --clone', 'Clone repository instead of archive download')
   .option('-y, --yes', 'Use the default options')
   .option('--registry <registry>', 'Use a custom registry for package manager')
+  .option('--answers <json>', 'Skip prompts and use provided answers directly')
   .option('--debug', 'Show debug logs')
 
 cli
