@@ -6,11 +6,6 @@ const store = require('../lib/store')
 
 const cli = cac('sao')
 
-// maybe hide this behind a debug flag??
-// cli.command('show', 'Show the config').action(flags => {
-//   console.log(JSON.stringify(store.get(), null, 2))
-// })
-
 cli
   .command('[generator] [outDir]', 'Run a generator')
   .action((generator, outDir, flags) => {
