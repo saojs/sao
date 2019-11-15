@@ -57,7 +57,7 @@ cli
       const outputPrompt = {
         type: 'input',
         name: 'outDir',
-        message: 'File path to template output',
+        message: 'Output project to (file path):',
         default: '.'
       }
       inquirer.prompt([generatorPrompt, outputPrompt]).then(answers => {
@@ -65,11 +65,12 @@ cli
         const options = {
           generator,
           outDir,
+          updateCheck: true,
           ...flags
         }
         return runGenerator(options)
       })
-    } else {
+    } else if (generator) {
       const options = Object.assign(
         {
           generator,
