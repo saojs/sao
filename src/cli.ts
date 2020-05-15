@@ -16,7 +16,7 @@ cli
       useDefaultPromptValues: flags.yes,
       ...flags,
     }
-    const { SAO, handleError } = await import('./')
+    const { SAO, handleError }: typeof import('./') = require('./')
     return new SAO(options).run().catch((err: Error) => {
       handleError(err)
     })
@@ -38,9 +38,11 @@ cli
 cli
   .command('set-alias <name> <value>', 'Set an alias for a generator path')
   .action(async (name, value) => {
-    const { store } = await import('./store')
-    const { escapeDots } = await import('./utils/common')
-    const { logger } = await import('./logger')
+    const { store }: typeof import('./store') = require('./store')
+    const {
+      escapeDots,
+    }: typeof import('./utils/common') = require('./utils/common')
+    const { logger }: typeof import('./logger') = require('./logger')
 
     store.set(`alias.${escapeDots(name)}`, value)
     logger.success(`Added alias '${name}'`)
@@ -49,8 +51,10 @@ cli
 cli
   .command('get-alias <name>', 'Get the generator for an alias')
   .action(async (name) => {
-    const { store } = await import('./store')
-    const { escapeDots } = await import('./utils/common')
+    const { store }: typeof import('./store') = require('./store')
+    const {
+      escapeDots,
+    }: typeof import('./utils/common') = require('./utils/common')
 
     console.log(store.get(`alias.${escapeDots(name)}`))
   })

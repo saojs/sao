@@ -6408,10 +6408,10 @@ tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-tsup@^1.4.7:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-1.4.7.tgz#d816af54f352142b13fe6137ea9b548c96258301"
-  integrity sha512-TRnGyLiwTadjTtwQFNmhzXtjKc2fk5t0tiYx5lE3MycMIRoZyASO1qkQhhVOxEpAaUFsfoLBwCr3wjakg+Yg5w==
+tsup@^1.4.8:
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/tsup/-/tsup-1.4.8.tgz#8f8d82e57b1aedc9658d470645a54de3bb87f08e"
+  integrity sha512-IyvdIZ/wYjrbExzRzsFNjaL6w8BhF6XUmGJA7egRMjyjyKFjTnsgZOAQ1RppEKOiY/oY3z2aKaKSGCCoPMVYXg==
   dependencies:
     joycon "^2.2.5"
     rollup "^2.10.0"

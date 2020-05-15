@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "test": "npm run lint && ava",
-    "build": "tsup src/index.ts src/cli.ts",
+    "build": "rm -rf dist && tsup src/index.ts src/cli.ts",
     "bundle": "yarn build --bundle",
     "lint": "echo TODO"
   },
@@ -57,7 +57,7 @@
     "prettier": "^2.0.5",
     "resolve-from": "^5.0.0",
     "semantic-release": "^17.0.7",
-    "tsup": "^1.4.7",
+    "tsup": "^1.4.8",
     "type-fest": "^0.13.1",
     "typescript": "^3.9.2",
     "update-notifier": "^4.1.0",
