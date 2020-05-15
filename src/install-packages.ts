@@ -116,10 +116,10 @@ export const installPackages = async ({
         logUpdate.clear()
         logUpdate.stderr.clear()
         logger.success(`Installed ${packageName}`)
+        resolve({ code, npmClient })
       } else {
-        throw new SAOError(`Failed to install ${packageName} in ${cwd}`)
+        reject(new SAOError(`Failed to install ${packageName} in ${cwd}`))
       }
-      resolve({ code, npmClient })
     })
 
     ps.on('error', reject)

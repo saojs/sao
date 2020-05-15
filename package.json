@@ -69,9 +69,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "yarn lint --fix",
-      "git add"
+    "*.ts": [
+      "yarn lint --fix"
     ]
   },
   "release": {
