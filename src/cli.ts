@@ -2,25 +2,14 @@
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import cac from 'cac'
-import { Options } from '.'
 
 const cli = cac('sao')
 
 cli
   .command('<generator> [outDir]', 'Run a generator')
-  .action(async (generator, outDir, flags) => {
-    const options: Options = {
-      generator,
-      outDir: outDir || '.',
-      updateCheck: true,
-      useDefaultPromptValues: flags.yes,
-      ...flags,
-    }
-    const { SAO, handleError }: typeof import('./') = require('./')
-    return new SAO(options).run().catch((err: Error) => {
-      handleError(err)
-    })
-  })
+  .action((generator, outDir, options) =>
+    import('./cmd/main').then((res) => res.main(generator, outDir, options))
+  )
   .option(
     '--npm-client <client>',
     `Use a specific npm client ('yarn' | 'npm' | 'pnpm')`
@@ -37,27 +26,13 @@ cli
 
 cli
   .command('set-alias <name> <value>', 'Set an alias for a generator path')
-  .action(async (name, value) => {
-    const { store }: typeof import('./store') = require('./store')
-    const {
-      escapeDots,
-    }: typeof import('./utils/common') = require('./utils/common')
-    const { logger }: typeof import('./logger') = require('./logger')
-
-    store.set(`alias.${escapeDots(name)}`, value)
-    logger.success(`Added alias '${name}'`)
-  })
+  .action((name, value) =>
+    import('./cmd/set-alias').then((res) => res.setAlias(name, value))
+  )
 
 cli
   .command('get-alias <name>', 'Get the generator for an alias')
-  .action(async (name) => {
-    const { store }: typeof import('./store') = require('./store')
-    const {
-      escapeDots,
-    }: typeof import('./utils/common') = require('./utils/common')
-
-    console.log(store.get(`alias.${escapeDots(name)}`))
-  })
+  .action((name) => import('./cmd/get-alias').then((res) => res.getAlias(name)))
 
 const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf8'))
 
