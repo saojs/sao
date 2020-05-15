@@ -1,16 +1,18 @@
-const spawn = require('cross-spawn')
-const logUpdate = require('log-update')
-const spinner = require('./spinner')
-const logger = require('./logger')
-const SAOError = require('./SAOError')
+import spawn from 'cross-spawn'
+import logUpdate from 'log-update'
+import { spinner } from './spinner'
+import { logger } from './logger'
+import { SAOError } from './error'
 
-let cachedNpmClient = null
+type NPM_CLIENT = 'npm' | 'yarn' | 'pnpm'
 
-function setNpmClient(npmClient) {
+let cachedNpmClient: NPM_CLIENT | null = null
+
+export function setNpmClient(npmClient: NPM_CLIENT) {
   cachedNpmClient = npmClient
 }
 
-function getNpmClient() {
+export function getNpmClient() {
   if (cachedNpmClient) {
     return cachedNpmClient
   }
@@ -24,15 +26,25 @@ function getNpmClient() {
   return cachedNpmClient
 }
 
-module.exports = async ({
+export interface InstallOptions {
+  cwd: string
+  npmClient?: NPM_CLIENT
+  installArgs?: string[]
+  packages?: string[]
+  saveDev?: boolean
+  registry?: string
+}
+
+export const installPackages = async ({
   cwd,
-  npmClient,
+  npmClient: _npmClient,
   installArgs,
   packages,
   saveDev,
-  registry
-}) => {
-  npmClient = npmClient || getNpmClient()
+  registry,
+}: InstallOptions) => {
+  const npmClient = _npmClient || getNpmClient()
+
   const packageName = packages ? packages.join(', ') : 'packages'
 
   return new Promise((resolve, reject) => {
@@ -61,18 +73,18 @@ module.exports = async ({
           FORCE_COLOR: true,
           /* eslint-disable camelcase */
           npm_config_color: 'always',
-          npm_config_progress: true
+          npm_config_progress: true,
           /* eslint-enable camelcase */
         },
         process.env
-      )
+      ),
     })
 
     let stdoutLogs = ''
     let stderrLogs = ''
 
     ps.stdout &&
-      ps.stdout.setEncoding('utf8').on('data', data => {
+      ps.stdout.setEncoding('utf8').on('data', (data) => {
         if (npmClient === 'pnpm') {
           stdoutLogs = data
         } else {
@@ -84,7 +96,7 @@ module.exports = async ({
       })
 
     ps.stderr &&
-      ps.stderr.setEncoding('utf8').on('data', data => {
+      ps.stderr.setEncoding('utf8').on('data', (data) => {
         if (npmClient === 'pnpm') {
           stderrLogs = data
         } else {
@@ -97,7 +109,7 @@ module.exports = async ({
         spinner.start()
       })
 
-    ps.on('close', code => {
+    ps.on('close', (code) => {
       spinner.stop()
       // Clear output when succeeded
       if (code === 0) {
@@ -113,6 +125,3 @@ module.exports = async ({
     ps.on('error', reject)
   })
 }
-
-module.exports.getNpmClient = getNpmClient
-module.exports.setNpmClient = setNpmClient

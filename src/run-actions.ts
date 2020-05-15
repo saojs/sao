@@ -1,16 +1,24 @@
-const path = require('path')
-const majo = require('majo')
-const matcher = require('micromatch')
-const { glob, fs } = require('majo')
-const isBinaryPath = require('is-binary-path')
-const logger = require('./logger')
-const getGlobPatterns = require('./utils/getGlobPatterns')
+import path from 'path'
+import matcher from 'micromatch'
+import { glob, majo, remove } from 'majo'
+import ejs from 'ejs'
+import isBinaryPath from 'is-binary-path'
+import { logger } from './logger'
+import { getGlobPatterns } from './utils/get-glob-patterns'
+import { GeneratorConfig } from './generator-config'
+import { GeneratorContext } from './generator-context'
+import { move } from './utils/fs'
 
-module.exports = async (config, context) => {
+export const runActions = async (
+  config: GeneratorConfig,
+  context: GeneratorContext
+) => {
   const actions =
     typeof config.actions === 'function'
       ? await config.actions.call(context, context)
       : config.actions
+
+  if (!actions) return
 
   for (const action of actions) {
     logger.debug('Running action:', action)
@@ -20,7 +28,7 @@ module.exports = async (config, context) => {
         baseDir: path.resolve(
           context.generator.path,
           action.templateDir || config.templateDir || 'template'
-        )
+        ),
       })
 
       if (action.filters) {
@@ -49,7 +57,7 @@ module.exports = async (config, context) => {
           let fileList = Object.keys(stream.files)
 
           // Exclude binary path
-          fileList = fileList.filter(fp => !isBinaryPath(fp))
+          fileList = fileList.filter((fp) => !isBinaryPath(fp))
 
           if (action.transformInclude) {
             fileList = matcher(fileList, action.transformInclude)
@@ -58,35 +66,25 @@ module.exports = async (config, context) => {
             fileList = matcher.not(fileList, action.transformExclude)
           }
 
-          fileList.forEach(relativePath => {
+          fileList.forEach((relativePath) => {
             const contents = files[relativePath].contents.toString()
-            const transformer = require('jstransformer')(
-              require(`jstransformer-${config.transformer || 'ejs'}`)
-            )
-            const templateData = action.templateData || config.templateData
+
+            const actionData = action.data && action.data.call(context, context)
             stream.writeContents(
               relativePath,
-              transformer.render(
+              ejs.render(
                 contents,
-                config.transformerOptions,
-                Object.assign(
-                  {},
-                  context.answers,
-                  typeof templateData === 'function'
-                    ? templateData.call(context, context)
-                    : templateData,
-                  {
-                    context
-                  }
-                )
-              ).body
+                Object.assign({}, context.answers, actionData, {
+                  context,
+                })
+              )
             )
           })
         })
       }
-      stream.on('write', (_, targetPath) => {
+      stream.onWrite = (_, targetPath) => {
         logger.fileAction('magenta', 'Created', targetPath)
-      })
+      }
       await stream.dest(context.outDir)
     } else if (action.type === 'modify' && action.handler) {
       const stream = majo()
@@ -94,7 +92,7 @@ module.exports = async (config, context) => {
       stream.use(async ({ files }) => {
         await Promise.all(
           // eslint-disable-next-line array-callback-return
-          Object.keys(files).map(async relativePath => {
+          Object.keys(files).map(async (relativePath) => {
             const isJson = relativePath.endsWith('.json')
             let contents = stream.fileContents(relativePath)
             if (isJson) {
@@ -116,43 +114,43 @@ module.exports = async (config, context) => {
       await stream.dest(context.outDir)
     } else if (action.type === 'move' && action.patterns) {
       await Promise.all(
-        Object.keys(action.patterns).map(async pattern => {
+        Object.keys(action.patterns).map(async (pattern) => {
           const files = await glob(pattern, {
             cwd: context.outDir,
             absolute: true,
-            onlyFiles: false
+            onlyFiles: false,
           })
           if (files.length > 1) {
             throw new Error('"move" pattern can only match one file!')
           } else if (files.length === 1) {
             const from = files[0]
             const to = path.join(context.outDir, action.patterns[pattern])
-            await fs.move(from, to, {
-              overwrite: true
+            await move(from, to, {
+              overwrite: true,
             })
             logger.fileMoveAction(from, to)
           }
         })
       )
     } else if (action.type === 'remove' && action.files) {
-      let patterns
-      if (typeof action.files === 'function') {
-        action.files = action.files(context.answers)
-      }
-      if (typeof action.files === 'string' || Array.isArray(action.files)) {
-        patterns = [].concat(action.files)
+      let patterns: string[] = []
+
+      if (typeof action.files === 'string') {
+        patterns = [action.files]
+      } else if (Array.isArray(action.files)) {
+        patterns = action.files
       } else if (typeof action.files === 'object') {
-        patterns = getGlobPatterns(action.files, context.answers)
+        patterns = getGlobPatterns(action.files, context.data)
       }
       const files = await glob(patterns, {
         cwd: context.outDir,
         absolute: true,
-        onlyFiles: false
+        onlyFiles: false,
       })
       await Promise.all(
-        files.map(file => {
+        files.map((file) => {
           logger.fileAction('red', 'Removed', file)
-          return fs.remove(file)
+          return remove(file)
         })
       )
     }

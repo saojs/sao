@@ -1,10 +1,20 @@
-const path = require('path')
-const updateNotifier = require('update-notifier')
-const chalk = require('chalk')
-const yarnGlobal = require('yarn-global')
-const logger = require('./logger')
+import path from 'path'
+import fs from 'fs'
+import updateNotifier from 'update-notifier'
+import chalk from 'chalk'
+import yarnGlobal from 'yarn-global'
+import { logger } from './logger'
+import { ParsedGenerator } from './parse-generator'
 
-module.exports = ({ generator, checkGenerator, showNotifier }) => {
+export const updateCheck = ({
+  generator,
+  checkGenerator,
+  showNotifier,
+}: {
+  generator: ParsedGenerator
+  checkGenerator: boolean
+  showNotifier: boolean
+}) => {
   performSelfUpdateCheck()
   if (checkGenerator) {
     performGeneratorUpdateCheck(generator, showNotifier)
@@ -12,16 +22,17 @@ module.exports = ({ generator, checkGenerator, showNotifier }) => {
 }
 
 function performSelfUpdateCheck() {
-  const pkg = require('../package')
+  const pkg = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
+  )
 
   const notifier = updateNotifier({ pkg })
 
   if (notifier.update) {
     process.on('exit', () => {
+      if (!notifier.update) return
       logger.warn(
-        `Your current version of SAO is out of date. The latest version is "${
-          notifier.update.latest
-        }", while you're on "${notifier.update.current}".`
+        `Your current version of SAO is out of date. The latest version is "${notifier.update.latest}", while you're on "${notifier.update.current}".`
       )
       const isPnpm = __dirname.includes('/pnpm-global/')
       const isYarn = !isPnpm && yarnGlobal.hasDependency('sao')
@@ -36,17 +47,19 @@ function performSelfUpdateCheck() {
   }
 }
 
-function performGeneratorUpdateCheck(generator, showNotifier) {
+function performGeneratorUpdateCheck(
+  generator: ParsedGenerator,
+  showNotifier: boolean
+) {
   const pkg = require(path.join(generator.path, 'package.json'))
 
   const notifier = updateNotifier({ pkg })
 
   if (notifier.update && showNotifier) {
     process.on('exit', () => {
+      if (!notifier.update) return
       logger.warn(
-        `The generator you were running is out of date. The latest version is "${
-          notifier.update.latest
-        }", while you're on "${notifier.update.current}".`
+        `The generator you were running is out of date. The latest version is "${notifier.update.latest}", while you're on "${notifier.update.current}".`
       )
 
       logger.tip(

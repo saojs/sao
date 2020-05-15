@@ -1,6 +1,7 @@
-const path = require('path')
+import path from 'path'
+import { GeneratorConfig } from './generator-config'
 
-module.exports = {
+export const defautSaoFile: GeneratorConfig = {
   templateDir: '.',
   actions: [
     {
