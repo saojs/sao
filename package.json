@@ -11,7 +11,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "!**/__test__/**"
+    "!**/*.test.ts"
   ],
   "scripts": {
     "test": "npm run lint && jest",
