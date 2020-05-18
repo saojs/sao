@@ -11,7 +11,7 @@ export class SAOError extends Error {
   }
 }
 
-export function handleError(error: Error | SAOError) {
+export function handleError(error: Error | SAOError): void {
   spinner.stop()
   if (error instanceof SAOError) {
     if (error.cmdOutput) {
@@ -21,5 +21,5 @@ export function handleError(error: Error | SAOError) {
   } else {
     logger.error(error.stack)
   }
-  process.exit(1) // eslint-disable-line unicorn/no-process-exit
+  process.exit(1)
 }

@@ -1,1 +1,1 @@
-export const escapeDots = (v: string) => v.replace(/\./g, '\\.')
+export const escapeDots = (v: string): string => v.replace(/\./g, '\\.')

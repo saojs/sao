@@ -12,7 +12,7 @@ export const defautSaoFile: GeneratorConfig = {
   async completed() {
     await this.gitInit()
     const pkgPath = path.join(this.outDir, 'package.json')
-    if (await this.fs.pathExists(pkgPath)) {
+    if (await this.pathExists(pkgPath)) {
       await this.npmInstall()
     }
     this.showProjectTips()

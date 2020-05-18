@@ -8,7 +8,7 @@ import { prompt } from './utils/prompt'
 export const runPrompts = async (
   config: GeneratorConfig,
   context: GeneratorContext
-) => {
+): Promise<void> => {
   const prompts =
     typeof config.prompts === 'function'
       ? await config.prompts.call(context, context)

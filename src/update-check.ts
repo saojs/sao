@@ -6,22 +6,7 @@ import yarnGlobal from 'yarn-global'
 import { logger } from './logger'
 import { ParsedGenerator } from './parse-generator'
 
-export const updateCheck = ({
-  generator,
-  checkGenerator,
-  showNotifier,
-}: {
-  generator: ParsedGenerator
-  checkGenerator: boolean
-  showNotifier: boolean
-}) => {
-  performSelfUpdateCheck()
-  if (checkGenerator) {
-    performGeneratorUpdateCheck(generator, showNotifier)
-  }
-}
-
-function performSelfUpdateCheck() {
+function performSelfUpdateCheck(): void {
   const pkg = JSON.parse(
     fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
   )
@@ -50,7 +35,8 @@ function performSelfUpdateCheck() {
 function performGeneratorUpdateCheck(
   generator: ParsedGenerator,
   showNotifier: boolean
-) {
+): void {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const pkg = require(path.join(generator.path, 'package.json'))
 
   const notifier = updateNotifier({ pkg })
@@ -70,3 +56,20 @@ function performGeneratorUpdateCheck(
     })
   }
 }
+
+
+export const updateCheck = ({
+  generator,
+  checkGenerator,
+  showNotifier,
+}: {
+  generator: ParsedGenerator
+  checkGenerator: boolean
+  showNotifier: boolean
+}): void => {
+  performSelfUpdateCheck()
+  if (checkGenerator) {
+    performGeneratorUpdateCheck(generator, showNotifier)
+  }
+}
+

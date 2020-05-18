@@ -1,4 +1,4 @@
- export const evaluate = (exp: string, data: any) => {
+ export const evaluate = (exp: string, data: any): any => {
   /* eslint-disable no-new-func */
   const fn = new Function('data', `with (data) { return ${exp} }`)
   try {

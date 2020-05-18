@@ -11,7 +11,7 @@ export interface GitUser {
 
 let gitUser: GitUser | null = null
 
-export const getGitUser = (mock?: boolean) => {
+export const getGitUser = (mock?: boolean): GitUser => {
   if (gitUser) return gitUser
 
   if (mock) {

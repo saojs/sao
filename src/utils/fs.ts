@@ -3,7 +3,7 @@ import move from 'move-file'
 
 export { ensureDir, remove, outputFile } from 'majo'
 
-export const pathExists = async (path: string) => {
+export const pathExists = async (path: string): Promise<boolean> => {
   try {
     await fs.promises.access(path)
     return true

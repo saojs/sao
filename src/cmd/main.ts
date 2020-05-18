@@ -1,6 +1,14 @@
 import { Options, SAO, handleError } from '..'
 
-export const main = async (generator: string, outDir: string, flags: any) => {
+type Flags = {
+  yes?: boolean
+}
+
+export const main = async (
+  generator: string,
+  outDir: string,
+  flags: Flags
+): Promise<void> => {
   const options: Options = {
     generator,
     outDir: outDir || '.',

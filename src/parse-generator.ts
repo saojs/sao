@@ -1,5 +1,6 @@
 import path from 'path'
 import sum from 'hash-sum'
+import parsePackageName from 'parse-package-name'
 import { REPOS_CACHE_PATH, PACKAGES_CACHE_PATH } from './paths'
 import { store } from './store'
 import { SAOError } from './error'
@@ -41,7 +42,7 @@ export type GeneratorPrefix = 'npm' | 'github' | 'gitlab' | 'bitbucket'
 export function parseGenerator(generator: string): ParsedGenerator {
   if (generator.startsWith('alias:')) {
     const alias = generator.slice(6)
-    const url = store.get(`alias.${escapeDots(alias)}`)
+    const url = store.get(`alias.${escapeDots(alias)}`) as string | undefined
     if (!url) {
       throw new SAOError(`Cannot find alias '${alias}'`)
     }
@@ -86,7 +87,7 @@ export function parseGenerator(generator: string): ParsedGenerator {
       0,
       hasSubGenerator ? generator.indexOf(':') : generator.length
     )
-    const parsed = require('parse-package-name')(slug)
+    const parsed = parsePackageName(slug)
     const hash = sum(`npm:${slug}`)
     return {
       type: 'npm',
@@ -108,7 +109,7 @@ export function parseGenerator(generator: string): ParsedGenerator {
     repo,
     version,
     subGenerator,
-  ] = /([^/]+)\/([^#:]+)(?:#(.+))?(?::(.+))?$/.exec(generator)!
+  ] = /([^/]+)\/([^#:]+)(?:#(.+))?(?::(.+))?$/.exec(generator) || []
   const hash = sum({
     type: 'repo',
     prefix,

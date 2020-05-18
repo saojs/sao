@@ -17,12 +17,12 @@ export class Logger {
     )
   }
 
-  setOptions(options: Options) {
+  setOptions(options: Options): void {
     Object.assign(this.options, options)
   }
 
   // level: 4
-  debug(...args: any[]) {
+  debug(...args: any[]): void {
     if (this.options.logLevel < 4) {
       return
     }
@@ -31,7 +31,7 @@ export class Logger {
   }
 
   // level: 2
-  warn(...args: any[]) {
+  warn(...args: any[]): void {
     if (this.options.logLevel < 2) {
       return
     }
@@ -39,7 +39,7 @@ export class Logger {
   }
 
   // level: 1
-  error(...args: any[]) {
+  error(...args: any[]): void {
     if (this.options.logLevel < 1) {
       return
     }
@@ -48,27 +48,27 @@ export class Logger {
   }
 
   // level: 3
-  success(...args: any[]) {
+  success(...args: any[]): void {
     this.status('green', 'success', ...args)
   }
 
   // level: 3
-  tip(...args: any[]) {
+  tip(...args: any[]): void {
     this.status('blue', 'tip', ...args)
   }
 
-  info(...args: any[]) {
+  info(...args: any[]): void {
     this.status('cyan', 'info', ...args)
   }
 
-  status(color: ColorType, label: string, ...args: any[]) {
+  status(color: ColorType, label: string, ...args: any[]): void {
     if (this.options.logLevel < 3) {
       return
     }
     console.log(colors[color](label), ...args)
   }
 
-  fileAction(color: ColorType, type: string, fp: string) {
+  fileAction(color: ColorType, type: string, fp: string): void {
     if (this.options.logLevel < 3) {
       return
     }
@@ -77,7 +77,7 @@ export class Logger {
     )
   }
 
-  fileMoveAction(from: string, to: string) {
+  fileMoveAction(from: string, to: string): void {
     if (this.options.logLevel < 3) {
       return
     }

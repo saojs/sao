@@ -114,9 +114,11 @@ export const loadGeneratorConfig = (
     stopDir: path.dirname(cwd),
   })
 
-export const generatorHasConfig = (cwd: string) => {
-  return joycon.resolve({
-    cwd,
-    stopDir: path.dirname(cwd),
-  })
+export const generatorHasConfig = (cwd: string): boolean => {
+  return Boolean(
+    joycon.resolve({
+      cwd,
+      stopDir: path.dirname(cwd),
+    })
+  )
 }

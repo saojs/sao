@@ -1,4 +1,4 @@
-export const renderSimpleTemplate = (template: string, data: any) => {
+export const renderSimpleTemplate = (template: string, data: any): string => {
   if (typeof template !== 'string') {
     throw new TypeError(
       `Expected a string in the first argument, got ${typeof template}`

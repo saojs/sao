@@ -8,23 +8,8 @@ import { RepoGenerator } from '../parse-generator'
 import { SAOError } from '../error'
 import { move } from './fs'
 
-export async function downloadRepo(
-  generator: RepoGenerator,
-  { clone, outDir }: { clone?: boolean; outDir: string }
-) {
-  const url = getUrl(generator, clone)
-  if (clone) {
-    const cmd = spawn.sync('git', ['clone', url, outDir, '--depth=1'])
-    if (cmd.status !== 0) {
-      throw new SAOError(`Failed to download repo: ${cmd.output}`)
-    }
-  } else {
-    await downloadFile(url, outDir, true)
-  }
-}
-
-function getUrl(generator: RepoGenerator, clone?: boolean) {
-  let url: string = ''
+function getUrl(generator: RepoGenerator, clone?: boolean): string {
+  let url = ''
 
   let origin =
     generator.prefix === 'github'
@@ -83,7 +68,7 @@ function getUrl(generator: RepoGenerator, clone?: boolean) {
   return url
 }
 
-async function downloadFile(url: string, outPath: string, extract: boolean) {
+async function downloadFile(url: string, outPath: string, extract: boolean): Promise<void> {
   const tempFile = path.join(os.tmpdir(), `sao-${Date.now()}`)
   const writer = fs.createWriteStream(tempFile)
   const reponse = await axios({ url, responseType: 'stream', method: 'GET' })
@@ -104,3 +89,20 @@ async function downloadFile(url: string, outPath: string, extract: boolean) {
     await move(tempFile, outPath)
   }
 }
+
+export async function downloadRepo(
+  generator: RepoGenerator,
+  { clone, outDir }: { clone?: boolean; outDir: string }
+): Promise<void> {
+  const url = getUrl(generator, clone)
+  if (clone) {
+    const cmd = spawn.sync('git', ['clone', url, outDir, '--depth=1'])
+    if (cmd.status !== 0) {
+      throw new SAOError(`Failed to download repo: ${cmd.output}`)
+    }
+  } else {
+    await downloadFile(url, outDir, true)
+  }
+}
+
+

@@ -12,7 +12,7 @@ import { move } from './utils/fs'
 export const runActions = async (
   config: GeneratorConfig,
   context: GeneratorContext
-) => {
+): Promise<void> => {
   const actions =
     typeof config.actions === 'function'
       ? await config.actions.call(context, context)
@@ -82,7 +82,7 @@ export const runActions = async (
           })
         })
       }
-      stream.onWrite = (_, targetPath) => {
+      stream.onWrite = (_, targetPath): void => {
         logger.fileAction('magenta', 'Created', targetPath)
       }
       await stream.dest(context.outDir)

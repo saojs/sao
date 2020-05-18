@@ -4,15 +4,15 @@ import { spinner } from './spinner'
 import { logger } from './logger'
 import { SAOError } from './error'
 
-type NPM_CLIENT = 'npm' | 'yarn' | 'pnpm'
+export type NPM_CLIENT = 'npm' | 'yarn' | 'pnpm'
 
 let cachedNpmClient: NPM_CLIENT | null = null
 
-export function setNpmClient(npmClient: NPM_CLIENT) {
+export function setNpmClient(npmClient: NPM_CLIENT): void {
   cachedNpmClient = npmClient
 }
 
-export function getNpmClient() {
+export function getNpmClient(): NPM_CLIENT {
   if (cachedNpmClient) {
     return cachedNpmClient
   }
@@ -42,7 +42,7 @@ export const installPackages = async ({
   packages,
   saveDev,
   registry,
-}: InstallOptions) => {
+}: InstallOptions): Promise<{ code: number }> => {
   const npmClient = _npmClient || getNpmClient()
 
   const packageName = packages ? packages.join(', ') : 'packages'
@@ -116,7 +116,7 @@ export const installPackages = async ({
         logUpdate.clear()
         logUpdate.stderr.clear()
         logger.success(`Installed ${packageName}`)
-        resolve({ code, npmClient })
+        resolve({ code })
       } else {
         reject(new SAOError(`Failed to install ${packageName} in ${cwd}`))
       }

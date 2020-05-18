@@ -35,7 +35,7 @@ interface EnquirerContext {
   state: any
 }
 
-export const prompt = async (prompts: Prompt[]) => {
+export const prompt = async (prompts: Prompt[]): Promise<void> => {
   const answers = await enquirer.prompt(
     // @ts-ignore
     prompts.map((prompt) => {
@@ -43,25 +43,25 @@ export const prompt = async (prompts: Prompt[]) => {
         type: prompt.type,
         message: prompt.message,
         name: prompt.name,
-        skip(this: EnquirerContext, _: string, value: string) {
+        skip(this: EnquirerContext, _: string, value: string): any {
           if (prompt.skip === undefined) {
             return false
           }
           return prompt.skip(this.state, value)
         },
-        validate(this: EnquirerContext) {
+        validate(this: EnquirerContext): any {
           if (prompt.validate === undefined) {
             return true
           }
           return prompt.validate(this.value, this.state)
         },
-        result(this: EnquirerContext, value: any) {
+        result(this: EnquirerContext, value: any): any {
           if (prompt.result === undefined) {
             return value
           }
           return prompt.result(value, this.state)
         },
-        initial(this: EnquirerContext) {
+        initial(this: EnquirerContext): any {
           if (prompt.default === undefined) {
             return
           }
@@ -70,7 +70,7 @@ export const prompt = async (prompts: Prompt[]) => {
           }
           return prompt.default
         },
-        format(this: EnquirerContext, value: any) {
+        format(this: EnquirerContext, value: any): any {
           if (prompt.format === undefined) {
             return value
           }

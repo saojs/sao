@@ -11,7 +11,9 @@ logger.debug('Store path:', storePath)
 
 try {
   mkdirSync(configDir)
-} catch(_) {}
+} catch(_) {
+  // noop
+}
 
 class Store {
   data: {[k: string]: any}
@@ -28,12 +30,12 @@ class Store {
     }
   }
 
-  set(key: string, value: any) {
+  set(key: string, value: any): void {
     dotProp.set(this.data, key, value)
     writeFileSync(storePath, JSON.stringify(this.data), 'utf8')
   }
 
-  get(key: string) {
+  get(key: string): any {
     return dotProp.get(this.data, key)
   }
 }
