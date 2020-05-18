@@ -64,7 +64,7 @@
     "resolve-from": "^5.0.0",
     "semantic-release": "^17.0.7",
     "ts-jest": "^26.0.0",
-    "tsup": "^1.4.8",
+    "tsup": "^1.4.15",
     "type-fest": "^0.13.1",
     "typescript": "^3.9.2",
     "update-notifier": "^4.1.0",
