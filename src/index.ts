@@ -1,21 +1,20 @@
 import path from 'path'
 import { SetRequired } from 'type-fest'
 import resolveFrom from 'resolve-from'
-import {
-  loadGeneratorConfig,
-  GeneratorConfig,
-} from './generator-config'
+import { loadGeneratorConfig, GeneratorConfig } from './generator-config'
 import { logger } from './logger'
 import { isLocalPath } from './utils/is-local-path'
 import { SAOError } from './error'
-import {
-  parseGenerator,
-  ParsedGenerator,
-} from './parse-generator'
+import { parseGenerator, ParsedGenerator } from './parse-generator'
 import { updateCheck } from './update-check'
 import { store } from './store'
-import { ensureRepo, ensurePackage, ensureLocal } from './utils/ensure-generator'
+import {
+  ensureRepo,
+  ensurePackage,
+  ensureLocal,
+} from './utils/ensure-generator'
 import { GeneratorContext } from './generator-context'
+import { defautSaoFile } from './default-saofile'
 
 export interface Options {
   outDir?: string
@@ -69,13 +68,19 @@ export class SAO {
     }
   }
 
+  async getGeneratorHelp(): Promise<string> {
+    const { config } = await this.getGenerator()
+    console.log(config)
+    return ''
+  }
+
   /**
-   * Run the generator.
+   * Get actual generator to run and its config
    */
-  async run(
+  async getGenerator(
     generator: ParsedGenerator = this.parsedGenerator,
     hasParent?: boolean
-  ): Promise<void> {
+  ): Promise<{ generator: ParsedGenerator; config: GeneratorConfig }> {
     if (generator.type === 'repo') {
       await ensureRepo(generator, {
         update: this.opts.update,
@@ -89,9 +94,8 @@ export class SAO {
     }
 
     const loaded = await loadGeneratorConfig(generator.path)
-    const config: GeneratorConfig = loaded.path
-      ? loaded.data
-      : require(path.join(__dirname, 'saofile.fallback.js'))
+    const config: GeneratorConfig =
+      loaded.path && loaded.data ? loaded.data : defautSaoFile
 
     // Only run following code for root generator
     if (!hasParent) {
@@ -118,15 +122,21 @@ export class SAO {
         generatorPath = isLocalPath(generatorPath)
           ? path.resolve(generator.path, generatorPath)
           : resolveFrom(generator.path, generatorPath)
-        return this.run(parseGenerator(generatorPath), true)
+        return this.getGenerator(parseGenerator(generatorPath), true)
       }
       throw new SAOError(`No such sub generator in generator ${generator.path}`)
     }
 
-    await this.runGenerator(generator, config)
+    return {
+      generator,
+      config,
+    }
   }
 
-  async runGenerator(generator: ParsedGenerator, config: GeneratorConfig): Promise<void> {
+  async runGenerator(
+    generator: ParsedGenerator,
+    config: GeneratorConfig
+  ): Promise<void> {
     if (config.description) {
       logger.status('green', 'Generator', config.description)
     }
@@ -162,5 +172,3 @@ export class SAO {
 }
 
 export { handleError } from './error'
-
-
