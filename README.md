@@ -1,3 +1,5 @@
+## ATTENTION: [I'm working on SAO v2](https://github.com/saojs/sao/pull/145) without an ETA, if you want to get it shipped faster, [please consider sponsoring me](https://github.com/sponsors/egoist).
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/8784712/47992262-650b1780-e127-11e8-9e58-6c75e22ad99f.png" width="150" />
 </p>
