@@ -63,8 +63,8 @@ export interface GeneratorConfig {
    */
   description?: string
   /**
-   * Check for npm generator updates
-   * Enabled by default
+   * Check updates for npm generators
+   * Defaults to `true`
    */
   updateCheck?: boolean
   /**
@@ -73,33 +73,50 @@ export interface GeneratorConfig {
    */
   transform?: boolean
   /**
-   * Custom data to use in template transformation
+   * Extra data to use in template transformation
    */
   data?: DataFunction
+  /**
+   * Use prompts to ask questions before generating project
+   */
   prompts?:
     | Prompt[]
     | ((
         this: GeneratorContext,
         ctx: GeneratorContext
       ) => Prompt[] | Promise<Prompt[]>)
+  /**
+   * Use actions to control how files are generated
+   */
   actions?:
     | Action[]
     | ((
         this: GeneratorContext,
         ctx: GeneratorContext
       ) => Action[] | Promise<Action[]>)
+  /**
+   * Directory to template folder
+   * Defaults to `./template` in your generator folder
+   */
   templateDir?: string
-  templateData?: {
-    [k: string]: any
-  }
+  /**
+   * Sub generator
+   */
   subGenerators?: Array<{
     name: string
     generator: string
   }>
+  /**
+   * Run some operations before starting
+   */
   prepare?: (
     this: GeneratorContext,
     ctx: GeneratorContext
   ) => Promise<void> | void
+  /**
+   * Run some operations when completed
+   * e.g. log some success message
+   */
   completed?: (
     this: GeneratorContext,
     ctx: GeneratorContext
