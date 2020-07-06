@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import updateNotifier from 'update-notifier'
-import chalk from 'chalk'
+import {colors} from './utils/colors'
 import yarnGlobal from 'yarn-global'
 import { logger } from './logger'
 import { ParsedGenerator } from './parse-generator'
@@ -22,7 +22,7 @@ function performSelfUpdateCheck(): void {
       const isPnpm = __dirname.includes('/pnpm-global/')
       const isYarn = !isPnpm && yarnGlobal.hasDependency('sao')
       logger.tip(
-        `To upgrade SAO, run the following command:\n${chalk.dim(
+        `To upgrade SAO, run the following command:\n${colors.dim(
           isYarn
             ? '$ yarn global add sao'
             : `$ ${isPnpm ? 'pnpm' : 'npm'} i -g sao`
@@ -49,7 +49,7 @@ function performGeneratorUpdateCheck(
       )
 
       logger.tip(
-        `To run the generator with an updated version, run the following command:\n${chalk.dim(
+        `To run the generator with an updated version, run the following command:\n${colors.dim(
           '$ sao ' + process.argv.slice(2).join(' ') + ' --update'
         )}`
       )

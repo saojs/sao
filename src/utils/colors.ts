@@ -1,7 +1,5 @@
-import colors from 'kleur'
+import colors, { Color } from 'chalk'
 
-export {
-  colors
-}
+export { colors }
 
-export type ColorType = keyof colors.Kleur
+export type ColorType = typeof Color
