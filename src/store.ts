@@ -1,4 +1,4 @@
-import {join} from 'path'
+import { join } from 'path'
 import envPaths from 'env-paths'
 import dotProp from 'dot-prop'
 import { logger } from './logger'
@@ -10,19 +10,19 @@ const storePath = join(configDir, 'config.json')
 logger.debug('Store path:', storePath)
 
 try {
-  mkdirSync(configDir)
-} catch(_) {
-  // noop
+  mkdirSync(configDir, { recursive: true })
+} catch (error) {
+  console.error(error)
 }
 
 class Store {
-  data: {[k: string]: any}
+  data: { [k: string]: any }
 
   constructor() {
     this.data = this.read()
   }
 
-  read(): {[k: string]: any} {
+  read(): { [k: string]: any } {
     try {
       return JSON.parse(readFileSync(storePath, 'utf8'))
     } catch (_) {
@@ -39,6 +39,5 @@ class Store {
     return dotProp.get(this.data, key)
   }
 }
-
 
 export const store = new Store()
