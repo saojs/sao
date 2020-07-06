@@ -629,10 +629,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@rollup/pluginutils@^3.0.10":
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.0.10.tgz#a659b9025920378494cd8f8c59fbf9b3a50d5f12"
-  integrity sha512-d44M7t+PjmMrASHbhgpSbVgtL6EFyX7J4mYxwQ/c5eoaE6N2VgCgEcWVzNnwycIloti+/MpwFr8qfw+nRw00sw==
+"@rollup/pluginutils@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.1.0.tgz#706b4524ee6dc8b103b3c995533e5ad680c02b9b"
+  integrity sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
   dependencies:
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
@@ -905,6 +905,11 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/parse-package-name@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@types/parse-package-name/-/parse-package-name-0.1.0.tgz#a4e54e3eef677d8b9d931b54b94ed77e8ae52a4f"
+  integrity sha512-+vF4M3Cd3Ec22Uwb+OKhDrSAcXQ5I6evRx+1letx4KzfzycU+AOEDHnCifus8In11i8iYNFXPfzg9HWTcC1h+Q==
+
 "@types/prettier@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.0.0.tgz#dc85454b953178cc6043df5208b9e949b54a3bc4"
@@ -988,6 +993,11 @@
     lodash "^4.17.15"
     semver "^7.3.2"
     tsutils "^3.17.1"
+
+"@zeit/ncc@^0.22.3":
+  version "0.22.3"
+  resolved "https://registry.yarnpkg.com/@zeit/ncc/-/ncc-0.22.3.tgz#fca6b86b4454ce7a7e1e7e755165ec06457f16cd"
+  integrity sha512-jnCLpLXWuw/PAiJiVbLjA8WBC0IJQbFeUwF4I9M+23MvIxTxk5pD4Q8byQBSPmHQjz5aBoA7AKAElQxMpjrCLQ==
 
 JSONStream@^1.0.4, JSONStream@^1.3.4, JSONStream@^1.3.5:
   version "1.3.5"
@@ -2733,10 +2743,10 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
-esbuild@^0.3.0:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.3.2.tgz#3f6bdfbf51b2e776bb57952691930097b3770705"
-  integrity sha512-sm5o2D/nHhXSrs2D4UySNeyjSxJlgxQ6Ze2Cy6OOIJqbuDd/u6sMtiSn243bAEiyyYzlazueeryrrWJJCkv8lA==
+esbuild@^0.5.3:
+  version "0.5.23"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.5.23.tgz#fd33da7330dbccb57ee8363f40742925e14ade2a"
+  integrity sha512-eakuhIFNHK6Zu+1nQ9x4xpA7rhdNEEP+eeL74j8kO1tXyewi/vUGTJul1lvXgMrERT4rjTSkBF7tcQoZViXF/Q==
 
 escape-goat@^2.0.0:
   version "2.1.1"
@@ -5419,6 +5429,13 @@ macos-release@^2.2.0:
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.3.0.tgz#eb1930b036c0800adebccd5f17bc4c12de8bb71f"
   integrity sha512-OHhSbtcviqMPt7yfw5ef5aghS2jzFVKEFyCJndQt2YpSQ9qRVSEv2axSJI1paVThEu+FFGs584h/1YhxjVqajA==
 
+magic-string@^0.22.4:
+  version "0.22.5"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.22.5.tgz#8e9cf5afddf44385c1da5bc2a6a0dbd10b03657e"
+  integrity sha512-oreip9rJZkzvA8Qzk9HFs8fZGF/u7H/gtrE8EN6RjKJ9kh2HlC+yQ2QezifqTZfGyiuAV0dRv5a+y/8gBb1m9w==
+  dependencies:
+    vlq "^0.2.2"
+
 majo@^0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/majo/-/majo-0.10.1.tgz#cb5422699d7fc27bc936f86cbf23c7408ade17db"
@@ -7403,25 +7420,32 @@ rimraf@^3.0.0, rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-rollup-plugin-dts@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-dts/-/rollup-plugin-dts-1.4.6.tgz#26e3da11ec647cfffee9658b63fa41d67e7840b9"
-  integrity sha512-1o5+eI97Ne8zXJrgdasn/xGi0xKuovCQwZRtPI2Lfl/c6qa9jQTFbn60NwOx3gWJ89K265/6kpDuahnBbplyWA==
+rollup-plugin-dts@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-dts/-/rollup-plugin-dts-1.4.7.tgz#6255147ac777314c0725a1efcb42df10fe282243"
+  integrity sha512-QkunbJ96yUNkW95k/Vd6SdTjCbWSG0rMVUtpHSCwfg078Z7vbDaBnfz/gkSqR5h8WFMxoccBT4aodHm6387Jvg==
   optionalDependencies:
     "@babel/code-frame" "^7.8.3"
 
-rollup-plugin-esbuild@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-1.4.1.tgz#b388ebd4cda1198208d7746feea7656d485019b0"
-  integrity sha512-gTzKtVo/OiOOe6pwRFHQCyCtEeYxcxLmjpqMiT4TnwXtPdF8RNP9c5wh/NZPztQydcMdEe1W+TO7poXwbLQekw==
+rollup-plugin-esbuild@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-2.1.0.tgz#8e12337c63a5b1144e0c5e8adf2f1568ad4d7d69"
+  integrity sha512-XYqmwk4X0SPEExgilARbre/PplhLtE3q6wiZtfgIbwxJOVGXWec1Bkcux7TFTHGX3TQozzqEASTsRJCt7py/5Q==
   dependencies:
-    "@rollup/pluginutils" "^3.0.10"
-    esbuild "^0.3.0"
+    "@rollup/pluginutils" "^3.1.0"
+    esbuild "^0.5.3"
 
-rollup@^2.10.0:
-  version "2.10.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.10.2.tgz#9adfcf8ab36861b5b0f8ca7b436f5866e3e9e200"
-  integrity sha512-tivFM8UXBlYOUqpBYD3pRktYpZvK/eiCQ190eYlrAyrpE/lzkyG2gbawroNdbwmzyUc7Y4eT297xfzv0BDh9qw==
+rollup-plugin-hashbang@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-hashbang/-/rollup-plugin-hashbang-2.2.2.tgz#971fc49b452e63f9dfdc75f79ae7256b3485e750"
+  integrity sha512-Yxw9ogeK3KncG1e4CvK0I0IKVBNeJP+DTZS3bExGTfGjw0WP1C7xxbY7LtRd8IKx4fFf53hz7XR1XG7UV6xqCw==
+  dependencies:
+    magic-string "^0.22.4"
+
+rollup@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.19.0.tgz#6484868882281552b0dc33aa5bc5b36a9c920452"
+  integrity sha512-nny5Vs4jwY3vbQAXgOyU4ZDZqLvMKm/umnsVry/demVL6ve8ke1XhdpYE0eiWencASmx/qFPw6pP8P7MLJl9XA==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -8416,16 +8440,6 @@ tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-tsup@^1.4.15:
-  version "1.4.15"
-  resolved "https://registry.yarnpkg.com/tsup/-/tsup-1.4.15.tgz#447ca7549a4773b11b94022edb0338c00d8afbb8"
-  integrity sha512-BAQLh8OS2/qkr8VJPRk5Ak6T0gR2tZLWKHlxR2m6P0Sgst3zB/Qu20OijFkM45Le4tWccGetw8hTD2m2xusEaQ==
-  dependencies:
-    joycon "^2.2.5"
-    rollup "^2.10.0"
-    rollup-plugin-dts "^1.4.6"
-    rollup-plugin-esbuild "^1.4.1"
-
 tsutils@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.17.1.tgz#ed719917f11ca0dee586272b2ac49e015a2dd759"
@@ -8744,6 +8758,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+vlq@^0.2.2:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/vlq/-/vlq-0.2.3.tgz#8f3e4328cf63b1540c0d67e1b2778386f8975b26"
+  integrity sha512-DRibZL6DsNhIgYQ+wNdWDL2SL3bKPlVrRiBqV5yuMm++op8W4kGFtaQfCs4KEJn0wBZcHVHJ3eoywX8983k1ow==
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
