@@ -35,7 +35,7 @@ interface EnquirerContext {
   state: any
 }
 
-export const prompt = async (prompts: Prompt[]): Promise<void> => {
+export const prompt = async (prompts: Prompt[]): Promise<{[k: string]: any}> => {
   const answers = await enquirer.prompt(
     // @ts-ignore
     prompts.map((prompt) => {
