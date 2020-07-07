@@ -1,4 +1,4 @@
-import enquirer from 'enquirer'
+import Enquirer from 'enquirer'
 
 export interface PromptState {
   answers: {
@@ -35,7 +35,30 @@ interface EnquirerContext {
   state: any
 }
 
-export const prompt = async (prompts: Prompt[]): Promise<{[k: string]: any}> => {
+export const prompt = async (
+  prompts: Prompt[],
+  userSuppliedAnswers?: string | boolean | { [k: string]: any }
+): Promise<{ [k: string]: any }> => {
+  const enquirer = new Enquirer()
+
+  if (typeof userSuppliedAnswers === 'string') {
+    userSuppliedAnswers = JSON.parse(userSuppliedAnswers)
+  }
+
+  enquirer.on('prompt', (prompt) => {
+    prompt.once('run', async () => {
+      if (
+        typeof userSuppliedAnswers === 'object' &&
+        prompt.name in userSuppliedAnswers
+      ) {
+        await prompt.keypress(String(userSuppliedAnswers[prompt.name]))
+        await prompt.submit()
+      } else if (userSuppliedAnswers === true) {
+        await prompt.submit()
+      }
+    })
+  })
+
   const answers = await enquirer.prompt(
     // @ts-ignore
     prompts.map((prompt) => {
@@ -65,7 +88,7 @@ export const prompt = async (prompts: Prompt[]): Promise<{[k: string]: any}> => 
           if (prompt.default === undefined) {
             return
           }
-          if (typeof prompt.default === 'function')  {
+          if (typeof prompt.default === 'function') {
             return prompt.default(this.state)
           }
           return prompt.default

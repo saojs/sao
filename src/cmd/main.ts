@@ -14,7 +14,7 @@ export const main = (cli: ReturnType<typeof cac>) => async (
     generator,
     outDir: outDir || '.',
     updateCheck: true,
-    useDefaultPromptValues: cli.options.yes,
+    answers: cli.options.yes ? true : cli.options.answers,
     ...cli.options,
   }
   try {

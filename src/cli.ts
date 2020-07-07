@@ -17,11 +17,11 @@ cli
   )
   .option('-u, --update', 'Update cached generator')
   .option('-c, --clone', 'Clone repository instead of archive download')
-  .option('-y, --yes', 'Use the default values for prompts')
+  .option('-y, --yes', 'Use the default value for all prompts')
   .option('--registry <registry>', 'Use a custom registry for package manager')
   .option(
     '--answers.* [value]',
-    'Skip specific prompt and use provided answer directly'
+    'Skip specific prompt and use provided answer instead'
   )
   .option('--debug', 'Show debug logs')
 

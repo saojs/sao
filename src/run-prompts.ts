@@ -26,18 +26,18 @@ export const runPrompts = async (
   }`
   const storedAnswers = store.get(STORED_ANSWERS_ID) || {}
 
-  const { mock, useDefaultPromptValues } = context.sao.opts
+  const { mock } = context.sao.opts
   if (!mock) {
     logger.debug('Reusing cached answers:', storedAnswers)
   }
 
-  if (useDefaultPromptValues) {
+  if (context.sao.opts.answers === true) {
     logger.warn(
       `The yes flag has been set. This will automatically answer default value to all questions, which may have security implications.`
     )
   }
 
-  const answers = await prompt(prompts)
+  const answers = await prompt(prompts, context.sao.opts.answers)
 
   logger.debug(`Retrived answers:`, answers)
 

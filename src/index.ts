@@ -32,8 +32,13 @@ export interface Options {
   updateCheck?: boolean
   /** Mock git info, prompts etc */
   mock?: boolean
-  /** Skip prompts and use their default values instead */
-  useDefaultPromptValues?: boolean | { [k: string]: any }
+  /**
+   * User-supplied answers
+   * `true` means using default answers for prompts
+   */
+  answers?: boolean | {
+    [k: string]: any
+  }
 }
 
 export class SAO {
@@ -147,9 +152,7 @@ export class SAO {
       await config.prepare.call(generatorContext, generatorContext)
     }
 
-    if (typeof this.opts.useDefaultPromptValues === 'object') {
-      generatorContext._answers = this.opts.useDefaultPromptValues
-    } else if (config.prompts) {
+    if (config.prompts) {
       const { runPrompts } = await import('./run-prompts')
       await runPrompts(config, generatorContext)
     } else {
