@@ -2,12 +2,12 @@ import resolveFrom from 'resolve-from'
 import { logger } from './logger'
 import { store } from './store'
 import { GeneratorConfig } from './generator-config'
-import { GeneratorContext } from './generator-context'
 import { prompt } from './utils/prompt'
+import { SAO } from '.'
 
 export const runPrompts = async (
   config: GeneratorConfig,
-  context: GeneratorContext
+  context: SAO
 ): Promise<void> => {
   const prompts =
     typeof config.prompts === 'function'
@@ -19,25 +19,25 @@ export const runPrompts = async (
     return
   }
 
-  const pkgPath = resolveFrom.silent(context.generator.path, './package.json')
+  const pkgPath = resolveFrom.silent(context.parsedGenerator.path, './package.json')
   const pkgVersion = pkgPath ? require(pkgPath).version : ''
   const STORED_ANSWERS_ID = `answers.${
-    context.generator.hash + '__npm__' + pkgVersion.replace(/\./g, '\\.')
+    context.parsedGenerator.hash + '__npm__' + pkgVersion.replace(/\./g, '\\.')
   }`
   const storedAnswers = store.get(STORED_ANSWERS_ID) || {}
 
-  const { mock } = context.sao.opts
+  const { mock } = context.opts
   if (!mock) {
     logger.debug('Reusing cached answers:', storedAnswers)
   }
 
-  if (context.sao.opts.answers === true) {
+  if (context.opts.answers === true) {
     logger.warn(
       `The yes flag has been set. This will automatically answer default value to all questions, which may have security implications.`
     )
   }
 
-  const answers = await prompt(prompts, context.sao.opts.answers)
+  const answers = await prompt(prompts, context.opts.answers)
 
   logger.debug(`Retrived answers:`, answers)
 

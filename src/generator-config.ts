@@ -1,7 +1,7 @@
 import path from 'path'
 import JoyCon from 'joycon'
-import { GeneratorContext } from './generator-context'
 import { Prompt } from './utils/prompt'
+import { SAO } from './'
 
 const joycon = new JoyCon({
   files: ['saofile.js', 'saofile.json'],
@@ -31,8 +31,8 @@ export interface AddAction {
 }
 
 type DataFunction = (
-  this: GeneratorContext,
-  ctx: GeneratorContext
+  this: SAO,
+  ctx: SAO
 ) => { [k: string]: any }
 
 export interface MoveAction {
@@ -82,8 +82,8 @@ export interface GeneratorConfig {
   prompts?:
     | Prompt[]
     | ((
-        this: GeneratorContext,
-        ctx: GeneratorContext
+        this: SAO,
+        ctx: SAO
       ) => Prompt[] | Promise<Prompt[]>)
   /**
    * Use actions to control how files are generated
@@ -91,8 +91,8 @@ export interface GeneratorConfig {
   actions?:
     | Action[]
     | ((
-        this: GeneratorContext,
-        ctx: GeneratorContext
+        this: SAO,
+        ctx: SAO
       ) => Action[] | Promise<Action[]>)
   /**
    * Directory to template folder
@@ -110,16 +110,16 @@ export interface GeneratorConfig {
    * Run some operations before starting
    */
   prepare?: (
-    this: GeneratorContext,
-    ctx: GeneratorContext
+    this: SAO,
+    ctx: SAO
   ) => Promise<void> | void
   /**
    * Run some operations when completed
    * e.g. log some success message
    */
   completed?: (
-    this: GeneratorContext,
-    ctx: GeneratorContext
+    this: SAO,
+    ctx: SAO
   ) => Promise<void> | void
 }
 

@@ -6,12 +6,12 @@ import isBinaryPath from 'is-binary-path'
 import { logger } from './logger'
 import { getGlobPatterns } from './utils/get-glob-patterns'
 import { GeneratorConfig } from './generator-config'
-import { GeneratorContext } from './generator-context'
 import { move } from './utils/fs'
+import { SAO } from './'
 
 export const runActions = async (
   config: GeneratorConfig,
-  context: GeneratorContext
+  context: SAO
 ): Promise<void> => {
   const actions =
     typeof config.actions === 'function'
@@ -26,7 +26,7 @@ export const runActions = async (
       const stream = majo()
       stream.source(['!**/node_modules/**'].concat(action.files), {
         baseDir: path.resolve(
-          context.generator.path,
+          context.parsedGenerator.path,
           action.templateDir || config.templateDir || 'template'
         ),
       })

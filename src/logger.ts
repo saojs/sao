@@ -3,22 +3,34 @@ import { colors, ColorType } from './utils/colors'
 
 interface Options {
   logLevel?: number
+  mock?: boolean
 }
 
 export class Logger {
   options: Required<Options>
+  lines: string[]
 
   constructor(options?: Options) {
     this.options = Object.assign(
       {
-        logLevel: 3
+        logLevel: 3,
+        mock: false,
       },
       options
     )
+    this.lines = []
   }
 
   setOptions(options: Options): void {
     Object.assign(this.options, options)
+  }
+
+  log(...args: any[]): void {
+    if (this.options.mock) {
+      this.lines.push(args.join(' '))
+    } else {
+      console.log(...args)
+    }
   }
 
   // level: 4
@@ -35,7 +47,7 @@ export class Logger {
     if (this.options.logLevel < 2) {
       return
     }
-    console.warn(colors.yellow('warning'), ...args)
+    this.log(colors.yellow('warning'), ...args)
   }
 
   // level: 1
@@ -44,7 +56,7 @@ export class Logger {
       return
     }
     process.exitCode = process.exitCode || 1
-    console.error(colors.red('error'), ...args)
+    this.log(colors.red('error'), ...args)
   }
 
   // level: 3
@@ -65,7 +77,7 @@ export class Logger {
     if (this.options.logLevel < 3) {
       return
     }
-    console.log(colors[color](label), ...args)
+    this.log(colors[color](label), ...args)
   }
 
   fileAction(color: ColorType, type: string, fp: string): void {

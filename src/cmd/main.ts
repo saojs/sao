@@ -23,8 +23,7 @@ export const main = (cli: ReturnType<typeof cac>) => async (
       const help = await sao.getGeneratorHelp()
       console.log(help)
     } else {
-      const { generator, config } = await sao.getGenerator()
-      await sao.runGenerator(generator, config)
+      await sao.run()
     }
   } catch (error) {
     handleError(error)

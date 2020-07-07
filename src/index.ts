@@ -1,6 +1,8 @@
 import path from 'path'
 import { SetRequired } from 'type-fest'
 import resolveFrom from 'resolve-from'
+import { glob } from 'majo'
+import spawn from 'cross-spawn'
 import { loadGeneratorConfig, GeneratorConfig } from './generator-config'
 import { logger } from './logger'
 import { isLocalPath } from './utils/is-local-path'
@@ -13,8 +15,17 @@ import {
   ensurePackage,
   ensureLocal,
 } from './utils/ensure-generator'
-import { GeneratorContext } from './generator-context'
 import { defautSaoFile } from './default-saofile'
+import { readFile, pathExists } from './utils/fs'
+import { spinner } from './spinner'
+import { colors } from './utils/colors'
+import { GitUser, getGitUser } from './utils/git-user'
+import {
+  NPM_CLIENT,
+  getNpmClient,
+  InstallOptions,
+  installPackages,
+} from './install-packages'
 
 export interface Options {
   outDir?: string
@@ -36,13 +47,24 @@ export interface Options {
    * User-supplied answers
    * `true` means using default answers for prompts
    */
-  answers?: boolean | {
-    [k: string]: any
-  }
+  answers?:
+    | boolean
+    | {
+        [k: string]: any
+      }
 }
+
+const EMPTY_ANSWERS = Symbol()
+const EMPTY_DATA = Symbol()
 
 export class SAO {
   opts: SetRequired<Options, 'outDir' | 'logLevel'>
+  spinner = spinner
+  colors = colors
+  logger = logger
+
+  _answers: { [k: string]: any } | symbol = EMPTY_ANSWERS
+  _data: { [k: string]: any } | symbol = EMPTY_DATA
 
   parsedGenerator: ParsedGenerator
 
@@ -61,7 +83,12 @@ export class SAO {
 
     logger.setOptions({
       logLevel: this.opts.logLevel,
+      mock: this.opts.mock,
     })
+
+    if (this.opts.mock && typeof this.opts.answers === 'undefined') {
+      this.opts.answers = true
+    }
 
     this.parsedGenerator = parseGenerator(this.opts.generator)
     // Sub generator can only be used in an existing
@@ -146,31 +173,142 @@ export class SAO {
       logger.status('green', 'Generator', config.description)
     }
 
-    const generatorContext = new GeneratorContext(this, generator)
-
     if (typeof config.prepare === 'function') {
-      await config.prepare.call(generatorContext, generatorContext)
+      await config.prepare.call(this, this)
     }
 
     if (config.prompts) {
       const { runPrompts } = await import('./run-prompts')
-      await runPrompts(config, generatorContext)
+      await runPrompts(config, this)
     } else {
-      generatorContext._answers = {}
+      this._answers = {}
     }
 
-    generatorContext._data = config.data
-      ? config.data.call(generatorContext, generatorContext)
+    this._data = config.data
+      ? config.data.call(this, this)
       : {}
 
     if (config.actions) {
       const { runActions } = await import('./run-actions')
-      await runActions(config, generatorContext)
+      await runActions(config, this)
     }
 
     if (!this.opts.mock && config.completed) {
-      await config.completed.call(generatorContext, generatorContext)
+      await config.completed.call(this, this)
     }
+  }
+
+  async run() {
+    const { generator, config } = await this.getGenerator()
+    await this.runGenerator(generator, config)
+  }
+
+  get answers(): any {
+    if (typeof this._answers === 'symbol') {
+      throw new SAOError(`You can't access \`.answers\` here`)
+    }
+    return this._answers
+  }
+
+  get data(): any {
+    if (typeof this._data === 'symbol') {
+      throw new SAOError(`You can't call \`.data\` here`)
+    }
+    return {
+      ...this.answers,
+      ...this._data,
+    }
+  }
+
+  get pkg(): any {
+    try {
+      return require(path.join(this.outDir, 'package.json'))
+    } catch (err) {
+      return {}
+    }
+  }
+
+  get gitUser(): GitUser {
+    return getGitUser(this.opts.mock)
+  }
+
+  get outFolder(): string {
+    return path.basename(this.opts.outDir)
+  }
+
+  get outDir(): string {
+    return this.opts.outDir
+  }
+
+  get npmClient(): NPM_CLIENT {
+    return getNpmClient()
+  }
+
+  gitInit(): void {
+    if (this.opts.mock) {
+      return
+    }
+
+    const ps = spawn.sync('git', ['init'], {
+      stdio: 'ignore',
+      cwd: this.outDir,
+    })
+    if (ps.status === 0) {
+      logger.success('Initialized empty Git repository')
+    } else {
+      logger.debug(`git init failed in ${this.outDir}`)
+    }
+  }
+
+  /**
+   * Run `npm install` in output directory
+   */
+  async npmInstall(opts?: InstallOptions): Promise<{ code: number }> {
+    if (this.opts.mock) {
+      return { code: 0 }
+    }
+
+    return installPackages(
+      Object.assign(
+        {
+          registry: this.opts.registry,
+          cwd: this.outDir,
+        },
+        opts
+      )
+    )
+  }
+
+  /**
+   * Display a success message
+   */
+  showProjectTips(): void {
+    spinner.stop() // Stop when necessary
+    logger.success(`Generated into ${colors.underline(this.outDir)}`)
+  }
+
+  createError(message: string): SAOError {
+    return new SAOError(message)
+  }
+
+  /**
+   * Get file list of output directory
+   */
+  async getOutputFiles() {
+    const files = await glob(['**/*', '!**/node_modules/**', '!**/.git/**'], {
+      cwd: this.opts.outDir,
+      dot: true,
+      onlyFiles: true,
+    })
+    return files.sort()
+  }
+
+  /**
+   * Read a file in output directory
+   * @param file file path
+   */
+  async readOutDir(file: string) {
+    return readFile(path.join(this.opts.outDir, file), 'utf8')
   }
 }
 
