@@ -67,9 +67,15 @@ export function parseGenerator(generator: string): ParsedGenerator {
 
   const GENERATOR_PREFIX_RE = /^(npm|github|bitbucket|gitlab):/
 
-  // Is a npm package name if there's no slash
-  if (!GENERATOR_PREFIX_RE.test(generator) && !generator.includes('/')) {
-    generator = `npm:sao-${generator}`
+  // Infer prefix for naked generate name (without prefix)
+  if (!GENERATOR_PREFIX_RE.test(generator)) {
+    if (generator.startsWith('@')) {
+      generator = `npm:${generator.replace('/', '/sao-')}`
+    } else if (generator.includes('/')) {
+      generator = `github:${generator}`
+    } else {
+      generator = `npm:sao-${generator}`
+    }
   }
 
   // Get generator type, e.g. `npm` or `github`
@@ -103,13 +109,8 @@ export function parseGenerator(generator: string): ParsedGenerator {
   }
 
   // Generator is a repo
-  const [
-    ,
-    user,
-    repo,
-    version,
-    subGenerator,
-  ] = /([^/]+)\/([^#:]+)(?:#(.+))?(?::(.+))?$/.exec(generator) || []
+  const [, user, repo, version = 'master', subGenerator] =
+    /([^/]+)\/([^#:]+)(?:#(.+))?(?::(.+))?$/.exec(generator) || []
   const hash = sum({
     type: 'repo',
     prefix,

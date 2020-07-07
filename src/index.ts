@@ -125,6 +125,8 @@ export class SAO {
       await ensureLocal(generator)
     }
 
+    logger.debug(`Loaded generator from ${generator.path}`)
+
     const loaded = await loadGeneratorConfig(generator.path)
     const config: GeneratorConfig =
       loaded.path && loaded.data ? loaded.data : defautSaoFile
@@ -301,6 +303,13 @@ export class SAO {
       onlyFiles: true,
     })
     return files.sort()
+  }
+
+  /**
+   * Check if a file exists in output directory
+   */
+  async hasOutputFile(file: string) {
+    return pathExists(path.join(this.opts.outDir, file))
   }
 
   /**

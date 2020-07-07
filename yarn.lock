@@ -300,10 +300,10 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
-"@egoist/extract-zip@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@egoist/extract-zip/-/extract-zip-2.0.0.tgz#870ef5d048286b830d93b89c1f017d1d49096fbf"
-  integrity sha512-OqK4swyT/PFF2kIN+ip6c1M9WRYYHLUCzf4+aHQKed8S2/G6h0pyxYKCEL2TqfIUrESbuDEaSNT6RqhNQOqN5g==
+"@egoist/extract-zip@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@egoist/extract-zip/-/extract-zip-2.0.1.tgz#fe428ed6de2873555c029c267ca43ba87070860c"
+  integrity sha512-9vujyc5+BH19ubhYVnH7+pI1Fx0pJ9f52Hsp4dNfOJtdxyeBMdLZkKGj/Wedt4p7idqSCSxcVjOLXxSDjbqMwQ==
   dependencies:
     debug "^4.1.1"
     get-stream "^5.1.0"

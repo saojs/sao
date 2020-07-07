@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 import { GeneratorConfig } from './generator-config'
 
 export const defautSaoFile: GeneratorConfig = {
@@ -6,15 +7,14 @@ export const defautSaoFile: GeneratorConfig = {
   actions: [
     {
       type: 'add',
-      files: '**'
-    }
+      files: '**',
+    },
   ],
   async completed() {
     await this.gitInit()
-    const pkgPath = path.join(this.outDir, 'package.json')
-    if (await this.pathExists(pkgPath)) {
+    if (await this.hasOutputFile('package.json')) {
       await this.npmInstall()
     }
     this.showProjectTips()
-  }
+  },
 }

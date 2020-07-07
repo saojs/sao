@@ -24,7 +24,7 @@
     "node": ">=12"
   },
   "dependencies": {
-    "@egoist/extract-zip": "^2.0.0",
+    "@egoist/extract-zip": "^2.0.1",
     "axios": "^0.19.2",
     "cac": "^6.5.9",
     "chalk": "^4.1.0",

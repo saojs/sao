@@ -7,6 +7,7 @@ import extractZip from '@egoist/extract-zip'
 import { RepoGenerator } from '../parse-generator'
 import { SAOError } from '../error'
 import { move } from './fs'
+import { logger } from '../logger'
 
 function getUrl(generator: RepoGenerator, clone?: boolean): string {
   let url = ''
@@ -71,6 +72,9 @@ function getUrl(generator: RepoGenerator, clone?: boolean): string {
 async function downloadFile(url: string, outPath: string, extract: boolean): Promise<void> {
   const tempFile = path.join(os.tmpdir(), `sao-${Date.now()}`)
   const writer = fs.createWriteStream(tempFile)
+
+  logger.debug(`Downloading file: ${url}`)
+
   const reponse = await axios({ url, responseType: 'stream', method: 'GET' })
 
   reponse.data.pipe(writer)
@@ -81,6 +85,7 @@ async function downloadFile(url: string, outPath: string, extract: boolean): Pro
   })
 
   if (extract) {
+    logger.debug(`Extracting downloaded file`)
     await extractZip(tempFile, {
       dir: outPath,
       strip: 1,
