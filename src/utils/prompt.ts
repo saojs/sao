@@ -6,7 +6,7 @@ export interface PromptState {
   }
 }
 
-export interface BasePrompt {
+export interface BasePromptOptions {
   name: string
   message: string
   skip?: (state: PromptState, value: any) => boolean
@@ -20,15 +20,54 @@ export interface BasePrompt {
   store?: boolean
 }
 
-export interface InputPrompt extends BasePrompt {
-  type: 'input'
+type DefaultValue<T> = T | ((state: PromptState) => T)
+
+interface Choice {
+  name: string
+  message?: string
+  value?: string
+  hint?: string
+  disabled?: boolean | string
 }
 
-export interface ConfirmPrompt extends BasePrompt {
+interface ArrayPromptOptions extends BasePromptOptions {
+  type:
+    | 'autocomplete'
+    | 'editable'
+    | 'form'
+    | 'multiselect'
+    | 'select'
+    | 'survey'
+    | 'list'
+    | 'scale'
+  choices: string[] | Choice[]
+  maxChoices?: number
+  muliple?: boolean
+  default?: DefaultValue<number>
+  delay?: number
+  separator?: boolean
+  sort?: boolean
+  linebreak?: boolean
+  edgeLength?: number
+  align?: 'left' | 'right'
+  scroll?: boolean
+}
+
+interface BooleanPromptOptions extends BasePromptOptions {
   type: 'confirm'
+  default?: DefaultValue<boolean>
 }
 
-export type Prompt = InputPrompt | ConfirmPrompt
+interface StringPromptOptions extends BasePromptOptions {
+  type: 'input' | 'invisible' | 'list' | 'password' | 'text'
+  default?: DefaultValue<string>
+  multiline?: boolean
+}
+
+export type PromptOptions =
+  | ArrayPromptOptions
+  | BooleanPromptOptions
+  | StringPromptOptions
 
 interface EnquirerContext {
   value: string
@@ -36,7 +75,7 @@ interface EnquirerContext {
 }
 
 export const prompt = async (
-  prompts: Prompt[],
+  prompts: PromptOptions[],
   userSuppliedAnswers?: string | boolean | { [k: string]: any }
 ): Promise<{ [k: string]: any }> => {
   const enquirer = new Enquirer()
@@ -63,6 +102,7 @@ export const prompt = async (
     // @ts-ignore
     prompts.map((prompt) => {
       return {
+        ...prompt,
         type: prompt.type,
         message: prompt.message,
         name: prompt.name,

@@ -69,7 +69,10 @@ export const runActions = async (
           fileList.forEach((relativePath) => {
             const contents = files[relativePath].contents.toString()
 
-            const actionData = action.data && action.data.call(context, context)
+            const actionData =
+              typeof action.data === 'object'
+                ? action.data
+                : action.data && action.data.call(context, context)
             stream.writeContents(
               relativePath,
               ejs.render(

@@ -186,9 +186,7 @@ export class SAO {
       this._answers = {}
     }
 
-    this._data = config.data
-      ? config.data.call(this, this)
-      : {}
+    this._data = config.data ? config.data.call(this, this) : {}
 
     if (config.actions) {
       const { runActions } = await import('./run-actions')
@@ -265,7 +263,9 @@ export class SAO {
   /**
    * Run `npm install` in output directory
    */
-  async npmInstall(opts?: InstallOptions): Promise<{ code: number }> {
+  async npmInstall(
+    opts?: Omit<InstallOptions, 'cwd' | 'registry'>
+  ): Promise<{ code: number }> {
     if (this.opts.mock) {
       return { code: 0 }
     }
@@ -322,3 +322,5 @@ export class SAO {
 }
 
 export { handleError } from './error'
+
+export { GeneratorConfig }

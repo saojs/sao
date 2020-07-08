@@ -1,6 +1,6 @@
 // @ts-check
 import { builtinModules } from 'module'
-import esbuildPlugin from 'rollup-plugin-esbuild'
+import tsPlugin from '@rollup/plugin-typescript'
 import dtsPlugin from 'rollup-plugin-dts'
 import hashbangPlugin from 'rollup-plugin-hashbang'
 import nodeResolvePlugin from '@rollup/plugin-node-resolve'
@@ -22,7 +22,9 @@ const createConfig = ({ dts } = {}) => {
     },
     plugins: [
       hashbangPlugin(),
-      !dts && esbuildPlugin(),
+      !dts && tsPlugin({
+        module: 'esnext'
+      }),
       !dts && commonjsPlugin(),
       !dts && {
         ...nodeResolve,
@@ -38,7 +40,6 @@ const createConfig = ({ dts } = {}) => {
             result = await nodeResolve.resolveId.call(this, source, importer)
           }
 
-          console.log(source, result)
           return result
         },
       },

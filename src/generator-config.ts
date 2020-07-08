@@ -1,6 +1,6 @@
 import path from 'path'
 import JoyCon from 'joycon'
-import { Prompt } from './utils/prompt'
+import { PromptOptions } from './utils/prompt'
 import { SAO } from './'
 
 const joycon = new JoyCon({
@@ -27,13 +27,10 @@ export interface AddAction {
   /**
    * Custom data to use in template transformation
    */
-  data?: DataFunction
+  data?: DataFunction | object
 }
 
-type DataFunction = (
-  this: SAO,
-  ctx: SAO
-) => { [k: string]: any }
+type DataFunction = (this: SAO, context: SAO) => object
 
 export interface MoveAction {
   type: 'move'
@@ -80,20 +77,12 @@ export interface GeneratorConfig {
    * Use prompts to ask questions before generating project
    */
   prompts?:
-    | Prompt[]
-    | ((
-        this: SAO,
-        ctx: SAO
-      ) => Prompt[] | Promise<Prompt[]>)
+    | PromptOptions[]
+    | ((this: SAO, ctx: SAO) => PromptOptions[] | Promise<PromptOptions[]>)
   /**
    * Use actions to control how files are generated
    */
-  actions?:
-    | Action[]
-    | ((
-        this: SAO,
-        ctx: SAO
-      ) => Action[] | Promise<Action[]>)
+  actions?: Action[] | ((this: SAO, ctx: SAO) => Action[] | Promise<Action[]>)
   /**
    * Directory to template folder
    * Defaults to `./template` in your generator folder
@@ -109,18 +98,12 @@ export interface GeneratorConfig {
   /**
    * Run some operations before starting
    */
-  prepare?: (
-    this: SAO,
-    ctx: SAO
-  ) => Promise<void> | void
+  prepare?: (this: SAO, ctx: SAO) => Promise<void> | void
   /**
    * Run some operations when completed
    * e.g. log some success message
    */
-  completed?: (
-    this: SAO,
-    ctx: SAO
-  ) => Promise<void> | void
+  completed?: (this: SAO, ctx: SAO) => Promise<void> | void
 }
 
 export const loadGeneratorConfig = (
