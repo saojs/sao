@@ -16,7 +16,8 @@
   "scripts": {
     "test": "npm run lint && jest",
     "build": "rm -rf dist && rollup -c",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
