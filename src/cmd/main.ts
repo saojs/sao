@@ -55,7 +55,9 @@ export const main = (cli: CAC) => async (
             ]
           })
         )
-      cli.globalCommand.helpCallback = (sections) => {
+      cli.globalCommand.helpCallback = (
+        sections
+      ): Array<{ title?: string; body: string }> => {
         sections = sections
           .map((section) => {
             if (section.title === 'Usage') {

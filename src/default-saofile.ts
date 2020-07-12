@@ -1,5 +1,3 @@
-import path from 'path'
-import fs from 'fs'
 import { GeneratorConfig } from './generator-config'
 
 export const defautSaoFile: GeneratorConfig = {

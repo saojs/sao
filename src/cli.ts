@@ -6,7 +6,7 @@ import { handleError } from './error'
 
 const runByTsNode = __filename.includes('/sao/src/')
 
-async function main() {
+async function main(): Promise<void> {
   const bin = runByTsNode ? 'yarn sao' : 'sao'
   const cli = cac(bin)
 

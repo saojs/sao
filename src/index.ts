@@ -214,7 +214,7 @@ export class SAO {
     }
   }
 
-  async run() {
+  async run(): Promise<void> {
     const { generator, config } = await this.getGenerator()
     await this.runGenerator(generator, config)
   }
@@ -312,7 +312,7 @@ export class SAO {
   /**
    * Get file list of output directory
    */
-  async getOutputFiles() {
+  async getOutputFiles(): Promise<string[]> {
     const files = await glob(['**/*', '!**/node_modules/**', '!**/.git/**'], {
       cwd: this.opts.outDir,
       dot: true,
@@ -324,7 +324,7 @@ export class SAO {
   /**
    * Check if a file exists in output directory
    */
-  async hasOutputFile(file: string) {
+  async hasOutputFile(file: string): Promise<boolean> {
     return pathExists(path.join(this.opts.outDir, file))
   }
 
@@ -332,7 +332,7 @@ export class SAO {
    * Read a file in output directory
    * @param file file path
    */
-  async readOutDir(file: string) {
+  async readOutDir(file: string): Promise<string> {
     return readFile(path.join(this.opts.outDir, file), 'utf8')
   }
 }
