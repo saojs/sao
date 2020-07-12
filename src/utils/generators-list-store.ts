@@ -14,7 +14,6 @@ export class GeneratorsListStore {
   }
 
   add(generator: ParsedGenerator): void {
-    console.log('??')
     let exist = false
     for (const item of this.store) {
       if (item.hash === generator.hash) {

@@ -978,6 +978,11 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
+"@types/text-table@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@types/text-table/-/text-table-0.2.1.tgz#39c4d4a058a82f677392dfd09976e83d9b4c9264"
+  integrity sha512-dchbFCWfVgUSWEvhOkXGS7zjm+K7jCUvGrQkAHPk2Fmslfofp4HQTH2pqnQ3Pw5GPYv0zWa2AQjKtsfZThuemQ==
+
 "@types/update-notifier@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@types/update-notifier/-/update-notifier-4.1.0.tgz#891502c741babf12a666fa9ceb3af011dd76893c"
@@ -1658,10 +1663,10 @@ byte-size@^5.0.1:
   resolved "https://registry.yarnpkg.com/byte-size/-/byte-size-5.0.1.tgz#4b651039a5ecd96767e71a3d7ed380e48bed4191"
   integrity sha512-/XuKeqWocKsYa/cBY1YbSJSWWqTi4cFgr9S6OyM7PBaPbr9zvNGwWP33vt0uqGhwDdN+y3yhbXVILEUpnwEWGw==
 
-cac@^6.5.12:
-  version "6.5.12"
-  resolved "https://registry.yarnpkg.com/cac/-/cac-6.5.12.tgz#e166a9e68fea2689f5fee08bb03d9d9d4fadaaa7"
-  integrity sha512-XUhnXoAEdDCufbxn0U1vhbPKMoTx3D/D5Dcn8s0bOl6RZmYdxFE7TsWFbMqMMAqVFGhdbnZpXN+HosiuJiGfAQ==
+cac@^6.5.13:
+  version "6.5.13"
+  resolved "https://registry.yarnpkg.com/cac/-/cac-6.5.13.tgz#8d9be6dce0afb707c76c5962bf9cc6571f4c933a"
+  integrity sha512-pt643//kQb3S6syXMJ/EIfNZpivKeFpCdnnPbJ3Iq9ZVZyXQcQjXvzVMWTEQuUspp+rHUlhZYZZfnviP88VuYA==
 
 cacache@^12.0.0, cacache@^12.0.2, cacache@^12.0.3:
   version "12.0.4"
@@ -8379,14 +8384,9 @@ text-extensions@^1.0.0:
   resolved "https://registry.npmjs.org/text-extensions/-/text-extensions-1.9.0.tgz#1853e45fee39c945ce6f6c36b2d659b5aabc2a26"
   integrity sha512-wiBrwC1EhBelW12Zy26JeOUkQ5mRu+5o8rpsJk5+2t+Y5vE7e842qtZDQ2g1NpX/29HdyFeJ4nSIhI47ENSxlQ==
 
-text-table@^0.2.0:
+text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
-  integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
-
-text-table@~0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
 throat@^5.0.0:

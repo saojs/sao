@@ -1,15 +1,12 @@
-import { cac } from 'cac'
+import { CAC } from 'cac'
+import textTable from 'text-table'
+import colors from 'chalk'
 import { Options, SAO, handleError } from '..'
 
-export const main = (cli: ReturnType<typeof cac>) => async (
-  generator: string | undefined,
+export const main = (cli: CAC) => async (
+  generator: string,
   outDir: string
 ): Promise<void> => {
-  if (!generator) {
-    cli.outputHelp()
-    return
-  }
-
   const options: Options = {
     generator,
     outDir: outDir || '.',
@@ -19,9 +16,89 @@ export const main = (cli: ReturnType<typeof cac>) => async (
   }
   try {
     const sao = new SAO(options)
-    if (cli.options.help) {
-      const help = await sao.getGeneratorHelp()
-      console.log(help)
+    const g = sao.parsedGenerator
+    if (cli.options.version) {
+      const generators = sao.generatorsListStore.findGenerators(g)
+      const versions: string[] = []
+      for (const g of generators) {
+        if (g.type === 'npm') {
+          versions.push(g.version)
+        } else if (g.type === 'repo') {
+          versions.push(g.version)
+        }
+      }
+      if (versions.length > 0) {
+        console.log(colors.cyan(`Installed versions:\n`))
+        console.log(
+          versions
+            .map((version) => `${colors.dim('-')} ${colors.bold(version)}`)
+            .join('\n')
+        )
+      } else {
+        console.log(`No local versions found`)
+      }
+    } else if (cli.options.help) {
+      const { config } = await sao.getGenerator()
+      const prompts =
+        typeof config.prompts === 'function'
+          ? await config.prompts.call(sao, sao)
+          : config.prompts
+      const answerFlags =
+        prompts &&
+        textTable(
+          prompts.map((prompt) => {
+            return [
+              `  --answers.${prompt.name}${
+                prompt.type === 'confirm' ? '' : ` <value>`
+              }`,
+              `${prompt.message}`,
+            ]
+          })
+        )
+      cli.globalCommand.helpCallback = (sections) => {
+        sections = sections
+          .map((section) => {
+            if (section.title === 'Usage') {
+              section.body = section.body.replace(
+                '<generator>',
+                g.type === 'local'
+                  ? g.path
+                  : g.type === 'npm'
+                  ? g.name.replace('sao-', '')
+                  : `${g.prefix === 'github' ? '' : `${g.prefix}:`}${g.user}/${
+                      g.repo
+                    }`
+              )
+            }
+            if (section.title === 'Options') {
+              section.title = 'Shared Options'
+              section.body = section.body.replace(
+                /^\s+--answers\.\*[^\n]+\n/m,
+                ''
+              )
+            }
+            return section
+          })
+          .filter((section) => {
+            return (
+              section.title !== 'Commands' &&
+              section.title !==
+                'For more info, run any command with the `--help` flag'
+            )
+          })
+        if (answerFlags) {
+          sections.push({
+            title: 'Generator Options',
+            body: answerFlags,
+          })
+        }
+        sections.push({
+          title: `Tips`,
+          body: `  Prefix an option with '--no-' to set the value to 'false'.\n  e.g. --no-answers.unitTest`,
+        })
+        return sections
+      }
+      cli.outputHelp()
     } else {
       await sao.run()
     }

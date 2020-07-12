@@ -106,8 +106,15 @@ export class SAO {
 
   async getGeneratorHelp(): Promise<string> {
     const { config } = await this.getGenerator()
-    console.log(config)
-    return ''
+
+    let help = ''
+
+    if (config.description) {
+      help += `\n${config.description}`
+    }
+
+
+    return help
   }
 
   /**

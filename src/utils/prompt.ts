@@ -70,7 +70,7 @@ export interface ArrayPromptOptions extends BasePromptOptions {
   /** Allow to select multiple options */
   muliple?: boolean
   /** Default value for the prompt */
-  default?: DefaultValue<number>
+  default?: DefaultValue<string>
   delay?: number
   separator?: boolean
   sort?: boolean
@@ -159,10 +159,21 @@ export const prompt = async (
           if (prompt.default === undefined) {
             return
           }
-          if (typeof prompt.default === 'function') {
-            return prompt.default(this.state)
+          const value =
+            typeof prompt.default === 'function'
+              ? prompt.default(this.state)
+              : prompt.default
+          const choices = (prompt as ArrayPromptOptions).choices
+          if (choices) {
+            const index = choices.findIndex((c: string | Choice) => {
+              if (typeof c === 'string') {
+                return c === value
+              }
+              return typeof c === 'object' && c.name === value
+            })
+            return index
           }
-          return prompt.default
+          return value
         },
         format(this: EnquirerContext, value: any): any {
           if (prompt.format === undefined) {
