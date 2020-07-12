@@ -45,7 +45,7 @@ test('parseGenerator', () => {
       "slug": "sao-nm",
       "subGenerator": undefined,
       "type": "npm",
-      "version": "",
+      "version": "latest",
     }
   `)
   // Npm package with version
@@ -69,7 +69,7 @@ test('parseGenerator', () => {
       "slug": "@egoist/sao-nm",
       "subGenerator": undefined,
       "type": "npm",
-      "version": "",
+      "version": "latest",
     }
   `)
   // Scoped Npm package with version
