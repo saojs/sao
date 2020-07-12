@@ -26,6 +26,7 @@ import {
   InstallOptions,
   installPackages,
 } from './install-packages'
+import { GeneratorsListStore } from './utils/generators-list-store'
 
 export interface Options {
   outDir?: string
@@ -67,6 +68,7 @@ export class SAO {
   _data: { [k: string]: any } | symbol = EMPTY_DATA
 
   parsedGenerator: ParsedGenerator
+  generatorsListStore: GeneratorsListStore
 
   constructor(opts: Options) {
     this.opts = {
@@ -90,7 +92,9 @@ export class SAO {
       this.opts.answers = true
     }
 
+    this.generatorsListStore = new GeneratorsListStore()
     this.parsedGenerator = parseGenerator(this.opts.generator)
+
     // Sub generator can only be used in an existing
     if (this.parsedGenerator.subGenerator) {
       logger.debug(
@@ -108,6 +112,7 @@ export class SAO {
 
   /**
    * Get actual generator to run and its config
+   * Download it if not yet cached
    */
   async getGenerator(
     generator: ParsedGenerator = this.parsedGenerator,
@@ -123,6 +128,10 @@ export class SAO {
       await ensurePackage(generator, this.opts)
     } else if (generator.type === 'local') {
       await ensureLocal(generator)
+    }
+
+    if (!hasParent) {
+      this.generatorsListStore.add(generator)
     }
 
     logger.debug(`Loaded generator from ${generator.path}`)

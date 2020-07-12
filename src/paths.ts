@@ -10,3 +10,8 @@ export const ROOT_CACHE_PATH = path.join(
 )
 export const REPOS_CACHE_PATH = path.join(ROOT_CACHE_PATH, 'repos')
 export const PACKAGES_CACHE_PATH = path.join(ROOT_CACHE_PATH, 'packages')
+
+export const GENERATORS_LIST_PATH = path.join(
+  ROOT_CACHE_PATH,
+  'generators-list.json'
+)

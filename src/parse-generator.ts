@@ -98,7 +98,7 @@ export function parseGenerator(generator: string): ParsedGenerator {
     return {
       type: 'npm',
       name: parsed.name,
-      version: parsed.version,
+      version: parsed.version || 'latest',
       slug,
       subGenerator: hasSubGenerator
         ? generator.slice(generator.indexOf(':') + 1)

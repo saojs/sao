@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import { join } from 'path'
-import { readFileSync } from 'fs'
 import cac from 'cac'
 import { handleError } from './error'
 
@@ -37,10 +35,12 @@ cli
     import('./cmd/get-alias').then((res) => res.getAlias(cli)(name))
   )
 
-const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf8'))
-
-cli.option('-h, --help', 'Get help for each command')
-cli.version(pkg.version)
+cli
+  .command('version [generator]', 'Show version for SAO or specified generator')
+  .option('--debug', 'Show debug logs')
+  .action((generator, options) =>
+    import('./cmd/version').then((res) => res.version(cli)(generator, options))
+  )
 
 try {
   cli.parse()
