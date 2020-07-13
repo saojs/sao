@@ -46,7 +46,7 @@ export interface BasePromptOptions {
 
 type DefaultValue<T> = T | ((state: PromptState) => T)
 
-interface Choice {
+export interface Choice {
   name: string
   message?: string
   value?: string

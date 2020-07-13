@@ -57,6 +57,12 @@ Now let's create some template files, for example, `template/package.json`:
 
 Template files supports [ejs](https://ejs.co) template engine, and the anwers we retrieved will be available here as local variable.
 
+### Prompts
+
+`prompts` is a list of questions you want the user to answer.
+
+Check out the [prompt types](https://doc.deno.land/https/raw.githubusercontent.com/saojs/sao/v2/src/utils/prompt.ts#PromptOptions) for details.
+
 ## Testing Generators
 
 Using the testing framework [Jest](https://jestjs.io/) as example:
