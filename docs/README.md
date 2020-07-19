@@ -29,15 +29,15 @@ module.exports = {
     {
       type: 'input',
       name: 'description',
-      message: 'How would you describe this package'
-    }
+      message: 'How would you describe this package',
+    },
   ],
   actions: [
     {
       type: 'add',
-      files: '**'
-    }
-  ]
+      files: '**',
+    },
+  ],
 }
 ```
 
@@ -61,6 +61,12 @@ Template files supports [ejs](https://ejs.co) template engine, and the anwers we
 
 `prompts` is a list of questions you want the user to answer.
 
+Each `prompt` object has a `type` property, which can be either:
+
+- `"input" | "invisible" | "list" | "password" | "text"`: [StringPromptOptions](/typedoc/interfaces/stringpromptoptions.html)
+- `"confirm"`: [BooleanPromptOptions](/typedoc/interfaces/booleanpromptoptions.html)
+- `"autocomplete" | "editable" | "form" | "multiselect" | "select" | "survey" | "list" | "scale"`: [ArrayPromptOptions](/typedoc/interfaces/arraypromptoptions.html)
+
 Check out the [GeneratorConfig['prompts']](/typedoc/interfaces/generatorconfig.html#prompts) type for details.
 
 ## Testing Generators
@@ -75,19 +81,44 @@ test('it works', () => {
     generator: '/absolute/path/to/your/generator',
     // `mock` make SAO run in mock mode
     // then it will use default value for prompts
+    // It defaults to `process.env.NODE_ENV === 'test'`
+    // if it's not specified explicitly
     mock: true
   })
 
   await sao.run()
 
-  expect(sao.answers).toMatchInlineSnapshot()
-  expect(await sao.getOutputFiles()).toMatchInlineSnapshot()
+  expect(sao.answers).toEqual({
+    answerA: true,
+    answerB: 'foo'
+  })
+  expect(await sao.getOutputFiles()).toEqual([
+    'a.js',
+    'b.js'
+  ])
+  expect(await sao.readOutputFile('foo.js')).toBe(`const foo = 'foo'`)
 })
 ```
 
-Setting the option `mock` to `true` will make SAO run in mock mode:
+Setting the option `mock` to `true` or setting `process.env.NODE_ENV` to `test` will make SAO run in mock mode:
 
-- All prompts will use default value instead of asking user for input.
+- All prompts will use default value instead of asking user for input, you can also pass a custom `answers` object if you want.
 - Use mocked value for git user information.
 - Logger won't output text to terminal, instead they're saved to `sao.logger.lines`
 - `outDir` will be a random temporary directory.
+
+### Testing Prompts
+
+By setting `mock: true` you are essentially making all prompts use their default values, however you can provide custom `answers`:
+
+```js
+const sao = new SAO({
+  generator: '/absolute/path/to/your/generator',
+  mock: true,
+  answers: {
+    unitTest: true,
+  },
+})
+```
+
+With above code you can test if you generator works properly when the answer of `unitTest` is `true`

@@ -379,7 +379,7 @@ export class SAO {
    * Read a file in output directory
    * @param file file path
    */
-  async readOutDir(file: string): Promise<string> {
+  async readOutputFile(file: string): Promise<string> {
     return readFile(path.join(this.opts.outDir, file), 'utf8')
   }
 }

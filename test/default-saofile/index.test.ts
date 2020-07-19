@@ -14,5 +14,5 @@ test('use default saofile', async () => {
       "foo.txt",
     ]
   `)
-  expect(await sao.readOutDir('foo.txt')).toBe('foo\n')
+  expect(await sao.readOutputFile('foo.txt')).toBe('foo\n')
 })
