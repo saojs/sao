@@ -107,7 +107,8 @@ interface EnquirerContext {
 
 export const prompt = async (
   prompts: PromptOptions[],
-  userSuppliedAnswers?: string | boolean | { [k: string]: any }
+  userSuppliedAnswers?: string | boolean | { [k: string]: any },
+  mock?: boolean
 ): Promise<{ [k: string]: any }> => {
   const enquirer = new Enquirer()
 
@@ -117,14 +118,21 @@ export const prompt = async (
 
   enquirer.on('prompt', (prompt) => {
     prompt.once('run', async () => {
-      if (
-        typeof userSuppliedAnswers === 'object' &&
-        prompt.name in userSuppliedAnswers
-      ) {
-        await prompt.keypress(String(userSuppliedAnswers[prompt.name]))
+      if (typeof userSuppliedAnswers === 'object') {
+        const value = userSuppliedAnswers[prompt.name]
+        if (value !== undefined) {
+          for (const char of String(value).split('')) {
+            await prompt.keypress(char)
+          }
+        }
+        if (mock || value !== undefined) {
+          await prompt.submit()
+        }
+      } else if (userSuppliedAnswers === true || mock) {
         await prompt.submit()
-      } else if (userSuppliedAnswers === true) {
-        await prompt.submit()
+      }
+      if (mock) {
+        await prompt.cursorShow()
       }
     })
   })
@@ -137,6 +145,7 @@ export const prompt = async (
         type: prompt.type,
         message: prompt.message,
         name: prompt.name,
+        show: !mock,
         skip(this: EnquirerContext, _: string, value: string): any {
           if (prompt.skip === undefined) {
             return false
