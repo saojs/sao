@@ -157,7 +157,7 @@ export const prompt = async (
         },
         initial(this: EnquirerContext): any {
           if (prompt.default === undefined) {
-            return
+            return ''
           }
           const value =
             typeof prompt.default === 'function'
@@ -176,7 +176,7 @@ export const prompt = async (
             })
             return index
           }
-          return value
+          return value === undefined ? '' : value
         },
         format(this: EnquirerContext, value: any): any {
           if (prompt.format === undefined) {
