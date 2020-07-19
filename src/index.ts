@@ -76,6 +76,10 @@ export class SAO {
       ...opts,
       outDir: path.resolve(opts.outDir || '.'),
       logLevel: opts.logLevel || 3,
+      mock:
+        typeof opts.mock === 'boolean'
+          ? opts.mock
+          : process.env.NODE_ENV === 'test',
     }
 
     if (opts.debug) {

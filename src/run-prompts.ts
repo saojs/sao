@@ -37,7 +37,7 @@ export const runPrompts = async (
     )
   }
 
-  const answers = await prompt(prompts, context.opts.answers)
+  const answers = await prompt(prompts, context.opts.answers || context.opts.mock)
 
   logger.debug(`Retrived answers:`, answers)
 
