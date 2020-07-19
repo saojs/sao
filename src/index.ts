@@ -6,7 +6,7 @@ import spawn from 'cross-spawn'
 import { loadGeneratorConfig, GeneratorConfig } from './generator-config'
 import { logger } from './logger'
 import { isLocalPath } from './utils/is-local-path'
-import { SAOError } from './error'
+import { SAOError, handleError } from './error'
 import { parseGenerator, ParsedGenerator } from './parse-generator'
 import { updateCheck } from './update-check'
 import { store } from './store'
@@ -112,7 +112,6 @@ export class SAO {
     if (config.description) {
       help += `\n${config.description}`
     }
-
 
     return help
   }
@@ -337,6 +336,6 @@ export class SAO {
   }
 }
 
-export { handleError } from './error'
+export { GeneratorConfig, handleError, store }
 
-export { GeneratorConfig }
+export { runCLI } from './cli-engine'

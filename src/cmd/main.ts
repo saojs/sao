@@ -1,7 +1,8 @@
 import { CAC } from 'cac'
 import textTable from 'text-table'
 import colors from 'chalk'
-import { Options, SAO, handleError } from '..'
+import { Options, SAO } from '..'
+import { handleError } from '../error'
 
 export const main = (cli: CAC) => async (
   generator: string,

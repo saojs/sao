@@ -1,12 +1,10 @@
-#!/usr/bin/env node
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import cac from 'cac'
-import { handleError } from './error'
 
 const runByTsNode = __filename.includes('/sao/src/')
 
-async function main(): Promise<void> {
+export async function runCLI(): Promise<void> {
   const bin = runByTsNode ? 'yarn sao' : 'sao'
   const cli = cac(bin)
 
@@ -61,8 +59,3 @@ async function main(): Promise<void> {
     await cli.runMatchedCommand()
   }
 }
-
-main().catch((error) => {
-  handleError(error)
-  process.exit(1)
-})
