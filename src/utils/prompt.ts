@@ -1,4 +1,5 @@
 import Enquirer from 'enquirer'
+import { SAOError } from '../error'
 
 /**
  * The state of current running prompt
@@ -105,6 +106,20 @@ interface EnquirerContext {
   state: PromptState
 }
 
+function validatePrompt(prompt: PromptOptions, index: number): void {
+  if (!prompt.type) {
+    throw new SAOError(`Missing property "type" on prompt (index: ${index})`)
+  }
+
+  if (!prompt.message) {
+    throw new SAOError(`Missing property "message" on prompt (index: ${index})`)
+  }
+
+  if (!prompt.name) {
+    throw new SAOError(`Missing property "name" on prompt (index: ${index})`)
+  }
+}
+
 export const prompt = async (
   prompts: PromptOptions[],
   userSuppliedAnswers?: string | boolean | { [k: string]: any },
@@ -139,7 +154,9 @@ export const prompt = async (
 
   const answers = await enquirer.prompt(
     // @ts-ignore
-    prompts.map((prompt) => {
+    prompts.map((prompt, index) => {
+      validatePrompt(prompt, index)
+
       return {
         ...prompt,
         type: prompt.type,
