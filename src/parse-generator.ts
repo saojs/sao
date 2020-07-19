@@ -70,11 +70,11 @@ export function parseGenerator(generator: string): ParsedGenerator {
   // Infer prefix for naked generate name (without prefix)
   if (!GENERATOR_PREFIX_RE.test(generator)) {
     if (generator.startsWith('@')) {
-      generator = `npm:${generator.replace('/', '/sao-')}`
+      generator = `npm:${generator.replace(/\/(sao-)?/, '/sao-')}`
     } else if (generator.includes('/')) {
       generator = `github:${generator}`
     } else {
-      generator = `npm:sao-${generator}`
+      generator = `npm:${generator.replace(/^(sao-)?/, 'sao-')}`
     }
   }
 

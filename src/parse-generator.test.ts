@@ -97,4 +97,16 @@ test('parseGenerator', () => {
       "version": "master",
     }
   `)
+  // Remove sao- pefix
+  expect(parse(`sao-nm`)).toMatchInlineSnapshot(`
+    Object {
+      "hash": "096eb1e0",
+      "name": "sao-nm",
+      "path": "~/.sao/V2/packages/096eb1e0/node_modules/sao-nm",
+      "slug": "sao-nm",
+      "subGenerator": undefined,
+      "type": "npm",
+      "version": "latest",
+    }
+  `)
 })

@@ -26,7 +26,7 @@ import {
   InstallOptions,
   installPackages,
 } from './install-packages'
-import { GeneratorsListStore } from './utils/generators-list-store'
+import { GeneratorList, generatorList } from './utils/generator-list'
 
 export interface Options {
   outDir?: string
@@ -68,7 +68,7 @@ export class SAO {
   private _data: { [k: string]: any } | symbol = EMPTY_DATA
 
   parsedGenerator: ParsedGenerator
-  generatorsListStore: GeneratorsListStore
+  generatorList: GeneratorList
 
   constructor(opts: Options) {
     this.opts = {
@@ -92,7 +92,7 @@ export class SAO {
       this.opts.answers = true
     }
 
-    this.generatorsListStore = new GeneratorsListStore()
+    this.generatorList = generatorList
     this.parsedGenerator = parseGenerator(this.opts.generator)
 
     // Sub generator can only be used in an existing
@@ -142,7 +142,7 @@ export class SAO {
     }
 
     if (!hasParent) {
-      this.generatorsListStore.add(generator)
+      this.generatorList.add(generator)
     }
 
     logger.debug(`Loaded generator from ${generator.path}`)
@@ -375,6 +375,6 @@ export class SAO {
   }
 }
 
-export { GeneratorConfig, handleError, store }
+export { GeneratorConfig, handleError, store, generatorList }
 
 export { runCLI } from './cli-engine'

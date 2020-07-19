@@ -9,7 +9,7 @@ export async function runCLI(): Promise<void> {
   const cli = cac(bin)
 
   cli
-    .command('<generator> [outDir]', 'Run a generator')
+    .command('[generator] [outDir]', 'Run a generator')
     .action((generator, outDir) =>
       import('./cmd/main').then((res) => res.main(cli)(generator, outDir))
     )
@@ -30,22 +30,25 @@ export async function runCLI(): Promise<void> {
     )
     .option('--debug', 'Display debug logs')
     .option('--version', 'Display SAO version')
-    .option('--help', 'Display CLI usages')
+    .option('-h, --help', 'Display CLI usages')
 
   cli
     .command('set-alias <name> <value>', 'Set an alias for a generator path')
+    .option('-h, --help', 'Display CLI usages')
     .action((name, value) =>
-      import('./cmd/set-alias').then((res) => res.setAlias(cli)(name, value))
+      import('./cmd/set-alias').then((res) => res.setAlias()(name, value))
     )
 
   cli
     .command('get-alias <name>', 'Get the generator for an alias')
+    .option('-h, --help', 'Display CLI usages')
     .action((name) =>
       import('./cmd/get-alias').then((res) => res.getAlias(cli)(name))
     )
 
   cli
     .command('list', 'List all downloaded generators')
+    .option('-h, --help', 'Display CLI usages')
     .action(() => import('./cmd/list').then((res) => res.list()()))
 
   cli.parse(process.argv, { run: false })
@@ -57,6 +60,8 @@ export async function runCLI(): Promise<void> {
     console.log(`sao: ${pkg.version}`)
     console.log(`node: ${process.versions.node}`)
     console.log(`os: ${process.platform}`)
+  } else if (cli.matchedCommand?.name !== '' && cli.options.help) {
+    cli.outputHelp()
   } else {
     await cli.runMatchedCommand()
   }

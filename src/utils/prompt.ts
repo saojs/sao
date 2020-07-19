@@ -44,7 +44,7 @@ export interface BasePromptOptions {
   store?: boolean
 }
 
-type DefaultValue<T> = T | ((state: PromptState) => T)
+export type WithPromptState<T> = T | ((state: PromptState) => T)
 
 export interface Choice {
   name: string
@@ -64,13 +64,13 @@ export interface ArrayPromptOptions extends BasePromptOptions {
     | 'survey'
     | 'list'
     | 'scale'
-  choices: string[] | Choice[]
+  choices: WithPromptState<string[] | Choice[]>
   /** Maxium number of options to select */
   maxChoices?: number
   /** Allow to select multiple options */
   muliple?: boolean
   /** Default value for the prompt */
-  default?: DefaultValue<string>
+  default?: WithPromptState<string>
   delay?: number
   separator?: boolean
   sort?: boolean
@@ -84,13 +84,13 @@ export interface ArrayPromptOptions extends BasePromptOptions {
 export interface BooleanPromptOptions extends BasePromptOptions {
   type: 'confirm'
   /** Default value for the prompt */
-  default?: DefaultValue<boolean>
+  default?: WithPromptState<boolean>
 }
 
 export interface StringPromptOptions extends BasePromptOptions {
   type: 'input' | 'invisible' | 'list' | 'password' | 'text'
   /** Default value for the prompt */
-  default?: DefaultValue<string>
+  default?: WithPromptState<string>
   /** Allow the input to be multiple lines */
   multiline?: boolean
 }
@@ -163,7 +163,10 @@ export const prompt = async (
             typeof prompt.default === 'function'
               ? prompt.default(this.state)
               : prompt.default
-          const choices = (prompt as ArrayPromptOptions).choices
+          let choices = (prompt as ArrayPromptOptions).choices
+          if (typeof choices === 'function') {
+            choices = choices.call(this.state, this.state)
+          }
           if (choices) {
             const index = choices.findIndex((c: string | Choice) => {
               if (typeof c === 'string') {
@@ -180,6 +183,13 @@ export const prompt = async (
             return value
           }
           return prompt.format(value, this.state)
+        },
+        choices(this: EnquirerContext): any {
+          const choices = (prompt as ArrayPromptOptions).choices
+          if (typeof choices === 'function') {
+            return choices.call(this.state, this.state)
+          }
+          return choices
         },
       }
     })

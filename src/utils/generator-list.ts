@@ -1,9 +1,16 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs'
-import { ParsedGenerator } from '../parse-generator'
+import {
+  ParsedGenerator,
+  NpmGenerator,
+  RepoGenerator,
+} from '../parse-generator'
 import { GENERATORS_LIST_PATH } from '../paths'
 import { logger } from '../logger'
+import { getRepoGeneratorName, getNpmGeneratorName } from '../cmd/utils'
 
-export class GeneratorsListStore {
+export type GroupedGenerators = Map<string, Array<NpmGenerator | RepoGenerator>>
+
+export class GeneratorList {
   store: ParsedGenerator[]
 
   constructor() {
@@ -42,4 +49,27 @@ export class GeneratorsListStore {
       return false
     })
   }
+
+  /**
+   * Group generators by name
+   */
+  get groupedGenerators(): GroupedGenerators {
+    const generatorsMap: GroupedGenerators = new Map()
+    for (const g of this.store) {
+      if (g.type === 'npm') {
+        const name = getNpmGeneratorName(g)
+        const arr = generatorsMap.get(name) || []
+        arr.push(g)
+        generatorsMap.set(g.name, arr)
+      } else if (g.type === 'repo') {
+        const name = getRepoGeneratorName(g)
+        const arr = generatorsMap.get(name) || []
+        arr.push(g)
+        generatorsMap.set(name, arr)
+      }
+    }
+    return generatorsMap
+  }
 }
+
+export const generatorList = new GeneratorList()
