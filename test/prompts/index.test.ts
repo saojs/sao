@@ -15,6 +15,6 @@ test('prompts', async () => {
 
   expect(sao.answers).toEqual({
     name: 'my name',
-    age: undefined,
+    age: '',
   })
 })
