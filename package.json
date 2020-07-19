@@ -76,7 +76,6 @@
     "rollup": "^2.22.1",
     "rollup-plugin-dts": "^1.4.8",
     "semantic-release": "^17.0.7",
-    "sucrase": "^3.15.0",
     "text-table": "^0.2.0",
     "ts-jest": "^26.0.0",
     "ts-node": "^8.10.2",

@@ -1,32 +1,18 @@
-const fs = require('fs')
 const { build: esbuild } = require('esbuild')
-const { transform } = require('sucrase')
-const { dirname } = require('path')
 const { rollup } = require('rollup')
 
 async function build() {
-  const result = await esbuild({
+  await esbuild({
     entryPoints: ['./src/index.ts'],
-    format: 'esm',
+    format: 'cjs',
     outdir: 'dist',
     bundle: true,
     platform: 'node',
     logLevel: 'error',
-    write: false,
+    write: true,
     target: 'es2018',
     external: Object.keys(require('../package.json').dependencies || {}),
   })
-  if (result.outputFiles) {
-    await Promise.all(
-      result.outputFiles.map(async (file) => {
-        const res = transform(new TextDecoder('utf-8').decode(file.contents), {
-          transforms: ['imports'],
-        })
-        await fs.promises.mkdir(dirname(file.path), { recursive: true })
-        await fs.promises.writeFile(file.path, res.code, 'utf8')
-      })
-    )
-  }
 }
 
 async function dts() {
