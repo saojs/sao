@@ -281,7 +281,7 @@ export class SAO {
   /**
    * The basename of output directory
    */
-  get outFolder(): string {
+  get outDirName(): string {
     return path.basename(this.opts.outDir)
   }
 
