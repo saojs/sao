@@ -1,3 +1,4 @@
 dist
 rollup.config.js
 scripts
+docs/typedoc/

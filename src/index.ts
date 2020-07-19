@@ -64,8 +64,8 @@ export class SAO {
   colors = colors
   logger = logger
 
-  _answers: { [k: string]: any } | symbol = EMPTY_ANSWERS
-  _data: { [k: string]: any } | symbol = EMPTY_DATA
+  private _answers: { [k: string]: any } | symbol = EMPTY_ANSWERS
+  private _data: { [k: string]: any } | symbol = EMPTY_DATA
 
   parsedGenerator: ParsedGenerator
   generatorsListStore: GeneratorsListStore
@@ -104,6 +104,11 @@ export class SAO {
     }
   }
 
+  /**
+   * Get the help message for current generator
+   *
+   * Used by SAO CLI, in general you don't want to touch this
+   */
   async getGeneratorHelp(): Promise<string> {
     const { config } = await this.getGenerator()
 
@@ -218,11 +223,20 @@ export class SAO {
     await this.runGenerator(generator, config)
   }
 
-  get answers(): any {
+  /**
+   * Retrive the answers
+   *
+   * You can't access this in `prompts` function
+   */
+  get answers(): { [k: string]: any } {
     if (typeof this._answers === 'symbol') {
       throw new SAOError(`You can't access \`.answers\` here`)
     }
     return this._answers
+  }
+
+  set answers(value: { [k: string]: any }) {
+    this._answers = value
   }
 
   get data(): any {
@@ -235,6 +249,11 @@ export class SAO {
     }
   }
 
+  /**
+   * Read package.json from output directory
+   *
+   * Returns an empty object when it doesn't exist
+   */
   get pkg(): any {
     try {
       return require(path.join(this.outDir, 'package.json'))
@@ -243,22 +262,39 @@ export class SAO {
     }
   }
 
+  /**
+   * Get the information of system git user
+   */
   get gitUser(): GitUser {
     return getGitUser(this.opts.mock)
   }
 
+  /**
+   * The basename of output directory
+   */
   get outFolder(): string {
     return path.basename(this.opts.outDir)
   }
 
+  /**
+   * The absolute path to output directory
+   */
   get outDir(): string {
     return this.opts.outDir
   }
 
+  /**
+   * The npm client
+   */
   get npmClient(): NPM_CLIENT {
     return getNpmClient()
   }
 
+  /**
+   * Run `git init` in output directly
+   *
+   * It will fail silently when `git` is not available
+   */
   gitInit(): void {
     if (this.opts.mock) {
       return
@@ -304,6 +340,9 @@ export class SAO {
     logger.success(`Generated into ${colors.underline(this.outDir)}`)
   }
 
+  /**
+   * Create an SAO Error so we can pretty print the error message instead of showing full error stack
+   */
   createError(message: string): SAOError {
     return new SAOError(message)
   }

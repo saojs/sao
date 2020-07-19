@@ -13,6 +13,24 @@
       rel="stylesheet"
       href="https://unpkg.com/@egoist/docup@1/dist/docup.min.css"
     />
+    <style>
+    :root {
+      --bg: #131415;
+      --fg: #eaeaea;
+      --navbar-bg: var(--bg);
+      --sidebar-bg: var(--bg);
+      --sidebar-text-fg: var(--fg);
+      --code-block-bg: #1a1a1a;
+      --code-span-bg: #1a1a1a;
+      --navlink-hover-bg: rgba(103, 103, 103, 0.29);
+      --sidebar-menu-item-active-fg: white;
+      --content-link-fg: #ffe77a;
+    }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+    }
+    </style>
   </head>
   <body>
     <!-- Script -->
@@ -20,7 +38,17 @@
     <!-- Start app -->
     <script>
       docup.init({
-        // ..options
+        title: 'SAO',
+        navLinks: [
+          {
+            text: 'TypeDoc',
+            link: '/typedoc/'
+          },
+          {
+            text: 'GitHub',
+            link: 'https://github.com/saojs/sao'
+          }
+        ]
       })
     </script>
   </body>

@@ -15,7 +15,7 @@ export const runPrompts = async (
       : config.prompts
 
   if (!prompts || prompts.length === 0) {
-    context._answers = {}
+    context.answers = {}
     return
   }
 
@@ -55,5 +55,5 @@ export const runPrompts = async (
     logger.debug('Cached prompt answers:', answersToStore)
   }
 
-  context._answers = answers
+  context.answers = answers
 }

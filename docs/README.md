@@ -61,7 +61,7 @@ Template files supports [ejs](https://ejs.co) template engine, and the anwers we
 
 `prompts` is a list of questions you want the user to answer.
 
-Check out the [prompt types](https://doc.deno.land/https/raw.githubusercontent.com/saojs/sao/v2/src/utils/prompt.ts#PromptOptions) for details.
+Check out the [GeneratorConfig['prompts']](/typedoc/interfaces/generatorconfig.html#prompts) type for details.
 
 ## Testing Generators
 
