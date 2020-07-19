@@ -1,5 +1,6 @@
 import { logger } from './logger'
 import { spinner } from './spinner'
+import { colors } from './utils/colors'
 
 export class SAOError extends Error {
   sao: boolean
@@ -24,7 +25,9 @@ export function handleError(error: Error | SAOError): void {
       console.error(error.cmdOutput)
     }
     logger.error(error.message)
-    logger.debug(error.stack)
+    logger.debug(colors.dim(error.stack))
+  } else if (error.name === 'CACError') {
+    logger.error(error.message)
   } else {
     logger.error(error.stack)
   }

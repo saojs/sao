@@ -1,8 +1,8 @@
 import { CAC } from 'cac'
 import textTable from 'text-table'
-import colors from 'chalk'
 import { Options, SAO } from '..'
 import { handleError } from '../error'
+import { printGenerators, getRepoGeneratorName } from './utils'
 
 export const main = (cli: CAC) => async (
   generator: string,
@@ -20,24 +20,7 @@ export const main = (cli: CAC) => async (
     const g = sao.parsedGenerator
     if (cli.options.version) {
       const generators = sao.generatorsListStore.findGenerators(g)
-      const versions: string[] = []
-      for (const g of generators) {
-        if (g.type === 'npm') {
-          versions.push(g.version)
-        } else if (g.type === 'repo') {
-          versions.push(g.version)
-        }
-      }
-      if (versions.length > 0) {
-        console.log(colors.cyan(`Installed versions:\n`))
-        console.log(
-          versions
-            .map((version) => `${colors.dim('-')} ${colors.bold(version)}`)
-            .join('\n')
-        )
-      } else {
-        console.log(`No local versions found`)
-      }
+      printGenerators(generators)
     } else if (cli.options.help) {
       const { config } = await sao.getGenerator()
       const prompts =
@@ -68,9 +51,7 @@ export const main = (cli: CAC) => async (
                   ? g.path
                   : g.type === 'npm'
                   ? g.name.replace('sao-', '')
-                  : `${g.prefix === 'github' ? '' : `${g.prefix}:`}${g.user}/${
-                      g.repo
-                    }`
+                  : getRepoGeneratorName(g)
               )
             }
             if (section.title === 'Options') {

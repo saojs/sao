@@ -44,6 +44,10 @@ export async function runCLI(): Promise<void> {
       import('./cmd/get-alias').then((res) => res.getAlias(cli)(name))
     )
 
+  cli
+    .command('list', 'List all downloaded generators')
+    .action(() => import('./cmd/list').then((res) => res.list()()))
+
   cli.parse(process.argv, { run: false })
 
   if (cli.options.version && cli.args.length === 0) {
@@ -53,8 +57,6 @@ export async function runCLI(): Promise<void> {
     console.log(`sao: ${pkg.version}`)
     console.log(`node: ${process.versions.node}`)
     console.log(`os: ${process.platform}`)
-  } else if (cli.args.length === 0) {
-    cli.outputHelp()
   } else {
     await cli.runMatchedCommand()
   }
