@@ -1,6 +1,6 @@
 import os from 'os'
 import path from 'path'
-import { SAO } from '../../src/index'
+import { SAO } from '../../'
 
 const outDir = path.join(os.tmpdir(), `sao-out/${Date.now()}`)
 

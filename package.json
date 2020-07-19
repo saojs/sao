@@ -15,7 +15,7 @@
     "!**/*.test.ts"
   ],
   "scripts": {
-    "test": "npm run lint && jest",
+    "test": "npm run lint && npm run build && jest",
     "build": "rm -rf dist && node scripts/build",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
