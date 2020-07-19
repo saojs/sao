@@ -1,3 +1,4 @@
+import { tmpdir } from 'os'
 import path from 'path'
 import { SetRequired } from 'type-fest'
 import resolveFrom from 'resolve-from'
@@ -88,6 +89,10 @@ export class SAO {
       mock: this.opts.mock,
     })
 
+    if (this.opts.mock) {
+      this.opts.outDir = path.join(tmpdir(), `sao-out/${Date.now()}/out`)
+    }
+
     if (this.opts.mock && typeof this.opts.answers === 'undefined') {
       this.opts.answers = true
     }
@@ -96,7 +101,7 @@ export class SAO {
     this.parsedGenerator = parseGenerator(this.opts.generator)
 
     // Sub generator can only be used in an existing
-    if (this.parsedGenerator.subGenerator) {
+    if (this.parsedGenerator.subGenerator && !this.opts.mock) {
       logger.debug(
         `Setting out directory to process.cwd() since it's a sub generator`
       )
