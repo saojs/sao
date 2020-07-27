@@ -1,6 +1,6 @@
 {
   "name": "sao",
-  "version": "1.0.0",
+  "version": "2.0.0-beta.1",
   "description": "Futuristic scaffolding tool ⚔",
   "repository": {
     "url": "https://github.com/saojs/sao.git",
@@ -9,7 +9,11 @@
   "main": "dist/index.js",
   "bin": "cli.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "/cli.js", "!**/*.test.ts"],
+  "files": [
+    "dist",
+    "/cli.js",
+    "!**/*.test.ts"
+  ],
   "scripts": {
     "test": "npm run lint && npm run build && jest",
     "build": "rm -rf dist && tsup src/index.ts --dts",
@@ -88,7 +92,9 @@
     }
   },
   "lint-staged": {
-    "*.ts": ["yarn lint --fix"]
+    "*.ts": [
+      "yarn lint --fix"
+    ]
   },
   "config": {
     "commitizen": {
