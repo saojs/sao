@@ -3,14 +3,14 @@
 
 ### Features
 
-* SAO v2 ([#145](https://github.com/saojs/sao/issues/145)) ([ca204d1](https://github.com/saojs/sao/commit/ca204d157f4c137dcafd2eeae5cd3691ed60c251))
+* Release version 2 ([#145](https://github.com/saojs/sao/issues/145)) ([ca204d1](https://github.com/saojs/sao/commit/ca204d157f4c137dcafd2eeae5cd3691ed60c251))
 
 
 ### BREAKING CHANGES
 
-* see changelog
+Docs for SAO v1 can be found here: https://v1.saojs.org/
 
-
+SAO v2 docs is still work in progress: https://saojs.org
 
 ## [1.7.1](https://github.com/saojs/sao/compare/v1.7.0...v1.7.1) (2020-05-12)
 
