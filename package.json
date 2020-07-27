@@ -1,6 +1,6 @@
 {
   "name": "sao",
-  "version": "0.0.0-semantic-release",
+  "version": "1.0.0",
   "description": "Futuristic scaffolding tool ⚔",
   "repository": {
     "url": "https://github.com/saojs/sao.git",
@@ -75,7 +75,6 @@
     "resolve-from": "^5.0.0",
     "rollup": "^2.22.1",
     "rollup-plugin-dts": "^1.4.8",
-    "semantic-release": "^17.0.7",
     "text-table": "^0.2.0",
     "ts-jest": "^26.0.0",
     "ts-node": "^8.10.2",
@@ -94,9 +93,6 @@
     "*.ts": [
       "yarn lint --fix"
     ]
-  },
-  "release": {
-    "branch": "master"
   },
   "config": {
     "commitizen": {
