@@ -1,5 +1,7 @@
 name: Ship js trigger
 on:
+  push:
+    branches: [master]
   pull_request:
     types:
       - closed
@@ -7,7 +9,6 @@ jobs:
   build:
     name: Release
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'releases/v')
     steps:
       - uses: actions/checkout@v2
         with:
@@ -15,7 +16,8 @@ jobs:
           ref: master
       - uses: actions/setup-node@v1
         with:
-          registry-url: "https://registry.npmjs.org"
+          node-version: 12.x
+          registry-url: 'https://registry.npmjs.org'
       - run: |
           if [ -f "yarn.lock" ]; then
             yarn install

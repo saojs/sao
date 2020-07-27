@@ -2,7 +2,7 @@ name: Ship js Schedule Prepare
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  "0 3 * * 2"
+    - cron: '0 3 * * 2'
 jobs:
   schedule_prepare:
     runs-on: ubuntu-latest
@@ -12,6 +12,8 @@ jobs:
           fetch-depth: 0
           ref: master
       - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
       - run: |
           if [ -f "yarn.lock" ]; then
             yarn install
