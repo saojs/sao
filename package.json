@@ -9,18 +9,15 @@
   "main": "dist/index.js",
   "bin": "cli.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "/cli.js",
-    "!**/*.test.ts"
-  ],
+  "files": ["dist", "/cli.js", "!**/*.test.ts"],
   "scripts": {
     "test": "npm run lint && npm run build && jest",
     "build": "rm -rf dist && tsup src/index.ts --dts",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "sao": "ts-node src/cli.ts",
-    "typedoc.g": "typedoc src/index.ts --readme none --mode file --out docs/typedoc --excludePrivate --excludeNotExported --theme minimal"
+    "typedoc.g": "typedoc src/index.ts --readme none --mode file --out docs/typedoc --excludePrivate --excludeNotExported --theme minimal",
+    "release": "shipjs prepare"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
@@ -75,6 +72,7 @@
     "resolve-from": "^5.0.0",
     "rollup": "^2.22.1",
     "rollup-plugin-dts": "^1.4.8",
+    "shipjs": "0.20.1",
     "text-table": "^0.2.0",
     "ts-jest": "^26.0.0",
     "ts-node": "^8.10.2",
@@ -90,9 +88,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": [
-      "yarn lint --fix"
-    ]
+    "*.ts": ["yarn lint --fix"]
   },
   "config": {
     "commitizen": {
