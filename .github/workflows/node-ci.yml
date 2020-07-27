@@ -10,7 +10,8 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  test:
+    name: Test on ${{ matrix.os }}
     runs-on: [windows-latest]
 
     strategy:
