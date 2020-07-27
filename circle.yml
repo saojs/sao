@@ -21,6 +21,3 @@ jobs:
       - run:
           name: test
           command: yarn test
-      - run:
-          name: Release
-          command: yarn semantic-release
