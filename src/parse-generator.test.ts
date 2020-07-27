@@ -5,7 +5,10 @@ const parse = (name: string): ParsedGenerator => {
   const result = parseGenerator(name)
   return {
     ...result,
-    path: result.path.replace(os.homedir(), '~'),
+    path: result.path
+      .replace(os.homedir(), '~')
+      // Replace back slashes with slashes (for Windows)
+      .replace(/\\/g, '/'),
   }
 }
 
