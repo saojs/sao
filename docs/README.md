@@ -55,7 +55,7 @@ Now let's create some template files, for example, `template/package.json`:
 }
 ```
 
-Template files supports [ejs](https://ejs.co) template engine, and the anwers we retrieved will be available here as local variable.
+Template files supports [ejs](https://ejs.co) template engine, and the answers we retrieved will be available here as local variable.
 
 ### Prompts
 
