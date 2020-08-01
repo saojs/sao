@@ -1,3 +1,11 @@
+## Install
+
+SAO v2 is currently in beta:
+
+```bash
+npm i -g sao@beta
+```
+
 ## Basic Usage
 
 ```bash
