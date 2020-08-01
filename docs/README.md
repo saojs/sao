@@ -12,7 +12,7 @@ npm i -g sao@beta
 sao nm my-project
 ```
 
-Running this command will download the generator from npm ([sao-nm](npm.im/sao-nm)) and generate a new project to `./my-project` directory.
+Running this command will download the generator from npm ([sao-nm](https://npm.im/sao-nm)) and generate a new project to `./my-project` directory.
 
 You can also use any GitHub repo:
 
