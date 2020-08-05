@@ -1,3 +1,6 @@
+> Info: Docs for SAO v1 can be found [here](https://v1.saojs.org).
+
+
 ## Install
 
 SAO v2 is currently in beta:
