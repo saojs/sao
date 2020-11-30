@@ -1,6 +1,5 @@
 > Info: Docs for SAO v1 can be found [here](https://v1.saojs.org).
 
-
 ## Install
 
 SAO v2 is currently in beta:
@@ -54,7 +53,7 @@ module.exports = {
 
 Here we use `prompts` to ask users some questions and retrieve answers as an object which looks like `{ name: '..', description: '...' }`.
 
-Next we use `actions` to define a series of actions, the `add` action will copy `files` from `sao-npm/template/` to the output directory.
+Next we use `actions` to define a series of actions, the `add` action will copy `files` from `template/` folder within your generator to the output directory.
 
 Now let's create some template files, for example, `template/package.json`:
 
@@ -66,7 +65,7 @@ Now let's create some template files, for example, `template/package.json`:
 }
 ```
 
-Template files supports [ejs](https://ejs.co) template engine, and the answers we retrieved will be available here as local variable.
+Template files supports [ejs](https://ejs.co) template engine, and the answers we retrieved will be available here as local variables.
 
 ### Prompts
 
@@ -79,6 +78,29 @@ Each `prompt` object has a `type` property, which can be either:
 - `"autocomplete" | "editable" | "form" | "multiselect" | "select" | "survey" | "list" | "scale"`: [ArrayPromptOptions](/typedoc/interfaces/arraypromptoptions.html)
 
 Check out the [GeneratorConfig['prompts']](/typedoc/interfaces/generatorconfig.html#prompts) type for details.
+
+### Sub Generators
+
+Sub generators are usually used to process files in an already generated project, for example you can use a sub generator to add a LICENSE file:
+
+```js
+module.exports = {
+  subGenerators: [
+    {
+      name: 'license',
+      generator: './generators/license',
+    },
+  ],
+}
+```
+
+The sub generator can be a local folder like `./generators/license` or an npm package (like `sao-license`) which can be resolved in your generator.
+
+Then you can invoke this sub generator like this:
+
+```
+sao {root_generator_name}:license
+```
 
 ## Testing Generators
 
