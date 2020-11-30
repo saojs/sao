@@ -4,7 +4,7 @@ import { PromptOptions } from './utils/prompt'
 import { SAO } from './'
 
 const joycon = new JoyCon({
-  files: ['saofile.js', 'saofile.json'],
+  files: ['saofile.js', 'saofile.mjs', 'saofile.json'],
 })
 
 export interface AddAction {
