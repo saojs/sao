@@ -34,7 +34,7 @@ sao saojs/sao-nm my-module
 sao nm my-module
 ```
 
-For detailed usage please head to https://saojs.org
+For detailed usage please head to https://sao.vercel.app
 
 ## Related
 
