@@ -69,7 +69,7 @@ export interface ArrayPromptOptions extends BasePromptOptions {
   /** Maxium number of options to select */
   maxChoices?: number
   /** Allow to select multiple options */
-  muliple?: boolean
+  multiple?: boolean
   /** Default value for the prompt */
   default?: WithPromptState<string>
   delay?: number
