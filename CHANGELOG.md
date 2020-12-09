@@ -1,3 +1,7 @@
+# [2.0.0-beta.2](https://github.com/saojs/sao/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2020-07-28)
+
+
+
 # [2.0.0-beta.1](https://github.com/saojs/sao/compare/v1.7.1...v2.0.0-beta.1) (2020-07-27)
 
 
