@@ -18,4 +18,4 @@ The state of current running prompt
 
 Prompt answers
 
-Defined in: [src/utils/prompt.ts:11](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L11)
+Defined in: [src/utils/prompt.ts:11](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L11)

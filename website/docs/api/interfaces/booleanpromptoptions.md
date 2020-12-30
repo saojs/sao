@@ -18,7 +18,7 @@ sidebar_label: "BooleanPromptOptions"
 
 Default value for the prompt
 
-Defined in: [src/utils/prompt.ts:88](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L88)
+Defined in: [src/utils/prompt.ts:88](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L88)
 
 ___
 
@@ -30,7 +30,7 @@ Function to format user input in the terminal.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[format](basepromptoptions.md#format)
 
-Defined in: [src/utils/prompt.ts:40](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L40)
+Defined in: [src/utils/prompt.ts:40](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L40)
 
 ___
 
@@ -42,7 +42,7 @@ The message to display when the prompt is rendered in the terminal.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[message](basepromptoptions.md#message)
 
-Defined in: [src/utils/prompt.ts:24](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L24)
+Defined in: [src/utils/prompt.ts:24](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L24)
 
 ___
 
@@ -54,7 +54,7 @@ Used as the key for the answer on the returned values (answers) object.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[name](basepromptoptions.md#name)
 
-Defined in: [src/utils/prompt.ts:20](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L20)
+Defined in: [src/utils/prompt.ts:20](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L20)
 
 ___
 
@@ -66,7 +66,7 @@ Function to format the final submitted value before it's returned.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[result](basepromptoptions.md#result)
 
-Defined in: [src/utils/prompt.ts:36](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L36)
+Defined in: [src/utils/prompt.ts:36](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L36)
 
 ___
 
@@ -78,7 +78,7 @@ Skip the prompt when returns `true`
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[skip](basepromptoptions.md#skip)
 
-Defined in: [src/utils/prompt.ts:26](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L26)
+Defined in: [src/utils/prompt.ts:26](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L26)
 
 ___
 
@@ -91,7 +91,7 @@ Defaults to `false`
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[store](basepromptoptions.md#store)
 
-Defined in: [src/utils/prompt.ts:45](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L45)
+Defined in: [src/utils/prompt.ts:45](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L45)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • **type**: *confirm*
 
-Defined in: [src/utils/prompt.ts:86](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L86)
+Defined in: [src/utils/prompt.ts:86](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L86)
 
 ___
 
@@ -113,4 +113,4 @@ ___
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[validate](basepromptoptions.md#validate)
 
-Defined in: [src/utils/prompt.ts:32](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L32)
+Defined in: [src/utils/prompt.ts:32](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L32)

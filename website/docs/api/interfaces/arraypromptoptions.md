@@ -16,7 +16,7 @@ sidebar_label: "ArrayPromptOptions"
 
 • `Optional` **align**: *left* \| *right*
 
-Defined in: [src/utils/prompt.ts:80](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L80)
+Defined in: [src/utils/prompt.ts:80](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L80)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **choices**: *WithPromptState*<*string*[] \| Choice[]\>
 
-Defined in: [src/utils/prompt.ts:68](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L68)
+Defined in: [src/utils/prompt.ts:68](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L68)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Default value for the prompt
 
-Defined in: [src/utils/prompt.ts:74](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L74)
+Defined in: [src/utils/prompt.ts:74](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L74)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **delay**: *number*
 
-Defined in: [src/utils/prompt.ts:75](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L75)
+Defined in: [src/utils/prompt.ts:75](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L75)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **edgeLength**: *number*
 
-Defined in: [src/utils/prompt.ts:79](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L79)
+Defined in: [src/utils/prompt.ts:79](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L79)
 
 ___
 
@@ -62,7 +62,7 @@ Function to format user input in the terminal.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[format](basepromptoptions.md#format)
 
-Defined in: [src/utils/prompt.ts:40](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L40)
+Defined in: [src/utils/prompt.ts:40](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L40)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **linebreak**: *boolean*
 
-Defined in: [src/utils/prompt.ts:78](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L78)
+Defined in: [src/utils/prompt.ts:78](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L78)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 Maxium number of options to select
 
-Defined in: [src/utils/prompt.ts:70](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L70)
+Defined in: [src/utils/prompt.ts:70](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L70)
 
 ___
 
@@ -92,7 +92,7 @@ The message to display when the prompt is rendered in the terminal.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[message](basepromptoptions.md#message)
 
-Defined in: [src/utils/prompt.ts:24](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L24)
+Defined in: [src/utils/prompt.ts:24](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L24)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 Allow to select multiple options
 
-Defined in: [src/utils/prompt.ts:72](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L72)
+Defined in: [src/utils/prompt.ts:72](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L72)
 
 ___
 
@@ -114,7 +114,7 @@ Used as the key for the answer on the returned values (answers) object.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[name](basepromptoptions.md#name)
 
-Defined in: [src/utils/prompt.ts:20](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L20)
+Defined in: [src/utils/prompt.ts:20](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L20)
 
 ___
 
@@ -126,7 +126,7 @@ Function to format the final submitted value before it's returned.
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[result](basepromptoptions.md#result)
 
-Defined in: [src/utils/prompt.ts:36](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L36)
+Defined in: [src/utils/prompt.ts:36](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L36)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 Make the options scrollable via arrow keys
 
-Defined in: [src/utils/prompt.ts:82](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L82)
+Defined in: [src/utils/prompt.ts:82](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L82)
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 • `Optional` **separator**: *boolean*
 
-Defined in: [src/utils/prompt.ts:76](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L76)
+Defined in: [src/utils/prompt.ts:76](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L76)
 
 ___
 
@@ -156,7 +156,7 @@ Skip the prompt when returns `true`
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[skip](basepromptoptions.md#skip)
 
-Defined in: [src/utils/prompt.ts:26](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L26)
+Defined in: [src/utils/prompt.ts:26](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L26)
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 • `Optional` **sort**: *boolean*
 
-Defined in: [src/utils/prompt.ts:77](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L77)
+Defined in: [src/utils/prompt.ts:77](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L77)
 
 ___
 
@@ -177,7 +177,7 @@ Defaults to `false`
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[store](basepromptoptions.md#store)
 
-Defined in: [src/utils/prompt.ts:45](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L45)
+Defined in: [src/utils/prompt.ts:45](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L45)
 
 ___
 
@@ -185,7 +185,7 @@ ___
 
 • **type**: *autocomplete* \| *editable* \| *form* \| *multiselect* \| *select* \| *survey* \| *list* \| *scale*
 
-Defined in: [src/utils/prompt.ts:59](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L59)
+Defined in: [src/utils/prompt.ts:59](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L59)
 
 ___
 
@@ -199,4 +199,4 @@ ___
 
 Inherited from: [BasePromptOptions](basepromptoptions.md).[validate](basepromptoptions.md#validate)
 
-Defined in: [src/utils/prompt.ts:32](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L32)
+Defined in: [src/utils/prompt.ts:32](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L32)

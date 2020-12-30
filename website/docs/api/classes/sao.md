@@ -22,7 +22,7 @@ Name | Type |
 
 **Returns:** [*SAO*](sao.md)
 
-Defined in: [src/index.ts:72](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L72)
+Defined in: [src/index.ts:72](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L72)
 
 ## Properties
 
@@ -30,7 +30,7 @@ Defined in: [src/index.ts:72](https://github.com/saojs/sao/blob/ddc7421/src/inde
 
 • `Private` **\_answers**: { [k: string]: *any*;  } \| *symbol*
 
-Defined in: [src/index.ts:68](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L68)
+Defined in: [src/index.ts:68](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L68)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • `Private` **\_data**: { [k: string]: *any*;  } \| *symbol*
 
-Defined in: [src/index.ts:69](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L69)
+Defined in: [src/index.ts:69](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L69)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **colors**: Chalk & ChalkFunction & { `BackgroundColor`: BackgroundColor ; `Color`: Color ; `ForegroundColor`: ForegroundColor ; `Level`: chalk.Level ; `Modifiers`: Modifiers ; `stderr`: chalk.Chalk & { `supportsColor`: chalk.ColorSupport \| *false*  } ; `supportsColor`: chalk.ColorSupport \| *false*  }
 
-Defined in: [src/index.ts:65](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L65)
+Defined in: [src/index.ts:65](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L65)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **generatorList**: GeneratorList
 
-Defined in: [src/index.ts:72](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L72)
+Defined in: [src/index.ts:72](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L72)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **logger**: *Logger*
 
-Defined in: [src/index.ts:66](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L66)
+Defined in: [src/index.ts:66](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L66)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **opts**: *SetRequired*<[*Options*](../interfaces/options.md), *outDir* \| *logLevel*\>
 
-Defined in: [src/index.ts:63](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L63)
+Defined in: [src/index.ts:63](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L63)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **parsedGenerator**: ParsedGenerator
 
-Defined in: [src/index.ts:71](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L71)
+Defined in: [src/index.ts:71](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L71)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **spinner**: Ora
 
-Defined in: [src/index.ts:64](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L64)
+Defined in: [src/index.ts:64](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L64)
 
 ## Accessors
 
@@ -100,7 +100,7 @@ You can't access this in `prompts` function
 
 **Returns:** object
 
-Defined in: [src/index.ts:240](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L240)
+Defined in: [src/index.ts:240](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L240)
 
 • **answers**(`value`: { [k: string]: *any*;  }): *void*
 
@@ -116,7 +116,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/index.ts:247](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L247)
+Defined in: [src/index.ts:247](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L247)
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 **Returns:** *any*
 
-Defined in: [src/index.ts:251](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L251)
+Defined in: [src/index.ts:251](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L251)
 
 ___
 
@@ -138,7 +138,7 @@ Get the information of system git user
 
 **Returns:** GitUser
 
-Defined in: [src/index.ts:277](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L277)
+Defined in: [src/index.ts:277](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L277)
 
 ___
 
@@ -150,7 +150,7 @@ The npm client
 
 **Returns:** NPM\_CLIENT
 
-Defined in: [src/index.ts:298](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L298)
+Defined in: [src/index.ts:298](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L298)
 
 ___
 
@@ -162,7 +162,7 @@ The absolute path to output directory
 
 **Returns:** *string*
 
-Defined in: [src/index.ts:291](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L291)
+Defined in: [src/index.ts:291](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L291)
 
 ___
 
@@ -174,7 +174,7 @@ The basename of output directory
 
 **Returns:** *string*
 
-Defined in: [src/index.ts:284](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L284)
+Defined in: [src/index.ts:284](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L284)
 
 ___
 
@@ -188,7 +188,7 @@ Returns an empty object when it doesn't exist
 
 **Returns:** *any*
 
-Defined in: [src/index.ts:266](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L266)
+Defined in: [src/index.ts:266](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L266)
 
 ## Methods
 
@@ -206,7 +206,7 @@ Name | Type |
 
 **Returns:** *SAOError*
 
-Defined in: [src/index.ts:355](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L355)
+Defined in: [src/index.ts:355](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L355)
 
 ___
 
@@ -226,7 +226,7 @@ Name | Type | Default value |
 
 **Returns:** *Promise*<{ `config`: [*GeneratorConfig*](../interfaces/generatorconfig.md) ; `generator`: ParsedGenerator  }\>
 
-Defined in: [src/index.ts:137](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L137)
+Defined in: [src/index.ts:137](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L137)
 
 ___
 
@@ -240,7 +240,7 @@ Used by SAO CLI, in general you don't want to touch this
 
 **Returns:** *Promise*<*string*\>
 
-Defined in: [src/index.ts:121](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L121)
+Defined in: [src/index.ts:121](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L121)
 
 ___
 
@@ -252,7 +252,7 @@ Get file list of output directory
 
 **Returns:** *Promise*<*string*[]\>
 
-Defined in: [src/index.ts:362](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L362)
+Defined in: [src/index.ts:362](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L362)
 
 ___
 
@@ -266,7 +266,7 @@ It will fail silently when `git` is not available
 
 **Returns:** *void*
 
-Defined in: [src/index.ts:307](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L307)
+Defined in: [src/index.ts:307](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L307)
 
 ___
 
@@ -284,7 +284,7 @@ Name | Type |
 
 **Returns:** *Promise*<*boolean*\>
 
-Defined in: [src/index.ts:374](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L374)
+Defined in: [src/index.ts:374](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L374)
 
 ___
 
@@ -302,7 +302,7 @@ Name | Type |
 
 **Returns:** *Promise*<{ `code`: *number*  }\>
 
-Defined in: [src/index.ts:326](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L326)
+Defined in: [src/index.ts:326](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L326)
 
 ___
 
@@ -320,7 +320,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<*string*\>
 
-Defined in: [src/index.ts:382](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L382)
+Defined in: [src/index.ts:382](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L382)
 
 ___
 
@@ -330,7 +330,7 @@ ___
 
 **Returns:** *Promise*<*void*\>
 
-Defined in: [src/index.ts:230](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L230)
+Defined in: [src/index.ts:230](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L230)
 
 ___
 
@@ -347,7 +347,7 @@ Name | Type |
 
 **Returns:** *Promise*<*void*\>
 
-Defined in: [src/index.ts:199](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L199)
+Defined in: [src/index.ts:199](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L199)
 
 ___
 
@@ -359,4 +359,4 @@ Display a success message
 
 **Returns:** *void*
 
-Defined in: [src/index.ts:347](https://github.com/saojs/sao/blob/ddc7421/src/index.ts#L347)
+Defined in: [src/index.ts:347](https://github.com/saojs/sao/blob/7f66560/src/index.ts#L347)

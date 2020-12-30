@@ -40,7 +40,7 @@ sidebar_label: "Index"
 
 Ƭ **PromptOptions**: [*ArrayPromptOptions*](interfaces/arraypromptoptions.md) \| [*BooleanPromptOptions*](interfaces/booleanpromptoptions.md) \| [*StringPromptOptions*](interfaces/stringpromptoptions.md)
 
-Defined in: [src/utils/prompt.ts:99](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L99)
+Defined in: [src/utils/prompt.ts:99](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L99)
 
 ## Variables
 
@@ -48,7 +48,7 @@ Defined in: [src/utils/prompt.ts:99](https://github.com/saojs/sao/blob/ddc7421/s
 
 • `Const` **generatorList**: *GeneratorList*
 
-Defined in: [src/utils/generator-list.ts:75](https://github.com/saojs/sao/blob/ddc7421/src/utils/generator-list.ts#L75)
+Defined in: [src/utils/generator-list.ts:75](https://github.com/saojs/sao/blob/7f66560/src/utils/generator-list.ts#L75)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • `Const` **store**: *Store*
 
-Defined in: [src/store.ts:43](https://github.com/saojs/sao/blob/ddc7421/src/store.ts#L43)
+Defined in: [src/store.ts:43](https://github.com/saojs/sao/blob/7f66560/src/store.ts#L43)
 
 ## Functions
 
@@ -72,7 +72,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/error.ts:21](https://github.com/saojs/sao/blob/ddc7421/src/error.ts#L21)
+Defined in: [src/error.ts:21](https://github.com/saojs/sao/blob/7f66560/src/error.ts#L21)
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 **Returns:** *Promise*<*void*\>
 
-Defined in: [src/cli-engine.ts:7](https://github.com/saojs/sao/blob/ddc7421/src/cli-engine.ts#L7)
+Defined in: [src/cli-engine.ts:7](https://github.com/saojs/sao/blob/7f66560/src/cli-engine.ts#L7)

@@ -22,7 +22,7 @@ sidebar_label: "BasePromptOptions"
 
 Function to format user input in the terminal.
 
-Defined in: [src/utils/prompt.ts:40](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L40)
+Defined in: [src/utils/prompt.ts:40](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L40)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 The message to display when the prompt is rendered in the terminal.
 
-Defined in: [src/utils/prompt.ts:24](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L24)
+Defined in: [src/utils/prompt.ts:24](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L24)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 Used as the key for the answer on the returned values (answers) object.
 
-Defined in: [src/utils/prompt.ts:20](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L20)
+Defined in: [src/utils/prompt.ts:20](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L20)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Function to format the final submitted value before it's returned.
 
-Defined in: [src/utils/prompt.ts:36](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L36)
+Defined in: [src/utils/prompt.ts:36](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L36)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 Skip the prompt when returns `true`
 
-Defined in: [src/utils/prompt.ts:26](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L26)
+Defined in: [src/utils/prompt.ts:26](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L26)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 Store the prompt answer in order to reuse it as default value the next time
 Defaults to `false`
 
-Defined in: [src/utils/prompt.ts:45](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L45)
+Defined in: [src/utils/prompt.ts:45](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L45)
 
 ___
 
@@ -85,4 +85,4 @@ ___
  This function may return a boolean or a string.
  If a string is returned it will be used as the validation error message.
 
-Defined in: [src/utils/prompt.ts:32](https://github.com/saojs/sao/blob/ddc7421/src/utils/prompt.ts#L32)
+Defined in: [src/utils/prompt.ts:32](https://github.com/saojs/sao/blob/7f66560/src/utils/prompt.ts#L32)

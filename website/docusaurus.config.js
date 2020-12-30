@@ -37,29 +37,12 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'Getting Started',
+              to: 'docs/installation',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'API',
+              to: 'docs/api',
             },
           ],
         },
@@ -72,12 +55,12 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/saojs/sao',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} SAO, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
