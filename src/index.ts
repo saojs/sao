@@ -387,3 +387,12 @@ export class SAO {
 export { GeneratorConfig, handleError, store, generatorList }
 
 export { runCLI } from './cli-engine'
+
+export {
+  PromptOptions,
+  BasePromptOptions,
+  StringPromptOptions,
+  ArrayPromptOptions,
+  BooleanPromptOptions,
+  PromptState,
+} from './utils/prompt'
